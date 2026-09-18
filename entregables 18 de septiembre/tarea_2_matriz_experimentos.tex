@@ -1,0 +1,156 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\definecolor{primary}{RGB}{15, 32, 67}
+\definecolor{secondary}{RGB}{0, 114, 206}
+\definecolor{lightgray}{RGB}{245, 247, 250}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=secondary,
+    urlcolor=secondary,
+    pdftitle={Tarea 2 - Experimentos de Ciencia de Datos}
+}
+
+\title{
+    \vspace{-1cm}
+    \textbf{\huge Tarea 2: Experimentos para Medir y Probar la Idea}\\[0.3cm]
+    \large\textbf{Proyecto StatCredit AI}\\[0.1cm]
+    \small Universidad Externado de Colombia -- Emprendimiento (Ciencia de Datos)\\[0.1cm]
+    \small\textbf{Grupo 5}
+}
+\author{}
+\date{18 de Septiembre de 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{tcolorbox}[colback=primary!5,colframe=primary,title=\textbf{¿De qué trata este entregable?}]
+En esta segunda tarea proponemos \textbf{12 experimentos prácticos} organizados en 6 preguntas clave (2 experimentos por pregunta). Como estudiantes de Ciencia de Datos, el objetivo es aplicar herramientas de análisis de datos, pruebas de usuario y mediciones simples para comprobar si las ideas de \textbf{StatCredit AI} funcionan antes de gastar tiempo o dinero construyendo cosas que nadie vaya a usar.
+\end{tcolorbox}
+
+\section{Matriz de Experimentos}
+
+\subsection{Pregunta 1: ¿Quién es tu cliente?}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 1.1: Agrupar empresas para encontrar nuestro primer cliente}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Cuáles entidades financieras en Colombia tienen más urgencia de dar crédito a trabajadores independientes?
+    \item \textbf{Cómo lo probamos (Ciencia de Datos):} Tomamos datos públicos de entidades financieras en Colombia y aplicamos algoritmos de agrupación (\textit{clustering} como $k$-means). Evaluamos dos variables principales: el volumen de solicitudes de crédito rechazadas y su \textbf{flexibilidad tecnológica}. Entendemos por \textit{flexibilidad tecnológica} aquellas entidades (como fintechs o neobancos) que ya cuentan con plataformas digitales activas y arquitecturas basadas en APIs abiertas, a diferencia de los bancos tradicionales que aún dependen de procesos manuales en papel o sistemas legados cerrados.
+    \item \textbf{Por qué importa la métrica:} Si encontramos un grupo claro de al menos 30 o 40 entidades con alta flexibilidad tecnológica y altos rechazos a independientes, sabremos exactamente a quiénes ofrecer primero nuestro servicio (\textit{Beachhead Market}).
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 1.2: Prueba A/B en página web para ver qué mensaje llama más la atención}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿A los directores de riesgo les atrae más el mensaje de \textit{"reducir la mora en préstamos a independientes"} o el de \textit{"cumplir con las normas de Open Finance"}?
+    \item \textbf{Cómo lo probamos:} Diseñamos una página web sencilla con dos versiones del mensaje principal (Prueba A/B) y medimos en cuál hace clic más gente interesada.
+    \item \textbf{Por qué importa la métrica:} Si la versión de \textit{"reducir la mora"} logra el doble de clics y registros para demostraciones, confirmaremos que los tomadores de decisión priorizan el impacto financiero directo (no perder dinero) sobre el simple cumplimiento de normas regulatorias.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Pregunta 2: ¿Qué puedes hacer por tu cliente?}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 2.1: Probar el modelo con datos pasados (Backtesting)}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Nuestro modelo de Inteligencia Artificial realmente predice mejor el pago de independientes que los modelos de scoring tradicionales?
+    \item \textbf{Cómo lo probamos:} Tomamos una base de datos anónima de préstamos pasados y comparamos los resultados del score tradicional frente a las predicciones de nuestro algoritmo.
+    \item \textbf{Por qué importa la métrica:} Demostrar una reducción del 25\% en los rechazos injustificados (\textit{falsos negativos}) significa que la entidad financiera puede aprobar a miles de clientes independientes adicionales que sí pueden pagar, aumentando sus ingresos sin incrementar la mora.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 2.2: Prueba de usabilidad de reportes con analistas de riesgo}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Los reportes explicativos visuales ayudan a los analistas a tomar decisiones de crédito más rápido?
+    \item \textbf{Cómo lo probamos:} Le mostramos dos tipos de pantalla a 10 analistas de crédito (una con solo un puntaje numérico y otra con el desglose explicativo de StatCredit AI) y tomamos el tiempo de evaluación de cada caso.
+    \item \textbf{Por qué importa la métrica:} Pasar de 15 minutos a menos de 7 minutos por cliente reduce a la mitad el tiempo de atención. Esto permite al equipo de analistas procesar el doble de solicitudes al día sin necesidad de contratar más personal.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Pregunta 3: ¿Cómo adquiere tu cliente tu producto?}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 3.1: Prueba de facilidad de integración de la API}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Es fácil y rápido para los equipos de sistemas conectar nuestra API de scoring a sus plataformas?
+    \item \textbf{Cómo lo probamos:} Invitamos a 5 programadores de fintechs aliadas a conectar nuestra API en un ambiente de pruebas (\textit{Sandbox}) y medimos el tiempo que tardan en realizar la primera consulta exitosa.
+    \item \textbf{Por qué importa la métrica:} Si logran conectar el servicio en menos de 1 hora, eliminamos la fricción técnica y la resistencia del área de tecnología, que suele ser uno de los mayores obstáculos para cerrar ventas B2B.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 3.2: Prueba de versión gratuita inicial (Freemium Pilot)}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Regalar un paquete de 500 consultas iniciales ayuda a que las empresas decidan contratar el servicio pagado?
+    \item \textbf{Cómo lo probamos:} Ofrecemos un plan piloto sin costo de 500 consultas y medimos qué porcentaje de empresas deciden firmar un contrato mensual cuando se agota la prueba.
+    \item \textbf{Por qué importa la métrica:} 500 consultas le permiten a la fintech probar la herramienta con clientes reales suficientes. Lograr que al menos 2 de cada 10 empresas (20\%) se conviertan a clientes de pago confirma que la prueba gratuita genera suficiente confianza comercial.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Pregunta 4: ¿Cómo ganas dinero con tu producto?}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 4.1: Encuesta de preferencia de modelo de cobro}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Los clientes prefieren pagar una mensualidad fija por el software o un cobro por cada consulta de score realizada?
+    \item \textbf{Cómo lo probamos:} Realizamos encuestas sencillas de decisión a encargados de compra en entidades crediticias, ofreciéndoles distintas combinaciones de tarifas.
+    \item \textbf{Por qué importa la métrica:} Descubrir que prefieren un cobro híbrido (una cuota mensual base baja más un valor pequeño por consulta realizada) nos ayuda a fijar un precio competitivo que cubre nuestros costos fijos y crece según el volumen del cliente.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 4.2: Simulación de estabilidad financiera (Monte Carlo)}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿El modelo de negocio de StatCredit AI sigue siendo rentable si algunos clientes cancelan o si los costos de los servidores aumentan?
+    \item \textbf{Cómo lo probamos:} Realizamos una simulación matemática (Monte Carlo) cambiando variables de ingresos, costos de servidores e inflación en 10,000 escenarios posibles.
+    \item \textbf{Por qué importa la métrica:} Si el negocio mantiene ganancias en más del 90\% de los escenarios simulados, comprobamos que el proyecto es financieramente estable y resistente a imprevistos del mercado.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Pregunta 5: ¿Cómo diseñas y construyes tu producto?}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 5.1: Prueba de velocidad y carga del sistema}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿La API responde a tiempo cuando entran cientos de solicitudes al mismo segundo?
+    \item \textbf{Cómo lo probamos:} Enviamos 500 solicitudes por segundo simuladas a nuestros servidores para medir el tiempo de respuesta y verificar que no se produzcan caídas del servicio.
+    \item \textbf{Por qué importa la métrica:} En aplicaciones móviles de crédito inmediato, si la respuesta tarda más de 0.3 segundos (300 milisegundos), los usuarios abandonan la solicitud en el punto de pago. Garantizar respuestas en menos de 0.3 segundos es vital para la experiencia del usuario.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 5.2: Prueba piloto a ciegas con entidad financiera}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Las personas independientes aprobadas con nuestro score realmente pagan a tiempo en la vida real?
+    \item \textbf{Cómo lo probamos:} Evaluamos 500 solicitudes reales en paralelo con una entidad aliada a ciegas (el banco evalúa con su método tradicional y nosotros con StatCredit AI, sin interferir en la decisión final).
+    \item \textbf{Por qué importa la métrica:} Una tasa de mora inferior al 3\% en el grupo evaluado por nuestro sistema después de 90 días demuestra que la Inteligencia Artificial funciona en el mercado real y cumple con los parámetros de riesgo permitidos por la regulación (SARC).
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Pregunta 6: ¿Cómo escalas tu negocio?}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 6.1: Prueba de adaptación del algoritmo a otro país (México)}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿El modelo entrenado con datos de independientes en Colombia se puede usar en otro país como México realizando ajustes mínimos?
+    \item \textbf{Cómo lo probamos:} Evaluamos nuestro algoritmo utilizando un conjunto de datos transaccionales de micronegocios e independientes en México.
+    \item \textbf{Por qué importa la métrica:} Mantener más del 80\% de la precisión inicial demuestra que la lógica de comportamiento financiero informal es similar entre países latinoamericanos, lo que permite expandir el negocio a nuevos mercados rápidamente y sin grandes costos de desarrollo.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=\textbf{Experimento 6.2: Inclusión de datos de facturación electrónica (DIAN)}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Agregar datos de facturas electrónicas mejora la capacidad de predecir el pago en micronegocios?
+    \item \textbf{Cómo lo probamos:} Comparamos la precisión del modelo evaluando primero solo datos bancarios y luego agregando datos de ventas y compras en facturas electrónicas.
+    \item \textbf{Por qué importa la métrica:} Las facturas reflejan las ventas reales recientes de un pequeño negocio. Un aumento del 15\% en la precisión justifica crear un módulo especializado para micronegocios, ampliando nuestro catálogo de productos.
+\end{itemize}
+\end{tcolorbox}
+
+\section{Conclusión}
+Estos 12 experimentos le brindan a \textbf{StatCredit AI} una estrategia clara de prueba y aprendizaje. Nos permiten validar paso a paso nuestro producto con datos reales, asegurando que cada funcionalidad que desarrollemos responda a una necesidad comprobada del mercado financiero en Colombia.
+
+\end{document}
