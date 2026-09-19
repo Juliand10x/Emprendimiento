@@ -1,0 +1,117 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{geometry}
+\geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+
+% Definición de colores institucionales
+\definecolor{externadoDarkBlue}{RGB}{10, 34, 64}
+\definecolor{externadoAccent}{RGB}{0, 114, 206}
+\definecolor{lightGray}{RGB}{245, 247, 250}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=externadoAccent,
+    urlcolor=externadoAccent,
+    titlecolor=externadoDarkBlue
+}
+
+\tcbset{
+    colback=lightGray,
+    colframe=externadoDarkBlue,
+    fonttitle=\bfseries\color{white},
+    arc=3mm
+}
+
+\title{
+    \vspace{-1cm}
+    \textbf{\Large UNIVERSIDAD EXTERNADO DE COLOMBIA}\\
+    \textbf{\large PREGRADO EN CIENCIA DE DATOS --- EMPRENDIMIENTO}\\
+    \vspace{0.5cm}
+    \Large \textbf{TALLER 2: CONTRATO DE EQUIPO (TERM SHEET)}\\
+    \large \textbf{Proyecto: StatCredit AI --- Scoring Crediticio Alternativo B2B}
+}
+\author{\textbf{Grupo 5:} Santiago Sandoval | Sebastián Ramos | Julián Duarte | Tomás Rincón | Julián Jiménez}
+\date{Semestre 2026-II}
+
+\begin{document}
+
+\maketitle
+
+\hrule
+\vspace{0.5cm}
+
+\section{Objetivo del Taller}
+El presente taller tiene como objetivo co-construir los lineamientos fundamentales del contrato de aprendizaje, el contrato de equipo y la declaración de expectativas y compromisos para el desarrollo del proyecto \textbf{StatCredit AI}. A través de este \textit{Term Sheet}, el equipo establece un pacto de responsabilidad ética, validación cuantitativa rigurosa y colaboración estratégica sostenida durante el semestre.
+
+\section{Justificación e Importancia del Trabajo en Equipo}
+El trabajo interdisciplinario en el pregrado de Ciencia de Datos constituye una competencia crítica para resolver problemas complejos en el sector financiero. La co-creación estratégica permite incorporar múltiples perspectivas (analítica de datos, ingeniería financiera y MLOps) para potenciar la innovación disruptiva (\textit{Tucker \& Abbasi, 2012}). Asimismo, la eficacia del desempeño operativo es directamente proporcional a la confianza, transparencia y empatía subyacentes en el equipo (\textit{Katzenbach \& Smith, 1993}).
+
+De acuerdo con el informe de inversión de KPMG (2023), los comités de evaluación y fondos de venture capital priorizan equipos de gestión cohesionados, con habilidades técnicas demostradas y planes de ejecución claros por encima de ideas aisladas.
+
+\section{Matriz de Integrantes e Ikigai del Equipo (Grupo 5)}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{p{3.5cm} p{4cm} p{4cm} p{3.5cm}}
+\toprule
+\textbf{Integrante} & \textbf{Fortaleza Principal (Ikigai)} & \textbf{Rol en StatCredit AI} & \textbf{Compromiso Clave} \\
+\midrule
+\textbf{Santiago Sandoval} & Modelado predictivo, MLOps e inferencia causal bayesiana. & Científico de Datos Lead / ML Architect & Garantizar auditabilidad y métricas de precisión algorítmica. \\
+\midrule
+\textbf{Sebastián Ramos} & Estrategia B2B, finanzas cuantitativas y modelos de negocio. & Director de Estrategia \& Negocios B2B & Definir modelo de monetización SaaS y proyecciones TAM/SAM/SOM. \\
+\midrule
+\textbf{Julián Duarte} & Arquitectura de software, APIs REST y gestión de datos. & Data Engineer / Backend Architect & Diseñar la tubería de ingesta y despliegue de la API. \\
+\midrule
+\textbf{Tomás Rincón} & Análisis de riesgo crediticio, regulación SARC y BI. & Analista de Riesgo \& Compliance & Asegurar cumplimiento normativo SARC y explicabilidad SHAP. \\
+\midrule
+\textbf{Julián Jiménez} & Desarrollo de software, interfaces y pruebas unitarias. & Software Engineer / QA & Garantizar la integridad operativa y pruebas de integración. \\
+\bottomrule
+\end{tabular}
+\caption{Matriz de roles y complementariedad del equipo Grupo 5.}
+\end{table}
+
+\section{Pacto de Compromiso Ético y Protocolo de Manejo de Conflictos}
+
+\begin{tcolorbox}[title=Acuerdos Fundamentales de Equipo (Term Sheet)]
+\begin{enumerate}[leftmargin=*]
+    \textbf{1. Rigor Técnico y Datos Reales:} Ninguna métrica predictiva o modelo de scoring será presentado sin validación objetiva. Se prohíbe el uso de datos sintéticos no justificados o la simulación de resultados sin sustento metodológico.
+    \textbf{2. Cumplimiento de Entregas y Puntualidad:} Todos los avances serán consolidados en formato \LaTeX{} al menos 24 horas antes de la fecha límite estipulada. Las sesiones de trabajo requerirán puntualidad estricta.
+    \textbf{3. Protocolo de Resolución de Desacuerdos:} Frente a divergencias técnicas o de visión estratégica, se aplicará el siguiente procedimiento paso a paso:
+    \begin{itemize}
+        \item \textit{Fase 1 (Argumentación Causal):} Cada postura debe sustentarse en datos objetivos, literatura académica o exigencias regulatorias (SARC).
+        \item \textit{Fase 2 (Votación Ponderada):} Si persiste la paridad, el líder del área técnica correspondiente (Santiago en Ciencia de Datos, Sebastián en Estrategia) tendrá voto dirimente.
+        \item \textit{Fase 3 (Consulta Docente):} Escalación al profesor de la asignatura únicamente tras agotar las instancias internas.
+    \end{itemize}
+    \textbf{4. Transparencia y Coevaluación:} La coevaluación del equipo reflejará fielmente la contribución individual, el cumplimiento de tareas y el respeto por los acuerdos del presente contrato.
+\end{enumerate}
+\end{tcolorbox}
+
+\section{Firma e Identificación del Equipo}
+
+\vspace{1cm}
+\begin{table}[h!]
+\centering
+\begin{tabular}{ccc}
+\underline{\hspace{4.5cm}} & \hspace{0.5cm} & \underline{\hspace{4.5cm}} \\
+Santiago Sandoval & & Sebastián Ramos \\
+Científico de Datos Lead & & Director de Estrategia B2B \\
+\vspace{1cm} & & \\
+\underline{\hspace{4.5cm}} & \hspace{0.5cm} & \underline{\hspace{4.5cm}} \\
+Julián Duarte & & Tomás Rincón \\
+Data Engineer & & Analista de Riesgo SARC \\
+\vspace{1cm} & & \\
+\multicolumn{3}{c}{\underline{\hspace{4.5cm}}} \\
+\multicolumn{3}{c}{Julián Jiménez} \\
+\multicolumn{3}{c}{Software Engineer / QA}
+\end{tabular}
+\end{table}
+
+\end{document}

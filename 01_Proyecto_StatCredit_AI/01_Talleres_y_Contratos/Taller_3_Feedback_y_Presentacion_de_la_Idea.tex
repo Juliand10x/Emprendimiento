@@ -1,0 +1,234 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{geometry}
+\geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning, calc}
+
+% Definición de colores institucionales
+\definecolor{externadoDarkBlue}{RGB}{10, 34, 64}
+\definecolor{externadoAccent}{RGB}{0, 114, 206}
+\definecolor{lightGray}{RGB}{245, 247, 250}
+\definecolor{alertRed}{RGB}{180, 40, 40}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=externadoAccent,
+    urlcolor=externadoAccent,
+    titlecolor=externadoDarkBlue
+}
+
+\tcbset{
+    colback=lightGray,
+    colframe=externadoDarkBlue,
+    fonttitle=\bfseries\color{white},
+    arc=3mm
+}
+
+\title{
+    \vspace{-1cm}
+    \textbf{\Large UNIVERSIDAD EXTERNADO DE COLOMBIA}\\
+    \textbf{\large PREGRADO EN CIENCIA DE DATOS --- EMPRENDIMIENTO}\\
+    \vspace{0.5cm}
+    \Large \textbf{TALLER 3: DIAGNÓSTICO ESTRATÉGICO, REENCUADRE Y FEEDBACK}\\
+    \large \textbf{Proyecto: StatCredit AI --- Motor SaaS B2B de Scoring Crediticio Alternativo \& XAI}
+}
+\author{\textbf{Grupo 5:} Santiago Sandoval | Sebastián Ramos | Julián Duarte | Tomás Rincón | Julián Jiménez}
+\date{Semestre 2026-II}
+
+\begin{document}
+
+\maketitle
+
+\hrule
+\vspace{0.5cm}
+
+\section{Introducción y Contexto Estratégico}
+El presente documento consolida el diagnóstico estratégico refinado de \textbf{StatCredit AI}, incorporando las observaciones de evaluación cualitativa sobre la estructuración del problema, la economía informal, la teoría del credit scoring y la distinción de nuestro modelo de negocio SaaS B2B.
+
+StatCredit AI aborda la asimetría de información que impide a las entidades financieras tradicionales originar crédito de forma segura hacia más de 13 millones de trabajadores independientes y micronegociantes solventes en Colombia.
+
+---
+
+\section{Reencuadre Estratégico del Problema (Bianchi \& Verganti, 2021)}
+Siguiendo la metodología de \textit{Problem Framing \& Reframing} (\textit{Bianchi \& Verganti, 2021}), la innovación disruptiva surge al modificar el marco de referencia interpretativo de una problemática:
+
+\begin{tcolorbox}[title=El Reencuadre de StatCredit AI]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Problema Visible Tradicional:} \textit{«Los trabajadores independientes y micronegocios son clientes de alto riesgo moroso porque carecen de historial crediticio formal en centrales de riesgo (DataCrédito/TransUnion).»}
+    \item \textbf{Reencuadre StatCredit AI:} \textit{«Los trabajadores independientes poseen una intensa actividad financiera y transaccional diaria en billeteras digitales y comercio no bancario, pero los modelos lineales tradicionales carecen de la capacidad metodológica e infraestructura para interpretar dicha información como un activo de repago.»}
+    \item \textbf{Enunciado Insignia:} \textit{“No buscamos cambiar quién puede acceder al crédito; buscamos cambiar la forma en que se mide quién puede pagarlo.”}
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Los 4 Movimientos de Diseño de Problemas}
+\begin{enumerate}
+    \item \textbf{De Déficit a Potencial:} El independiente no carece de capacidad de pago; posee una dinámica de caja no canalizada por los formatos bancarios tradicionales.
+    \item \textbf{De Problema a Oportunidad:} La banca no rechaza por malicia, sino por falta de herramientas actuariales; existe un mercado desatendido de más de \$45M USD en potencial de originación.
+    \item \textbf{De Intuición a Evidencia:} Reemplazamos la discrecionalidad del analista por algoritmos de Inferencia Causal e IA Explicable (XAI).
+    \item \textbf{De Solución Aislada a Arquitectura de Plataforma B2B:} Nos posicionamos como el motor inteligente (SaaS/API) que conecta la economía informal con las entidades financieras.
+\end{enumerate}
+
+---
+
+\section{Diagrama Causal de Ishikawa (Espina de Pescado) Reestructurado}
+Atendiendo las observaciones del cuerpo docente, la **cabeza del problema raíz** radica en la falta de información y datos estructurados en las entidades bancarias para la evaluación del riesgo, mientras que la **exclusión crediticia** y el **gota a gota** son consecuencias de segundo orden.
+
+\begin{figure}[h!]
+\centering
+\small
+\begin{tikzpicture}[node distance=1.5cm, >=stealth]
+    % Estilo de cajas
+    \tikzstyle{head} = [rectangle, draw=externadoDarkBlue, fill=externadoDarkBlue, text=white, font=\bfseries, text width=4.5cm, align=center, minimum height=1.2cm, rounded corners=2mm]
+    \tikzstyle{bone} = [rectangle, draw=externadoAccent, fill=lightGray, font=\bfseries, text width=3.2cm, align=center, rounded corners=1mm]
+    \tikzstyle{sub} = [font=\tiny, text width=2.8cm, align=left]
+
+    % Espina central
+    \draw[ultra thick, externadoDarkBlue, ->] (0,0) -- (10,0);
+    
+    % Cabeza (Problema Raíz)
+    \node[head] at (11.5,0) {Falta de información financiera estructurada en los bancos para evaluar el riesgo en independientes};
+
+    % Causa Top 1: Datos
+    \node[bone] (c1) at (2.5, 2.5) {1. Fragmentación de Datos};
+    \draw[thick, externadoAccent, ->] (c1) -- (3.5, 0);
+    \node[sub] at (1.8, 1.5) {• Billeteras digitales aisladas\\• Falta de score unificado\\• Datos no estructurados};
+
+    % Causa Top 2: Algoritmos
+    \node[bone] (c2) at (7, 2.5) {2. Inadecuación Algorítmica};
+    \draw[thick, externadoAccent, ->] (c2) -- (8, 0);
+    \node[sub] at (6.3, 1.5) {• Modelos lineales rígidos\\• Penalización de ingresos estacionales\\• Ausencia de inferencia causal};
+
+    % Causa Bottom 1: Economía Informal
+    \node[bone] (c3) at (2.5, -2.5) {3. Economía Informal};
+    \draw[thick, externadoAccent, ->] (c3) -- (3.5, 0);
+    \node[sub] at (1.8, -1.5) {• >50\% ocupación informal\\• Transacciones en Nequi/Efectivo\\• Sin soportes tributarios tradicionales};
+
+    % Causa Bottom 2: Regulación y Cultura
+    \node[bone] (c4) at (7, -2.5) {4. Regulación y SARC};
+    \draw[thick, externadoAccent, ->] (c4) -- (8, 0);
+    \node[sub] at (6.3, -1.5) {• Modelos caja negra rechazados\\• Exigencia de explicabilidad SARC\\• Sesgo pro-asalariado formal};
+
+\end{tikzpicture}
+\caption{Diagrama de Ishikawa: Causas raíz del problema de información en el riesgo crediticio.}
+\end{figure}
+
+\begin{tcolorbox}[colback=white,colframe=alertRed,title=Consecuencias del Problema Raíz (Efectos de Segundo Orden)]
+La falta de información estructurada genera tres consecuencias severas en el ecosistema:
+\begin{enumerate}
+    \item \textbf{Exclusión y Sobrecosto Financiero B2C:} Los independientes son empujados hacia modalidades informales violentas (\textit{gota a gota}) con tasas $>500\%$ EA.
+    \item \textbf{Canibalización y Pérdida de Margen B2B:} Los bancos compiten ferozmente por los mismos 6 millones de asalariados formales.
+    \item \textbf{Muerte Prematura de Micronegocios:} El 92\% de las unidades productivas carecen de liquidez para insumos por falta de crédito productivo.
+\end{enumerate}
+\end{tcolorbox}
+
+---
+
+\section{Fundamentación Teórica y Ejemplo Comparativo del Credit Score}
+
+\subsection{¿Qué es un Score Crediticio?}
+Un \textit{Credit Score} es una métrica probabilística estandarizada (rango 150 a 950 puntos) que cuantifica la probabilidad de que un deudor incurra en mora severa ($\ge 90$ días) en un horizonte de 12 meses.
+
+\subsection{Ejemplo Comparativo de Cálculo: Tradicional vs. StatCredit AI}
+Para ilustrar la diferencia metodológica y el valor agregado de StatCredit AI, consideremos el caso de un comerciante independiente que factura \$8.000.000 COP mensuales vía Nequi/Daviplata pero carece de tarjeta de crédito bancaria:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Cálculo Tradicional (Regresión Logística en Buró):}
+    $$\text{Score}_{\text{Tradicional}} = \beta_0 + \beta_1(\text{HistorialBancario}) + \beta_2(\text{TarjetasCredito}) - \beta_3(\text{ReportesMora})$$
+    Dado que $\text{HistorialBancario} = 0$ y $\text{TarjetasCredito} = 0$, el modelo tradicional calcula un puntaje de **320 puntos** ($\implies$ **RECHAZO AUTOMÁTICO DE SOLICITUD**).
+    \item \textbf{Cálculo StatCredit AI (Machine Learning No Lineal + XAI):}
+    $$\text{Score}_{\text{StatCredit}} = f\big(\text{FlujoTransaccionalNequi}, \text{FrecuenciaDepósitos}, \text{EstabilidadCaja}, \text{FacturaciónDIAN}\big)$$
+    El modelo evalúa 12 meses de entradas transaccionales continuas, identifica un patrón de liquidez solvente y asigna **740 puntos** ($\implies$ **APROBACIÓN CON CUPO PROPORCIONAL DE \$5.000.000 COP**).
+\end{enumerate}
+
+\subsection{¿Por qué los Bancos Tradicionales No Lo Han Logrado?}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Incompatibilidad de Infraestructura de IT:} Los sistemas legacy bancarios están diseñados para procesamiento batch nocturno de archivos planos, no para ingesta vía API en tiempo real de billeteras digitales.
+    \item \textbf{Aversión Regulatoria al SARC:} La Superintendencia Financiera (Circular 026) exige auditar por qué se aprueba o rechaza cada crédito. Los bancos temen usar modelos complejos por considerarlos "cajas negras" impredecibles.
+    \item \textbf{Sesgo Institucional de Descuento por Nómina:} La banca tradicional prefiere otorgar crédito de consumo a asalariados con deducción automática de nómina, ignorando la oportunidad del sector independiente.
+\end{itemize}
+
+\subsection{Ausencia de Evidencia vs. Evidencia de Ausencia}
+Los bancos confunden la *falta de reporte en DataCrédito* con *evidencia de insolvencia*. En Colombia, más del 50\% de la fuerza laboral opera en la **economía informal y semi-informal**, moviendo flujos transaccionales reales. StatCredit AI transforma esa ausencia de evidencia en prueba matemática objetiva de capacidad de repago.
+
+---
+
+\section{Caracterización de la Población Objetivo y Modelo B2B SaaS}
+
+\subsection{Población Objetivo End-User (B2B2C)}
+Para evitar ambigüedades sobre a quién se dirige la solución, definimos explícitamente nuestra **población objetivo beneficiaria**:
+\begin{quote}
+\textbf{Población Objetivo:} \textit{Trabajadores independientes solventes de la economía informal y semi-informal urbana en Colombia} (comerciantes, prestadores de servicios autónomos y micronegociantes no bancarizados con facturación o ingresos transaccionales digitales recurrentes entre 2 y 10 SMMLV).
+\end{quote}
+
+\subsection{Segmentación Comercial (B2B vs. B2C)}
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{p{4.5cm} p{5.5cm} p{5.5cm}}
+\toprule
+\textbf{Dimensión} & \textbf{Cliente Comercial Directo (B2B)} & \textbf{Población Objetivo Beneficiaria (B2B2C)} \\
+\midrule
+\textbf{Sujeto} & Entidades Financieras, Neobancos, Fintechs de originación, Cooperativas. & Trabajadores independientes, profesionales autónomos y micronegocios urbanos. \\
+\midrule
+\textbf{Relación Comercial} & Suscriptor pagador de la plataforma SaaS y la API de scoring. & Solicitante de crédito ante la entidad financiera. \\
+\midrule
+\textbf{Propuesta de Valor} & Reducción de tasa de rechazo, ampliación de colocación y cumplimiento SARC. & Acceso a crédito productivo justo con tasas de interés reguladas. \\
+\bottomrule
+\end{tabular}
+\caption{Matriz de diferenciación B2B vs B2C para StatCredit AI.}
+\end{table}
+
+\subsection{Modelo Software as a Service (SaaS)}
+StatCredit AI opera como un motor tecnológico **Score-as-a-Service**:
+\begin{enumerate}
+    \item \textbf{Integración vía REST API / gRPC:} Conexión directa al motor de originación de la entidad B2B.
+    \item \textbf{Ingesta de Datos en Tiempo Real:} Recepción en tiempo real de extractos digitales y datos transaccionales con autorización previa.
+    \item \textbf{Inferencia y Explicabilidad:} Entrega en <2 segundos del Score (150-950), probabilidad de mora y reporte de explicabilidad local SHAP para auditoría SARC.
+    \item \textbf{Estructura de Ingresos:} Suscripción mensual base (mantenimiento MLOps) + Tarifa por consulta (\textit{pay-per-query}).
+\end{enumerate}
+
+---
+
+\section{Análisis de la Competencia Actual}
+
+\begin{table}[h!]
+\centering
+\tiny
+\begin{tabular}{p{2.2cm} p{2.2cm} p{2.8cm} p{2.5cm} p{3.2cm}}
+\toprule
+\textbf{Competidor} & \textbf{Modelo} & \textbf{Producto Principal} & \textbf{Limitación Principal} & \textbf{Diferenciador StatCredit AI} \\
+\midrule
+\textbf{DataCrédito Experian} & Buró Crediticio Tradicional & Score DataCrédito (150-950) & Punto ciego total con independientes no bancarizados. & Ingesta de datos transaccionales alternativos en tiempo real. \\
+\midrule
+\textbf{TransUnion} & Buró Crediticio Tradicional & Score TransUnion \& Fraud Check & Optimizado para historial crediticio formal estructurado. & Inferencia Causal para independientes con ingresos estacionales. \\
+\midrule
+\textbf{Belvo} & Open Finance Aggregator (B2B) & Belvo Data API (Agregación) & Tubería de datos pura; no genera scoring ni asume lógica de riesgo. & Motor inteligente decisorio que entrega un Score predictivo auditable. \\
+\midrule
+\textbf{Sempli / Addi} & Fintech Originador Directo (Lender) & Crédito Digital Directo & Asumen riesgo de balance y capital de mora. & Proveedor B2B SaaS tecnológico sin riesgo de balance (margen >75\%). \\
+\midrule
+\textbf{Bancos Tradicionales} & Entidades Financieras & Créditos de Nómina y Consumo & Rechazo masivo de independientes por normas rígidas. & \textbf{Son clientes B2B objetivo}, no competidores directos de la API. \\
+\bottomrule
+\end{tabular}
+\caption{Matriz cualitativa de diferenciación competitiva.}
+\end{table}
+
+---
+
+\section{Metodología para la Estimación de Mercado (TAM, SAM, SOM)}
+
+Para el próximo entregable cuantitativo, la metodología se basa en un enfoque \textit{Bottom-Up}:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{TAM (Total Addressable Market):} Mercado total de soluciones B2B de Credit Scoring y Credit Analytics en América Latina ($\approx \$220\text{M USD}$ anuales).
+    \item \textbf{SAM (Serviceable Addressable Market):} Total de solicitudes de crédito originadas por la población independiente y micronegociantes en Colombia ($\approx 13\text{M de personas}$, representando un mercado potencial de scoring de $\$45\text{M USD}$ anuales).
+    \item \textbf{SOM (Serviceable Obtainable Market):} Cuota capturable en 3 años mediante alianzas estratégicas con las 25 principales Fintechs de crédito y Cooperativas en Colombia ($\approx \$3.5\text{M USD}$ en ingresos anuales recurrentes ARR).
+\end{itemize}
+
+\end{document}
