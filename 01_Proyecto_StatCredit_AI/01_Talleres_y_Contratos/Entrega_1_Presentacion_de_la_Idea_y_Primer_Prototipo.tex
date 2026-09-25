@@ -1,0 +1,427 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{geometry}
+\geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning, calc}
+
+% Definición de colores institucionales
+\definecolor{externadoDarkBlue}{RGB}{10, 34, 64}
+\definecolor{externadoAccent}{RGB}{0, 114, 206}
+\definecolor{lightGray}{RGB}{245, 247, 250}
+\definecolor{alertRed}{RGB}{180, 40, 40}
+\definecolor{successGreen}{RGB}{34, 139, 34}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=externadoAccent,
+    urlcolor=externadoAccent,
+    titlecolor=externadoDarkBlue
+}
+
+\tcbset{
+    colback=lightGray,
+    colframe=externadoDarkBlue,
+    fonttitle=\bfseries\color{white},
+    arc=3mm
+}
+
+\title{
+    \vspace{-1cm}
+    \textbf{\Large UNIVERSIDAD EXTERNADO DE COLOMBIA}\\
+    \textbf{\large PREGRADO EN CIENCIA DE DATOS --- EMPRENDIMIENTO}\\
+    \vspace{0.5cm}
+    \Large \textbf{ENTREGA 1: PRESENTACIÓN DE LA IDEA Y PRIMER PROTOTIPO}\\
+    \large \textbf{Proyecto: StatCredit AI --- Motor SaaS B2B de Scoring Crediticio Alternativo \& XAI}
+}
+\author{\textbf{Grupo 5:}\\ Santiago Sandoval \quad|\quad Sebastián Ramos \quad|\quad Julián Duarte \quad|\quad Tomás Rincón \quad|\quad Julián Jiménez}
+\date{Semestre 2026-II}
+
+\begin{document}
+
+\maketitle
+
+\hrule
+\vspace{0.5cm}
+
+\begin{tcolorbox}[title=Resumen Ejecutivo y Alineación con la Guía Maestra y Feedback Docente]
+El presente documento constituye la formulación técnica, analítica y estratégica oficial para la \textbf{Entrega 1} del proyecto \textbf{StatCredit AI}. Este desarrollo incorpora rigurosamente el marco de \textit{Problem Framing} (Bianchi \& Verganti, 2021), la Guía Maestra del Proyecto y el consolidado oficial del feedback docente (escrito y verbal), integrando los testimonios cualitativos de validación con expertos del sector (Diego Ramos en Riesgo Crediticio y Paola Cárdenas en Regulación SARC).
+
+Se adopta una postura de complementariedad analítica B2B: \textbf{existe información transaccional y financiera real en billeteras digitales y comercio no bancario que hoy no se aprovecha lo suficiente en los procesos tradicionales de evaluación crediticia}.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+% =========================================================================
+% SECCIÓN 1: INDUSTRIA Y SECTOR
+% =========================================================================
+\section{Ubicación Industrial, Sector Tecnológico y Definición del Score}
+
+\textbf{StatCredit AI} se posiciona en la intersección de cuatro sectores industriales y analíticos de alto crecimiento:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Fintech (Tecnología Financiera) --- Subsector Alternative Credit Scoring \& Credit Analytics:} Analítica avanzada para la evaluación del riesgo crediticio mediante fuentes de datos no tradicionales.
+    \item \textbf{Software as a Service (SaaS B2B / API-First):} Infraestructura analítica distribuida en la nube y consumible en tiempo real (latencia $<2$ segundos) mediante interfaces API REST/gRPC bajo esquemas de suscripción y cobro por consulta (*pay-per-query*).
+    \item \textbf{Inteligencia Artificial Aplicada (XAI \& Inferencia Causal):} Algoritmos de Machine Learning no lineales (XGBoost) integrados con Explicabilidad Local (SHAP --- \textit{SHapley Additive exPlanations}) e Inferencia Causal para auditoría SARC.
+    \item \textbf{Inclusión Financiera y Open Finance:} Ingesta automatizada de flujos transaccionales observables en billeteras de bajo monto (Nequi, Daviplata) y facturación electrónica DIAN.
+\end{enumerate}
+
+\subsection{Definición Actuarial del Credit Score y Diferenciación Metodológica}
+Un \textit{Credit Score} es una métrica probabilística estandarizada (escala 150 a 950 puntos) que cuantifica la probabilidad de que un deudor incurra en mora severa ($\ge 90$ días) en un horizonte de 12 meses:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Scoring Tradicional (Burós de Crédito):} Se calcula mediante regresiones logísticas alimentadas únicamente por el historial de pago bancario reportado previamente en centrales de riesgo (DataCrédito/TransUnion).
+    \item \textbf{Scoring Alternativo StatCredit AI:} Transforma la ausencia de reporte en buros (*ausencia de evidencia*, no *evidencia de insolvencia*) en prueba matemática de solvencia, evaluando la estabilidad de caja, frecuencia de depósitos y volumen transaccional en tiempo real.
+\end{itemize}
+
+% =========================================================================
+% SECCIÓN 2: NECESIDAD VS PROBLEMA ESPECÍFICO
+% =========================================================================
+\section{Necesidad del Mercado vs. Problema Específico de la Población Objetivo}
+
+Diferenciamos la necesidad general de la sociedad frente al reencuadre del problema planteado según la metodología de \textit{Problem Framing} (Bianchi \& Verganti, 2021) y las correcciones del cuerpo docente:
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{p{7.5cm} p{7.5cm}}
+\toprule
+\textbf{Necesidad General del Mercado} & \textbf{Problema Específico y Reencuadre} \\
+\midrule
+Los trabajadores independientes, comerciantes urbanos y micronegociantes en Colombia necesitan evaluar su capacidad de repago para acceder a crédito productivo formal con tasas de interés reguladas, evitando el endeudamiento informal y usurero (\textit{gota a gota}). & \textbf{Problema Visible:} Los micronegocios e independientes no cuentan con historial crediticio formal en centrales de riesgo.\\
+& \textbf{Replanteamiento StatCredit AI:} Sí poseen información financiera diaria (ventas, flujos en Nequi/Daviplata), pero esta información está fragmentada y hoy no se incorpora eficientemente a la evaluación crediticia. \\
+\bottomrule
+\end{tabular}
+\caption{Diferenciación entre necesidad general y reencuadre del problema de información.}
+\end{table}
+
+\subsection{Los 4 Movimientos Metodológicos de Reencuadre}
+\begin{enumerate}
+    \item \textbf{De Déficit a Potencial:} El comerciante no "carece" de historial; posee un historial transaccional real que todavía no se ha convertido en información crediticia auditable.
+    \item \textbf{De Problema a Oportunidad:} Los bancos no "rechazan por malicia"; existe la oportunidad de mejorar la evaluación de millones de micronegocios con información financiera alternativa.
+    \item \textbf{De Intuición a Evidencia:} En lugar de afirmaciones cualitativas ("parece capaz de pagar"), StatCredit AI calcula la probabilidad estadística de incumplimiento según flujos de ingresos, estabilidad y comportamiento transaccional.
+    \item \textbf{De Decisión Binaria a Probabilística:} Pasar del esquema rígido "Aprobar/Rechazar" a una probabilidad de incumplimiento continua, un nivel de riesgo calibrado y variables explicativas (XAI/SHAP).
+\end{enumerate}
+
+\subsection{Diagrama Causal de Ishikawa (Espina de Pescado: Problema Raíz vs. Consecuencias)}
+De acuerdo con el feedback docente, la **exclusión crediticia**, el **sobrecosto financiero** y la **recurrencia al gota a gota** son **consecuencias o efectos de segundo orden**. La **cabeza del problema raíz** en el diagrama de Ishikawa radica en la \textbf{falta de información financiera estructurada y de datos integrados en los bancos para evaluar el riesgo crediticio en independientes}.
+
+\begin{figure}[h!]
+\centering
+\small
+\begin{tikzpicture}[node distance=1.5cm, >=stealth]
+    \tikzstyle{head} = [rectangle, draw=externadoDarkBlue, fill=externadoDarkBlue, text=white, font=\bfseries, text width=4.5cm, align=center, minimum height=1.2cm, rounded corners=2mm]
+    \tikzstyle{bone} = [rectangle, draw=externadoAccent, fill=lightGray, font=\bfseries, text width=3.2cm, align=center, rounded corners=1mm]
+    \tikzstyle{sub} = [font=\tiny, text width=2.8cm, align=left]
+
+    \draw[ultra thick, externadoDarkBlue, ->] (0,0) -- (10,0);
+    \node[head] at (11.5,0) {Falta de información financiera estructurada en los bancos para evaluar el riesgo en independientes};
+
+    \node[bone] (c1) at (2.5, 2.5) {1. Fragmentación de Datos};
+    \draw[thick, externadoAccent, ->] (c1) -- (3.5, 0);
+    \node[sub] at (1.8, 1.5) {• Billeteras aisladas\\• Datos transaccionales no integrados\\• Flujos sin soporte en extractos PDF};
+
+    \node[bone] (c2) at (7, 2.5) {2. Fricción Operacional};
+    \draw[thick, externadoAccent, ->] (c2) -- (8, 0);
+    \node[sub] at (6.3, 1.5) {• Revisión manual (15-20/día en Excel)\\• Ingesta lenta y costosa\\• Falta de tubería API REST en tiempo real};
+
+    \node[bone] (c3) at (2.5, -2.5) {3. Economía Informal Urbana};
+    \draw[thick, externadoAccent, ->] (c3) -- (3.5, 0);
+    \node[sub] at (1.8, -1.5) {• >50\% ocupación informal\\• Transacciones en Nequi/Efectivo\\• Sin certificaciones de nómina fija};
+
+    \node[bone] (c4) at (7, -2.5) {4. Rigidez Regulatoria SARC};
+    \draw[thick, externadoAccent, ->] (c4) -- (8, 0);
+    \node[sub] at (6.3, -1.5) {• Temor a modelos de "caja negra"\\• Exigencia de explicabilidad SARC\\• Sesgo por descuento de nómina};
+\end{tikzpicture}
+\caption{Diagrama Causal de Ishikawa: Problema raíz de información y causas estructurales.}
+\end{figure}
+
+% =========================================================================
+% SECCIÓN 3: ANÁLISIS DETALLADO DE COMPETIDORES Y VALIDACIÓN EN CAMPO
+% =========================================================================
+\section{Análisis Detallado de Competidores y Validación con Expertos}
+
+\subsection{Matriz de Competidores Directos e Indirectos}
+Se caracterizan cinco (5) actores relevantes del ecosistema financiero y analítico:
+
+\begin{tcolorbox}[title=1. Competidor: DataCrédito Experian]
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{Nombre:} DataCrédito Experian Colombia.
+    \item \textbf{Actividad Comercial:} Buró de información crediticia y central de riesgo financiero.
+    \item \textbf{Problema que resuelven:} Consolidación del historial de endeudamiento formal y mora bancaria.
+    \item \textbf{Principal Producto:} Score DataCrédito (escala 150 a 950 puntos).
+    \item \textbf{Ciudades/Países de Operación:} Presencia global (Experian) con liderazgo en Colombia.
+    \item \textbf{Ventas Anuales:} Globalmente $>6.500$ millones USD; en Colombia $>250.000$ millones COP (Fuente: Superintendencia de Sociedades).
+    \item \textbf{Semejanza con StatCredit AI:} Emisión de una métrica probabilística cuantitativa de riesgo.
+    \item \textbf{Diferenciación con StatCredit AI:} DataCrédito evalúa antecedentes crediticios formales pasados. StatCredit AI complementa esta evaluación midiendo la liquidez transaccional en tiempo real de billeteras digitales.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=2. Competidor: TransUnion Colombia]
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{Nombre:} TransUnion Colombia.
+    \item \textbf{Actividad Comercial:} Buró de crédito, prevención de fraude y analítica de riesgo.
+    \item \textbf{Problema que resuelven:} Centralización de reportes de comportamiento de pago e identidad.
+    \item \textbf{Principal Producto:} Credit Score TransUnion \& Fraud Prevention Suite.
+    \item \textbf{Ciudades/Países de Operación:} Cobertura en más de 30 países.
+    \item \textbf{Ventas Anuales:} Globalmente $>3.800$ millones USD (Fuente: TransUnion Investor Relations).
+    \item \textbf{Semejanza con StatCredit AI:} Estimación de probabilidad de incumplimiento a 12 meses.
+    \item \textbf{Diferenciación con StatCredit AI:} TransUnion se basa en información reportada por entidades formales. StatCredit AI aplica Inferencia Causal para evaluar flujos de caja estacionales de independientes.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=3. Competidor: Belvo]
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{Nombre:} Belvo Financial Technologies.
+    \item \textbf{Actividad Comercial:} Plataforma de Open Finance (agregación de datos bancarios y fiscales vía API).
+    \item \textbf{Problema que resuelven:} Conexión e ingesta de datos financieros entre aplicaciones.
+    \item \textbf{Principal Producto:} Belvo Data API (Agregación de datos transaccionales y fiscales DIAN).
+    \item \textbf{Ciudades/Países de Operación:} México, Brasil y Colombia.
+    \item \textbf{Ventas Anuales:} Estimadas en $\$15 - \$25$ millones USD (Startup Serie A/B).
+    \item \textbf{Semejanza con StatCredit AI:} Uso de interfaces API REST B2B para extracción de datos digitales.
+    \item \textbf{Diferenciación con StatCredit AI:} Belvo es infraestructura de transporte de datos ("tubería"); no construye modelos de riesgo ni emite un score. StatCredit AI procesa esos datos y genera un puntaje explicable (SHAP).
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=4. Competidor: Juvo / Mambu (Alternative Scoring Modules)]
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{Nombre:} Juvo Financial / Mambu Alternative Credit Scoring Extensions.
+    \item \textbf{Actividad Comercial:} Evaluación basada en hábitos de recarga de telefonía móvil (telco data).
+    \item \textbf{Problema que resuelven:} Identificación de comportamiento financiero mediante uso móvil.
+    \item \textbf{Principal Producto:} Financial Identity Scoring Platform.
+    \item \textbf{Ciudades/Países de Operación:} Mercados emergentes en América Latina, África y Asia.
+    \item \textbf{Ventas Anuales:} Estimadas en $\$20 - \$40$ millones USD.
+    \item \textbf{Semejanza con StatCredit AI:} Enfoque en la población no bancarizada o sub-bancarizada.
+    \item \textbf{Diferenciación con StatCredit AI:} Juvo analiza recargas de celular, mientras que StatCredit AI evalúa la caja real de billeteras de bajo monto (Nequi/Daviplata) y facturación DIAN, logrando mayor precisión actuarial.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=5. Competidor: Sempli / Addi (Fintech Originadoras Directas)]
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{Nombre:} Sempli / Addi.
+    \item \textbf{Actividad Comercial:} Entidades Fintech de crédito digital directo (Lenders B2C y B2B).
+    \item \textbf{Problema que resuelven:} Otorgamiento ágil de préstamos de consumo y capital de trabajo digital.
+    \item \textbf{Principal Producto:} Préstamos digitales en punto de venta y crédito empresarial.
+    \item \textbf{Ciudades/Países de Operación:} Colombia y México.
+    \item \textbf{Ventas Anuales:} Ingresos por intereses y comisiones superiores a $\$80.000$ millones COP (Fuente: Superintendencia Financiera).
+    \item \textbf{Semejanza con StatCredit AI:} Evaluación algorítmica ágil de solicitudes de crédito.
+    \item \textbf{Diferenciación con StatCredit AI:} Sempli y Addi son prestamistas (asumen riesgo de cartera y fondeo). StatCredit AI es un proveedor SaaS puramente tecnológico sin riesgo de balance, cuyos clientes B2B son los propios bancos y fintechs.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Validación Cualitativa con Expertos de Campo}
+Los testimonios obtenidos en las entrevistas de campo respaldan de forma empírica los hallazgos:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Diego Ramos (Ejecutivo de Riesgo Crediticio):} Confirma la fricción operacional: \textit{«Eso tocaría revisarlo a mano, uno abriendo el PDF del extracto, contando transacción por transacción en Excel... uno alcanza a sacar máximo 15 o 20 casos al día por persona. Si me hubieran dado algo automático que me diera la información, cambiaría la manera de evaluar.»} Evidencia además el sesgo cultural de que "nómina fija es igual a seguridad".
+    \item \textbf{Paola Cárdenas (Experta en Regulación SARC):} Confirma la exigencia de la Superintendencia Financiera: \textit{«A uno no le sirve decir 'es que el modelo dijo que no' y ya... Sin ese reportecito que explique qué pesó a favor y qué en contra, ningún oficial de cumplimiento se va a poner a defender esa decisión frente a un auditor. Con esa explicación clara (SHAP), la cosa deja de sonar a caja negra sospechosa.»}
+\end{itemize}
+
+% =========================================================================
+% SECCIÓN 4: TRES PREGUNTAS CLAVE DEL MERCADO
+% =========================================================================
+\section{Respuestas a las Tres Preguntas Clave del Mercado}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{¿Qué hacen los clientes hoy?}
+    \begin{itemize}
+        \item \textit{Entidades Financieras B2B (Clientes Compradores):} Aplican estudios manuales costosos (procesando máximo 15 a 20 extractos al día en Excel por analista), o declinan la solicitud ante la imposibilidad técnica de medir la caja transaccional no estructurada.
+        \item \textit{Trabajadores Independientes B2B2C (Población Beneficiaria):} Recurren a prestamistas informales usureros (\textit{gota a gota} a tasas $>500\%$ EA, según reportes del Banco de la República), créditos familiares restringidos o paralizan el crecimiento de su micronegocio.
+    \end{itemize}
+    
+    \item \textbf{¿Por qué el problema es difícil de resolver?}
+    \begin{itemize}
+        \item \textit{Infraestructura Legacy y Volatilidad:} Los sistemas bancarios están diseñados para lotes (*batch*) nocturnos y no para ingestar APIs transaccionales heterogéneas de Nequi/Daviplata.
+        \item \textit{Exigencia Regulatoria SARC (Circular 026):} La Superintendencia Financiera exige auditar matemáticamente las razones de aprobación o rechazo. Los comités rechazan la "caja negra", haciendo indispensable la explicabilidad SHAP (XAI).
+    \end{itemize}
+    
+    \item \textbf{¿Qué tipo de mercado estamos abordando?}
+    \begin{itemize}
+        \item Abordamos un \textbf{Mercado B2B SaaS / API-First en Credit Analytics y RegTech}. Ofrecemos un **motor analítico complementario** que convierte transacciones de billeteras digitales en variables probabilísticas auditables.
+    \end{itemize}
+\end{enumerate}
+
+% =========================================================================
+% SECCIÓN 5: TAMAÑO DE LA INDUSTRIA (TAM, SAM, SOM JUSTIFICADO)
+% =========================================================================
+\section{Tamaño de la Industria y Estimación del Mercado (TAM, SAM, SOM)}
+
+Toda cifra citada se encuentra justificada y respaldada en fuentes oficiales:
+
+\begin{figure}[h!]
+\centering
+\small
+\begin{tikzpicture}[node distance=0.8cm]
+    \node (tam) [rectangle, draw=externadoDarkBlue, fill=externadoDarkBlue!90, text=white, font=\bfseries, text width=12cm, align=center, minimum height=1.2cm, rounded corners=2mm] 
+    {TAM: Mercado Global de Alternative Credit Scoring en LatAm --- \$220M USD / año};
+    
+    \node (sam) [rectangle, draw=externadoAccent, fill=externadoAccent!80, text=white, font=\bfseries, text width=9.5cm, align=center, minimum height=1.1cm, rounded corners=2mm, below=of tam] 
+    {SAM: Evaluaciones Crediticias a Independientes en Colombia --- \$45M USD / año};
+    
+    \node (som) [rectangle, draw=successGreen, fill=successGreen!90, text=white, font=\bfseries, text width=7cm, align=center, minimum height=1cm, rounded corners=2mm, below=of sam] 
+    {SOM: Captura Inicial a 3 Años (25 Fintechs/Cooperativas) --- \$3.5M USD ARR};
+\end{tikzpicture}
+\caption{Embudo de estimación de mercado para StatCredit AI.}
+\end{figure}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{TAM (Total Addressable Market) --- $\$220\text{ millones USD / año}$:} Mercado anual de software y analítica de Credit Scoring en América Latina (Fuente: \textit{Grand View Research --- Credit Scoring Software Market Report 2025}).
+    \item \textbf{SAM (Serviceable Addressable Market) --- $\$45\text{ millones USD / año}$:} Gasto estimado en evaluaciones crediticias para los $13.2$ millones de trabajadores independientes y micronegociantes urbanos en Colombia que requieren financiamiento (Fuente: \textit{Superintendencia Financiera de Colombia \& DANE - GEIH / Encuesta de Micronegocios 2025}).
+    \item \textbf{SOM (Serviceable Obtainable Market) --- $\$3.5\text{ millones USD ARR}$:} Meta de captura comercial a 3 años mediante alianzas estratégicas con 25 entidades financieras (neobancos, cooperativas y fintechs) en Colombia, procesando $1.4$ millones de consultas anuales a una tarifa de $\$2.50\text{ USD}$ por score.
+\end{itemize}
+
+% =========================================================================
+% SECCIÓN 6: CARACTERÍSTICAS DEL CLIENTE POTENCIAL Y POBLACIÓN
+% =========================================================================
+\section{Caracterización del Cliente Potencial y Beneficiario}
+
+\subsection{Cliente Comercial Directo B2B (Comprador de la API)}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Perfil Institucional:} Neobancos, Fintechs de originación, Cooperativas de Ahorro y Crédito y Microfinancieras en Colombia.
+    \item \textbf{Toma de Decisión (DMU):} Directores de Riesgo Crediticio (CRO), Vicepresidentes de Innovación/Tecnología (CTO) y Gerentes de Producto.
+    \item \textbf{Motivación de Compra:} Ampliar colocación rentable de cartera, reducir costos operacionales (de 15 minutos a $<2$ segundos) y garantizar cumplimiento SARC.
+\end{itemize}
+
+\subsection{Población Objetivo Beneficiaria B2B2C (Perfil Persona)}
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{p{4cm} p{11cm}}
+\toprule
+\textbf{Atributo Demográfico} & \textbf{Caracterización de la Población Objetivo} \\
+\midrule
+\textbf{Edad \& Género} & Hombres y mujeres entre 22 y 55 años. \\
+\midrule
+\textbf{Nivel de Ingresos} & Ingresos transaccionales mensuales de 2 a 10 SMMLV (\$2.600.000 a \$13.000.000 COP, según salarios oficiales 2026). \\
+\midrule
+\textbf{Formación Educativa} & Educación secundaria, técnica o profesionales autónomos independientes. \\
+\midrule
+\textbf{Ubicación Geográfica} & Principales áreas metropolitanas de Colombia (Bogotá, Medellín, Cali, Barranquilla, Bucaramanga). \\
+\midrule
+\textbf{Hábitos Financieros} & Comerciantes y prestadores de servicios con uso continuo de Nequi, Daviplata, pagos QR y facturación DIAN. \\
+\bottomrule
+\end{tabular}
+\caption{Perfil detallado del usuario beneficiario (Persona B2B2C).}
+\end{table}
+
+% =========================================================================
+% SECCIÓN 7: SOLUCIÓN Y DISEÑO GRÁFICO DEL PROTOTIPO MVP
+% =========================================================================
+\section{Propuesta de Solución y Diseño Gráfico del Primer Prototipo (MVP)}
+
+StatCredit AI opera como un **Motor Analítico B2B en Tiempo Real**. La API ingesta extractos transaccionales y facturación digital con autorización previa del usuario, los procesa mediante modelos de Machine Learning e Inferencia Causal, y entrega en $<2$ segundos el score predictivo, el nivel de riesgo calibrado y la matriz de explicabilidad SHAP.
+
+\subsection{Arquitectura Gráfica del Prototipo MVP}
+
+\begin{figure}[h!]
+\centering
+\small
+\begin{tikzpicture}[node distance=1.5cm, >=stealth]
+    \node (inputs) [rectangle, draw=externadoDarkBlue, fill=lightGray, font=\bfseries, text width=3.2cm, align=center, minimum height=1.5cm, rounded corners=2mm] 
+    {DATOS TRANSACCIONALES\\ \tiny • Nequi / Daviplata\\ • Facturas DIAN\\ • Extractos Digitales};
+    
+    \node (api) [rectangle, draw=externadoAccent, fill=externadoAccent!10, font=\bfseries, text width=3.5cm, align=center, minimum height=1.5cm, rounded corners=2mm, right=1.2cm of inputs] 
+    {MOTOR STATCREDIT AI\\ \tiny • Pipeline Ingesta REST\\ • Modelo ML XGBoost\\ • Explicabilidad SHAP};
+    
+    \node (outputs) [rectangle, draw=externadoDarkBlue, fill=externadoDarkBlue, text=white, font=\bfseries, text width=3.8cm, align=center, minimum height=1.5cm, rounded corners=2mm, right=1.2cm of api] 
+    {RESPUESTA API B2B\\ \tiny • Score (150 - 950)\\ • Capacidad de Repago\\ • Audit Hash SARC};
+
+    \draw[ultra thick, externadoAccent, ->] (inputs) -- (api);
+    \draw[ultra thick, externadoDarkBlue, ->] (api) -- (outputs);
+\end{tikzpicture}
+\caption{Esquema funcional de integración API REST de StatCredit AI.}
+\end{figure}
+
+\subsection{Ejemplo de Respuesta JSON del Prototipo API}
+\begin{tcolorbox}[title=Salida JSON del Prototipo B2B]
+\begin{verbatim}
+{
+  "transaction_id": "STC-2026-88941",
+  "applicant_id": "CC-1020456789",
+  "statcredit_score": 745,
+  "risk_category": "RIESGO BAJO-MODERADO",
+  "recommended_credit_limit_cop": 6500000,
+  "shap_explicability": {
+    "positive_factors": ["Flujo_Nequi_Constante (+45 pts)", "Estabilidad_Caja (+30 pts)"],
+    "risk_mitigators": ["Ingresos_Estacionales_Identificados (Causal_Validated)"]
+  },
+  "sarc_compliance_audit_hash": "a8f9c10d7e2b34910f"
+}
+\end{verbatim}
+\end{tcolorbox}
+
+% =========================================================================
+% SECCIÓN 8: JUSTIFICACIÓN DE LA EFECTIVIDAD DEL PROTOTIPO
+% =========================================================================
+\section{¿Por Qué Este Prototipo Resuelve el Problema?}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Aprovechamiento de Información Transaccional Observable:} Convierte flujos reales de caja en variables cuantitativas de repago, permitiendo evaluar a independientes sin historial formal previo.
+    \item \textbf{Cumplimiento Regulatorio SARC (Circular 026):} Como señala la experta Paola Cárdenas, la entrega de reportes SHAP permite a los oficiales de cumplimiento justificar las decisiones ante auditores de la Superintendencia Financiera.
+    \item \textbf{Agilidad Operativa:} Como valida el experto Diego Ramos, pasa de un proceso manual de 15-20 extractos al día en Excel a una respuesta automatizada en $<2$ segundos.
+\end{enumerate}
+
+% =========================================================================
+% SECCIÓN 9: IMPACTO SOCIAL MULTIDIMENSIONAL
+% =========================================================================
+\section{Análisis de Impacto Social Multidimensional}
+
+\begin{table}[h!]
+\centering
+\tiny
+\begin{tabular}{p{4.5cm} p{5.5cm} p{5.5cm}}
+\toprule
+\textbf{Impacto Social Positivo} & \textbf{Riesgo / Impacto Social Negativo} & \textbf{Estrategia de Mitigación} \\
+\midrule
+1. \textbf{Inclusión Financiera Real:} Acceso formal para independientes. & 1. \textbf{Sobreendeudamiento:} Otorgamiento excesivo de cupos. & Límites de crédito dinámicos ajustados a la variabilidad real de ingresos. \\
+\midrule
+2. \textbf{Alternativa al Gota a Gota:} Disminución de financiación usurera. & 2. \textbf{Sesgo Algorítmico:} Replicación de patrones discriminatorios. & Auditorías periódicas de equidad algorítmica (\textit{Fairness AI}). \\
+\midrule
+3. \textbf{Estimulo a la Formalización:} Fomento del uso de facturación digital. & 3. \textbf{Brecha Digital:} Dificultad de uso en ciertos usuarios. & Interfaces minimalistas y explicaciones en lenguaje claro. \\
+\midrule
+4. \textbf{Financiación de Micronegocios:} Capital para insumos y crecimiento. & 4. \textbf{Privacidad de Datos:} Temor al uso indebido de información. & Encriptación bancaria y consentimiento expreso (Habeas Data). \\
+\midrule
+5. \textbf{Equidad Económica:} Apoyo a microempresarias de la economía informal. & 5. \textbf{Exclusión de Quienes Usan Solo Efectivo:} Marginación del sector análogo. & Alianzas con corresponsales bancarios y digitalización progresiva. \\
+\bottomrule
+\end{tabular}
+\caption{Matriz de impacto social multidimensional y mitigaciones.}
+\end{table}
+
+% =========================================================================
+% SECCIÓN 10: IMPACTO AMBIENTAL MULTIDIMENSIONAL
+% =========================================================================
+\section{Análisis de Impacto Ambiental Multidimensional}
+
+\begin{table}[h!]
+\centering
+\tiny
+\begin{tabular}{p{4.5cm} p{5.5cm} p{5.5cm}}
+\toprule
+\textbf{Impacto Ambiental Positivo} & \textbf{Riesgo / Impacto Ambiental Negativo} & \textbf{Estrategia de Mitigación} \\
+\midrule
+1. \textbf{Proceso 100\% Paperless:} Eliminación de expedientes físicos. & 1. \textbf{Consumo de Servidores Cloud:} Huella de carbono en cómputo ML. & Uso de data centers con certificación 100\% renovable (AWS Green Regions). \\
+\midrule
+2. \textbf{Reducción de Transporte:} Eliminación de viajes a sucursales. & 2. \textbf{Huella Hídrica de Data Centers:} Enfriamiento de servidores. & Selección de infraestructura cloud con enfriamiento de aire cerrado. \\
+\midrule
+3. \textbf{Digitalización Transaccional:} Menor uso de papel en facturas. & 3. \textbf{Obsolescencia Electrónica (E-Waste):} Generación de chatarra tecnológica. & Convenios de reciclaje de hardware con gestores certificados. \\
+\midrule
+4. \textbf{Arquitectura Serverless:} Optimización en uso de recursos. & 4. \textbf{Almacenamiento Redundante:} Acumulación ineficiente de datos. & Políticas de retención, purga de datos obsoletos y compresión. \\
+\midrule
+5. \textbf{Criterios de Scoring Verde:} Incentivos a micronegocios sostenibles. & 5. \textbf{Retrenamiento de Modelos:} Gasto energético continuo. & Retrenamientos eficientes por lotes (cuantización y pruning). \\
+\bottomrule
+\end{tabular}
+\caption{Matriz de impacto ambiental multidimensional y mitigaciones.}
+\end{table}
+
+\vspace{0.5cm}
+\begin{center}
+\textbf{--- FIN DEL DOCUMENTO MÁSTER ENTREGA 1 ---}
+\end{center}
+
+\end{document}

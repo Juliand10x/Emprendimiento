@@ -5,69 +5,80 @@
 
 ---
 
-## 1. Propósito de esta Guía
-Esta guía define las reglas de juego para redactar, presentar y estructurar todos los trabajos, talleres y portafolios del proyecto **StatCredit AI**. La idea es que cualquier persona (compañero de equipo, profesor o jurado externo) que lea nuestro repositorio entienda exactamente qué hacemos, con qué metodología trabajamos y cómo explicamos nuestras ideas de forma clara, sencilla y rigurosa.
+## 1. Reglas de Oro sobre Tono, Lenguaje y Posicionamiento (Feedback Oficial de la Profesora)
+
+### A. Lo que NUNCA debemos decir (Prohibiciones Narrativas)
+De acuerdo con las observaciones y correcciones docentes (`Complementacion.pdf`):
+- ❌ **NUNCA** decir *"la banca está equivocada y nosotros tenemos la solución"*.
+- ❌ **NUNCA** afirmar que *"la banca está ciega"*, que *"los modelos bancarios son obsoletos"* o que *"los bancos rechazan por malicia o desinterés"*.
+- ❌ **NUNCA** asegurar que *"eliminamos por completo los sesgos"* o que *"resolvemos mágicamente el riesgo"*.
+
+> **Justificación Académica y Profesional:** La banca tradicional ya utiliza modelos de scoring y datos alternativos en alguna medida. Afirmaciones arrogantes o no demostradas generan fricción inmediata con los jurados evaluadores y demuestran falta de comprensión del sector financiero real.
+
+### B. Tono y Posicionamiento Correcto (La Narrativa Aprobada)
+- ✅ **Planteamiento Constructivo:** *"Existe información transaccional y financiera alternativa (billeteras de bajo monto, pagos por QR, facturación electrónica) que hoy no se aprovecha lo suficiente en los procesos tradicionales de evaluación crediticia."*
+- ✅ **Enfoque de Complementariedad B2B:** StatCredit AI no busca reemplazar a la banca ni competir contra ella, sino actuar como un **motor analítico complementario B2B** que les permite evaluar mejor y ampliar su colocación rentable.
+- ✅ **Enunciado Insignia del Proyecto:**
+  > *"No buscamos cambiar quién puede acceder al crédito; buscamos cambiar la forma en que se mide quién puede pagarlo."*
 
 ---
 
-## 2. Formato Oficial de Presentación: LaTeX (`.tex`)
-1. **Regla de Oro:** Todos los entregables oficiales y portafolios finales para evaluación se deben trabajar y compilar en **LaTeX (`.tex`)**.
-2. **Estilo Limpio y Profesional:**
-   - Usar siempre paquetes oficiales en español (`\usepackage[spanish]{babel}`).
-   - Mantener portadas limpias y elegantes con el nombre del proyecto **StatCredit AI**.
-   - Diseñar tablas claras utilizando `booktabs` (`\toprule`, `\midrule`, `\bottomrule`) o `tabularx` sin recargar de líneas verticales innecesarias.
-   - Usar cajas `tcolorbox` para resaltar resúmenes ("¿De qué trata este entregable?") o experimentos clave.
+## 2. Marco Teórico y Metodológico de Reencuadre (Bianchi & Verganti, 2021)
+
+El proyecto se rige estrictamente por la metodología de **Problem Framing & Reframing** y la creación de nuevo sentido (*Innovation of Meaning*):
+
+### A. Los 4 Pasos del Marco de Reencuadre
+1. **Problema Visible:** *"Los micronegocios y trabajadores independientes no tienen historial crediticio formal en centrales de riesgo."*
+2. **Replanteamiento:** *"Los independientes sí cuentan con información financiera diaria y observable (ventas, flujos en billeteras digitales), pero esta información está fragmentada y no se incorpora eficientemente en las evaluaciones bancarias tradicionales."*
+3. **Nueva Oportunidad:** *"Convertir esa información transaccional observable en una medida objetiva y auditable de riesgo crediticio."*
+4. **Solución Tecnológica (StatCredit AI):** Proporcionar la infraestructura SaaS/API de Ciencia de Datos que transforma ventas y flujos de caja en variables estadísticas y modelos probabilísticos con explicabilidad SHAP.
+
+### B. Los 4 Movimientos de Diseño de Problemas
+- **1. De Déficit a Potencial:** El comerciante independiente no "carece" de historial; posee un historial transaccional que todavía no se ha convertido en información crediticia utilizable.
+- **2. De Problema a Oportunidad:** Los bancos no "rechazan por malicia"; existe la oportunidad de mejorar la evaluación de millones de micronegocios desatendidos con datos alternativos.
+- **3. De Intuición a Evidencia:** Reemplazar afirmaciones subjetivas ("este negocio parece solvente") por el cálculo riguroso de la probabilidad de incumplimiento mediante flujos de ingresos, estabilidad y modelos de Machine Learning / Inferencia Causal.
+- **4. De Decisión Binaria a Probabilística:** Pasar de la lógica rígida de "aprobar/rechazar" a un scoring probabilístico continuo, nivel de riesgo calibrado y variables explicativas auditables (XAI/SHAP).
 
 ---
 
-## 3. Lenguaje, Tono y Estilo de Redacción
+## 3. Principios de Elevación y Expansión (Dorst, 2015 & Alerta a la Creación de Valor)
 
-Buscamos un equilibrio perfecto entre **claridad pedagógica** y **rigor en Ciencia de Datos**:
+### A. Elevación (Ascender de la Causa Raíz al Sentido Humano)
+No nos quedamos únicamente en la causa raíz técnica (*"falta de API para ingesta de datos"*). Practicamos la **elevación** preguntando por qué el problema importa a las personas reales:
+- *Técnico:* Ingestar datos transaccionales de Nequi/Daviplata.
+- *Financiero:* Reducir el costo de evaluación y medir la capacidad de repago.
+- *Humano / Social:* Evitar que un trabajador independiente solvente tenga que recurrir al crédito informal usurero (*gota a gota*) y permitir la estabilidad de su microempresa familiar.
 
-### A. Explicativo, Cercano y Sencillo
-- Explicar las ideas complejas "de forma sencilla" para que cualquier persona entienda el impacto real en la vida de un trabajador independiente en Colombia.
-- Preguntarnos siempre: *¿Lo entendería un estudiante de pregrado o un analista de crédito en su primer día?*
-
-### B. Estructura Clara por Preguntas e Impacto
-En los talleres y experimentos, usar siempre el esquema de tres pasos:
-1. **Lo que queremos saber:** La hipótesis o pregunta concreta que queremos responder.
-2. **Cómo lo probamos:** El método sencillo de Ciencia de Datos o validación de campo.
-3. **Por qué importa la métrica:** La razón financiera o de negocio por la cual ese número cambia las cosas.
-
-### C. Rigor Conceptual sin Palabrería Innecesaria
-- Evitar términos abstractos o relleno comercial sin sustento.
-- Cuando utilicemos términos técnicos de Ciencia de Datos (*Inferencia Causal, Regresión Logística, SHAP, Falsos Negativos, MLOps*) o de Emprendimiento (*SaaS, B2B, TAM/SAM/SOM, Canvas*), debemos explicarlos en una línea de forma intuitiva.
+### B. Expansión (Partes Interesadas y Valor Multidimensional)
+En todos los entregables debemos incorporar el análisis de **valor multidimensional**, considerando no solo al cliente comprador B2B, sino a:
+- La población beneficiaria B2B2C (trabajadores independientes urbanos).
+- El cumplimiento regulatorio y transparencia actuarial (Superintendencia Financiera - SARC Circular 026).
+- La sostenibilidad ambiental y ética de la IA (eficiencia energética en cloud, ausencia de discriminación algorítmica).
 
 ---
 
-## 4. Guía de Conceptos Metodológicos del Proyecto
+## 4. Formato Oficial de Presentación: LaTeX (`.tex`)
 
-### A. Reencuadre del Problema (Problem Framing & Reframing)
-Siguiendo la metodología de Bianchi & Verganti (2021):
-- **Supuesto Tradicional:** *"Los trabajadores independientes son riesgosos porque no tienen historial bancario en DataCrédito."*
-- **Reencuadre StatCredit AI:** *"Los independientes sí mueven dinero a diario en billeteras digitales (Nequi, Daviplata), pero los bancos usan fórmulas viejas que no saben leer esa información digital."*
-- **Enunciado Insignia:** *"No buscamos cambiar quién puede acceder al crédito; buscamos cambiar la forma en que se mide quién puede pagarlo."*
+1. **Obligatoriedad:** Todos los entregables finales para evaluación se deben compilar y presentar en **LaTeX (`.tex`)**.
+2. **Preamble y Paquetes Requeridos:**
+   - Idioma y codificación: `\usepackage[utf8]{inputenc}`, `\usepackage[spanish]{babel}`.
+   - Formato de página y márgenes: `\usepackage{geometry}`, `geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}`.
+   - Tipografía y colores: `\usepackage{xcolor}`, definiendo azul institucional (`externadoDarkBlue`) y azul acento (`externadoAccent`).
+   - Tablas limpias: `\usepackage{booktabs}` (usando `\toprule`, `\midrule`, `\bottomrule` sin líneas verticales recargadas).
+   - Resaltados estructurados: `\usepackage{tcolorbox}` para resúmenes ejecutivos y matrices de hallazgos.
+   - Diagramas metodológicos: `\usepackage{tikz}` para esquematizar flujos y la arquitectura del proyecto.
 
-### B. Diagrama de Causa y Efecto (Ishikawa)
-- **Cabeza del Problema Raíz:** *Falta de información financiera estructurada en los bancos para evaluar el riesgo crediticio en independientes.*
-- **Causas Raíz:** Fragmentación de datos, modelos lineales rígidos, economía informal no bancarizada y barreras regulatorias SARC.
-- **Consecuencias (No confundir con la causa):** *Exclusión crediticia, sobrecostos por préstamos usureros (gota a gota), pérdida de margen bancario y muerte prematura de micronegocios.*
-
-### C. Definición del Cliente B2B y Beneficiario B2B2C
-- **Cliente Comercial Directo (B2B):** Entidades Financieras, Neobancos, Fintechs de originación, Cooperativas de Ahorro y Crédito y Microfinancieras. Son las empresas que compran y pagan la suscripción/API.
-- **Población Objetivo Beneficiaria (B2B2C):** *Trabajadores independientes solventes de la economía informal y semi-informal urbana en Colombia* (comerciantes, profesionales autónomos y micronegociantes con ingresos transaccionales digitales de 2 a 10 SMMLV).
-
-### D. Modelo de Negocio Software as a Service (SaaS)
-- **Operación vía REST API:** Conexión directa al motor de originación del banco o fintech.
-- **Cobro Híbrido:** Suscripción mensual base (mantenimiento MLOps) + Tarifa variable por consulta de score realizada (*Pay-per-Query*).
-- **Explicabilidad SARC:** Entrega simultánea del Score y el reporte explicativo local SHAP para superar auditorías ante la Superintendencia Financiera (Circular 026).
+3. **Estructura Interna de los Experimentos y Talleres:**
+   Cada hipótesis o prueba debe seguir el esquema de 3 pasos:
+   1. **Lo que queremos saber:** La pregunta o hipótesis de negocio/riesgo a validar.
+   2. **Cómo lo probamos:** El método de Ciencia de Datos o prueba de campo.
+   3. **Por qué importa la métrica:** La razón financiera o de impacto en el score por la cual ese número transforma la decisión.
 
 ---
 
-## 5. Organización del Repositorio en GitHub
-Todo el proyecto debe mantenerse estrictamente ordenado en carpetas numeradas:
-- `00_Estándar_y_Metodología/`: Esta guía normativa de redacción.
-- `01_Proyecto_StatCredit_AI/`: Talleres de ideación, Term Sheet, diagnósticos estratégicos y presentaciones.
-- `02_Portafolios_de_Evidencias/`: Carpetas individuales para cada Portafolio (Portafolio 1, Portafolio 2, Portafolio 3).
-- `03_Materiales_de_Clase/`: Diapositivas de sesiones, apuntes y notas del curso.
-- `04_Lecturas_y_Bibliografía/`: Artículos académicos y referencias teóricas.
+## 5. Estructura Organizada del Repositorio
+- `00_Estandar_y_Metodologia/`: Guía Maestra y normativas del proyecto.
+- `01_Proyecto_StatCredit_AI/`: Talleres, diagnósticos estratégicos, entregables y presentaciones (.tex, .pptx).
+- `02_Portafolios_de_Evidencias/`: Portafolios oficiales acumulativos de evidencias.
+- `03_Materiales_de_Clase/`: Diapositivas de clase, notas y documentos de complementación pedagógica.
+- `04_Lecturas_y_Bibliografia/`: Artículos teóricos (Bianchi & Verganti, Steve Blank, etc.).

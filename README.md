@@ -35,36 +35,31 @@ El repositorio está organizado en carpetas numeradas para facilitar la navegaci
 Emprendimiento/
 ├── README.md                                      # Guía Maestra de Navegación del Repositorio
 │
-├── 00_Estándar_y_Metodología/                     # Estándar de Redacción, Tono y Metodología
-│   └── 00_Estandar_Redaccion_y_Metodologia.md    # Normativa técnica, pedagógica y LaTeX
+├── 00_Estándar_y_Metodología/                     # Guía Maestra, Normativas y Feedback Docente
+│   └── 00_Guia_Maestra_y_Estandar_del_Proyecto.md # Documento normativo máster del proyecto
 │
 ├── 01_Proyecto_StatCredit_AI/                     # Desarrollo Estratégico y Técnico del Proyecto
-│   ├── 01_Talleres_y_Contratos/                   # Talleres de Ideación, Term Sheet y Feedback (.tex y .docx)
+│   ├── 00_Guia_Maestra_y_Estandar_del_Proyecto.md # Copia sincronizada de la Guía Maestra
+│   ├── 01_Talleres_y_Contratos/                   # Talleres de Ideación, Term Sheet y Entregables (.tex y .docx)
 │   │   ├── Taller_2_Contrato_de_Equipo_Term_Sheet.tex
 │   │   ├── Taller_3_Feedback_y_Presentacion_de_la_Idea.tex
-│   │   ├── Sesion 03__Taller 3_Paso_0_Idea_Emprendimiento.docx
-│   │   └── Control_Lectura_Bianchi_Verganti.docx
-│   └── 02_Presentaciones_y_Diapositivas/          # Presentaciones y diapositivas de entregas (.pptx)
+│   │   └── Entrega_1_Presentacion_de_la_Idea_y_Primer_Prototipo.tex
+│   └── 02_Presentaciones_y_Diapositivas/          # Presentaciones y estructuras de diapositivas (.pptx, .md)
+│       └── Entrega_1_Estructura_Diapositivas_PPTX.md
 │
 ├── 02_Portafolios_de_Evidencias/                  # Portafolios Oficiales del Curso
 │   ├── Portafolio_1/                              # Portafolio 1 (Respaldo y referencia a Notion)
-│   │   └── README.md
 │   ├── Portafolio_2/                              # Portafolio 2 (Máster LaTeX y Tareas 1, 2, 3)
 │   │   ├── Portafolio_de_Evidencias_2_StatCredit_AI.tex
 │   │   ├── tarea_1_validacion_expertos.tex
 │   │   ├── tarea_2_matriz_experimentos.tex
 │   │   └── tarea_3_lienzo_canvas.tex
 │   └── Portafolio_3/                              # Espacio reservado para Portafolio 3
-│       └── README.md
 │
 ├── 03_Materiales_de_Clase/                        # Diapositivas de Sesión, Notas y Entregas del Curso
-│   ├── 2026_Sesion 01- 04_Emprendimiento_Slides.pdf
-│   ├── Slides sesion 05_20260828_Curso_Emprendimiento_Externado.pdf
-│   ├── Sesion 06_20260904_Emprendimiento.pdf
-│   ├── Sesion 07_20260911_Curso_Emprendimiento.pdf
 │   ├── Sesion 08_20260918_Emprendimiento_Entrega 1.pdf
-│   ├── Complementacion.pdf
-│   └── NotesEmpr.pdf
+│   ├── Complementacion.pdf                        # Guía oficial de reencuadre y corrección docente
+│   └── NotesEmpr.pdf                              # Apuntes de clase
 │
 └── 04_Lecturas_y_Bibliografía/                   # Lecturas Académicas y Marcos Teóricos
     ├── JBVD_2021_Bianchi, Roberto Verganti_Entrepreneurs as designers of problems worth solving.pdf
@@ -75,7 +70,9 @@ Emprendimiento/
 
 ## 🎯 Accesos Rápidos a Entregables
 
-- 📄 **Estándar de Redacción y Metodología:** [00_Estandar_Redaccion_y_Metodologia.md](file://wsl.localhost/Ubuntu/home/julianxd/code/Emprendimiento/00_Estandar_y_Metodologia/00_Estandar_Redaccion_y_Metodologia.md)
+- 📄 **Guía Maestra y Estándar del Proyecto:** [00_Guia_Maestra_y_Estandar_del_Proyecto.md](file://wsl.localhost/Ubuntu/home/julianxd/code/Emprendimiento/00_Estandar_y_Metodologia/00_Guia_Maestra_y_Estandar_del_Proyecto.md)
+- 🚀 **Entrega 1 (LaTeX Máster):** [Entrega_1_Presentacion_de_la_Idea_y_Primer_Prototipo.tex](file://wsl.localhost/Ubuntu/home/julianxd/code/Emprendimiento/01_Proyecto_StatCredit_AI/01_Talleres_y_Contratos/Entrega_1_Presentacion_de_la_Idea_y_Primer_Prototipo.tex)
+- 📊 **Entrega 1 (Estructura PPTX):** [Entrega_1_Estructura_Diapositivas_PPTX.md](file://wsl.localhost/Ubuntu/home/julianxd/code/Emprendimiento/01_Proyecto_StatCredit_AI/02_Presentaciones_y_Diapositivas/Entrega_1_Estructura_Diapositivas_PPTX.md)
 - 📝 **Portafolio de Evidencias No. 1:** [Portafolio 1 (Notion Reference)](file://wsl.localhost/Ubuntu/home/julianxd/code/Emprendimiento/02_Portafolios_de_Evidencias/Portafolio_1/README.md)
 - 📄 **Portafolio de Evidencias No. 2 (LaTeX Máster):** [Portafolio_de_Evidencias_2_StatCredit_AI.tex](file://wsl.localhost/Ubuntu/home/julianxd/code/Emprendimiento/02_Portafolios_de_Evidencias/Portafolio_2/Portafolio_de_Evidencias_2_StatCredit_AI.tex)
 - 📜 **Contrato de Equipo (Term Sheet - Taller 2):** [Taller_2_Contrato_de_Equipo_Term_Sheet.tex](file://wsl.localhost/Ubuntu/home/julianxd/code/Emprendimiento/01_Proyecto_StatCredit_AI/01_Talleres_y_Contratos/Taller_2_Contrato_de_Equipo_Term_Sheet.tex)
