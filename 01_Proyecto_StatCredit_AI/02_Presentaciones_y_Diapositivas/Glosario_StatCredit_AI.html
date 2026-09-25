@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Glosario StatCredit AI — Diccionario de términos y acrónimos</title>
+<style>
+  :root{--dark:#0A2240;--accent:#0072CE;--light:#F5F7FA;--ink:#1A2634;--muted:#5A6B7B;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.5;}
+
+  .portada{background:linear-gradient(135deg,var(--dark),#123a66);color:#fff;padding:60px 64px;border-radius:0 0 24px 24px;}
+  .portada .inst{font-size:15px;letter-spacing:.12em;text-transform:uppercase;opacity:.8;}
+  .portada h1{font-size:42px;margin:14px 0 6px;line-height:1.1;}
+  .portada .sub{font-size:18px;opacity:.9;margin-top:6px;}
+  .portada .meta{margin-top:24px;font-size:13px;opacity:.75;letter-spacing:.05em;}
+
+  .contenido{padding:40px 64px 60px;}
+  .intro{background:var(--light);border-left:5px solid var(--accent);padding:18px 22px;border-radius:10px;margin-bottom:30px;color:var(--ink);font-size:15px;}
+
+  .grupo{margin-bottom:34px;break-inside:avoid;}
+  .grupo h2{font-size:22px;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:6px;margin-bottom:14px;letter-spacing:.02em;}
+  .grupo h2 .cat{font-size:12px;color:var(--muted);font-weight:400;margin-left:10px;text-transform:uppercase;letter-spacing:.1em;}
+
+  .term{margin-bottom:14px;padding-left:0;break-inside:avoid;}
+  .term .t{font-weight:800;color:var(--dark);font-size:16px;}
+  .term .t .acro{color:var(--accent);font-weight:700;}
+  .term .d{font-size:14px;color:var(--ink);margin-top:2px;}
+
+  .footer{margin-top:36px;font-size:12px;color:var(--muted);text-align:center;border-top:1px solid #e3e9f0;padding-top:16px;}
+
+  @media print{
+    body{font-size:12px;}
+    .portada{page-break-after:always;}
+    .grupo h2{font-size:18px;}
+    .term .t{font-size:14px;}
+    .term .d{font-size:12.5px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="portada">
+  <div class="inst">Universidad Externado de Colombia · Pregrado en Ciencia de Datos — Emprendimiento</div>
+  <h1>Glosario — StatCredit AI</h1>
+  <div class="sub">Diccionario de términos y acrónimos clave del proyecto de scoring crediticio alternativo</div>
+  <div class="meta">Grupo 5 · Semestre 2026-II</div>
+</div>
+
+<div class="contenido">
+
+  <div class="intro">
+    Este glosario reúne los conceptos y siglas más usados en el proyecto <b>StatCredit AI</b>. Cada término se explica en una frase corta y fácil de entender. Está pensado como referencia rápida para la presentación y los entregables del curso.
+  </div>
+
+  <!-- CONCEPTOS CENTRALES -->
+  <div class="grupo">
+    <h2>Conceptos centrales del negocio <span class="cat">· crédito</span></h2>
+    <div class="term"><div class="t">Credit Score / Score</div><div class="d">Número estandarizado (150 a 950 puntos) que resume qué tan probable es que una persona pague o se atrase en un crédito.</div></div>
+    <div class="term"><div class="t">Scoring crediticio</div><div class="d">Técnica que usa datos y estadística para asignar un puntaje de riesgo a quien pide un préstamo.</div></div>
+    <div class="term"><div class="t">Mora severa</div><div class="d">Atraso de 90 días o más en el pago de una deuda; es lo que los modelos de score intentan predecir.</div></div>
+    <div class="term"><div class="t">Capacidad de repago</div><div class="d">Posibilidad real de una persona de devolver un préstamo, medida por sus ingresos y flujo de caja.</div></div>
+    <div class="term"><div class="t">Historial crediticio</div><div class="d">Registro de cómo una persona ha pagado sus deudas en el pasado, guardado en centrales de riesgo.</div></div>
+    <div class="term"><div class="t">Ausencia de evidencia vs. evidencia de insolvencia</div><div class="d">No tener historial en un buró no significa no poder pagar; solo significa que no hay datos registrados. Esa es la base del problema que ataca StatCredit AI.</div></div>
+    <div class="term"><div class="t">Falso negativo</div><div class="d">Cuando el sistema rechaza a alguien que en realidad sí habría pagado el crédito.</div></div>
+    <div class="term"><div class="t">Gota a gota</div><div class="d">Préstamo informal e ilegal con intereses altísimos (más de 500% anual) que golpea a quienes no acceden al crédito formal.</div></div>
+  </div>
+
+  <!-- TECNOLOGÍA Y MODELOS -->
+  <div class="grupo">
+    <h2>Tecnología, datos y modelos <span class="cat">· IA y analítica</span></h2>
+    <div class="term"><div class="t"><span class="acro">XAI</span> — Inteligencia Artificial Explicable</div><div class="d">IA que no solo da un resultado, sino que explica por qué lo dio. Es clave para cumplir la regulación.</div></div>
+    <div class="term"><div class="t"><span class="acro">SHAP</span> — SHapley Additive exPlanations</div><div class="d">Método que muestra cuánto aporta cada variable a la decisión del modelo (qué sumó puntos y qué restó).</div></div>
+    <div class="term"><div class="t">Inferencia causal</div><div class="d">Técnica que busca entender causas y efectos, no solo correlaciones (por ejemplo, si un ingreso estacional explica el pago).</div></div>
+    <div class="term"><div class="t"><span class="acro">XGBoost</span> — eXtreme Gradient Boosting</div><div class="d">Algoritmo de machine learning muy usado en scoring por su precisión, basado en combinar muchos árboles de decisión.</div></div>
+    <div class="term"><div class="t">Regresión logística</div><div class="d">Modelo estadístico tradicional que estima la probabilidad de un evento (como pagar o no). Es la base del scoring clásico.</div></div>
+    <div class="term"><div class="t"><span class="acro">ML</span> — Machine Learning (aprendizaje automático)</div><div class="d">Rama de la IA donde los algoritmos aprenden patrones a partir de datos sin ser programados regla por regla.</div></div>
+    <div class="term"><div class="t"><span class="acro">MLOps</span> — Machine Learning Operations</div><div class="d">Prácticas para poner modelos de ML en producción, mantenerlos y monitorearlos de forma confiable.</div></div>
+    <div class="term"><div class="t">Caja negra</div><div class="d">Modelo cuyo funcionamiento interno no se entiende; en banca es rechazado por la regulación por no poder explicar decisiones.</div></div>
+    <div class="term"><div class="t">Datos transaccionales</div><div class="d">Información de movimientos de dinero (recibos, pagos, transferencias) que revela la actividad económica real de una persona.</div></div>
+    <div class="term"><div class="t">Facturación electrónica <span class="acro">(DIAN)</span></div><div class="d">Facturas digitales emitidas ante la autoridad tributaria (DIAN) que reflejan las ventas reales de un negocio.</div></div>
+    <div class="term"><div class="t">Billeteras digitales</div><div class="d">Aplicaciones (como Nequi o Daviplata) para guardar y mover dinero desde el celular, muy usadas en la economía informal.</div></div>
+    <div class="term"><div class="t">Latencia</div><div class="d">Tiempo que tarda un sistema en responder. StatCredit AI responde en menos de 2 segundos.</div></div>
+    <div class="term"><div class="t">Backtesting</div><div class="d">Probar un modelo con datos del pasado para ver qué tan bien habría predicho los resultados.</div></div>
+    <div class="term"><div class="t">Simulación Monte Carlo</div><div class="d">Método que corre miles de escenarios posibles para medir el riesgo o la estabilidad financiera de un negocio.</div></div>
+  </div>
+
+  <!-- REGULACIÓN -->
+  <div class="grupo">
+    <h2>Regulación y cumplimiento <span class="cat">· sector financiero</span></h2>
+    <div class="term"><div class="t"><span class="acro">SARC</span> — Sistema de Administración de Riesgo Crediticio</div><div class="d">Conjunto de normas de la Superintendencia Financiera que obliga a las entidades a controlar el riesgo de crédito.</div></div>
+    <div class="term"><div class="t">Circular 026</div><div class="d">Norma de la Superintendencia que exige explicar las decisiones de crédito; base de la necesidad de explicabilidad (XAI/SHAP).</div></div>
+    <div class="term"><div class="t">Superintendencia Financiera</div><div class="d">Entidad estatal que vigila y regula a bancos, fintechs y cooperativas en Colombia.</div></div>
+    <div class="term"><div class="t">Regtech</div><div class="d">Tecnología para cumplir la regulación financiera de forma automática y auditable.</div></div>
+    <div class="term"><div class="t">Habeas Data</div><div class="d">Derecho de las personas a controlar cómo se usa su información personal; exige consentimiento para tratar sus datos.</div></div>
+    <div class="term"><div class="t">Fairness AI / auditoría de equidad</div><div class="d">Revisiones para detectar y corregir sesgos discriminatorios en los modelos (por género, edad, etc.).</div></div>
+  </div>
+
+  <!-- MODELO DE NEGOCIO -->
+  <div class="grupo">
+    <h2>Modelo de negocio y mercado <span class="cat">· SaaS B2B</span></h2>
+    <div class="term"><div class="t"><span class="acro">SaaS</span> — Software as a Service</div><div class="d">Software que se usa por internet y se paga por suscripción, sin instalarlo en cada equipo.</div></div>
+    <div class="term"><div class="t"><span class="acro">B2B</span> — Business to Business</div><div class="d">Negocio entre empresas: StatCredit AI vende su servicio a bancos, fintechs y cooperativas (no al consumidor final).</div></div>
+    <div class="term"><div class="t"><span class="acro">B2B2C</span> — Business to Business to Consumer</div><div class="d">La empresa sirve a otra empresa, pero el beneficio final llega al consumidor (el independiente que accede al crédito).</div></div>
+    <div class="term"><div class="t"><span class="acro">API REST</span> — Application Programming Interface</div><div class="d">Puerta de acceso técnica que permite a los sistemas de los clientes conectarse y consultar el score automáticamente.</div></div>
+    <div class="term"><div class="t">Pay-per-query</div><div class="d">Modelo de cobro en el que se paga por cada consulta de score realizada, además de una suscripción base.</div></div>
+    <div class="term"><div class="t"><span class="acro">TAM</span> — Total Addressable Market</div><div class="d">Tamaño total del mercado al que se podría llegar (todo el gasto posible en el sector).</div></div>
+    <div class="term"><div class="t"><span class="acro">SAM</span> — Serviceable Addressable Market</div><div class="d">Parte del TAM que la empresa puede atender con su propuesta (Colombia, independientes).</div></div>
+    <div class="term"><div class="t"><span class="acro">SOM</span> — Serviceable Obtainable Market</div><div class="d">Cuota que la empresa espera capturar de forma realista en un plazo (por ejemplo, a 3 años).</div></div>
+    <div class="term"><div class="t"><span class="acro">ARR</span> — Annual Recurring Revenue</div><div class="d">Ingresos anuales recurrentes por suscripciones; métrica clave para medir un negocio SaaS.</div></div>
+    <div class="term"><div class="t"><span class="acro">SMMLV</span> — Salario Mínimo Mensual Legal Vigente</div><div class="d">Unidad de medida de ingresos en Colombia; el segmento objetivo gana entre 2 y 10 SMMLV.</div></div>
+    <div class="term"><div class="t">Freemium</div><div class="d">Ofrecer una versión gratis limitada (ej. 500 consultas) para que el cliente pruebe y luego pague.</div></div>
+    <div class="term"><div class="t">Beachhead Market</div><div class="d">Mercado inicial y pequeño donde se lanza primero el producto para ganar tracción antes de expandirse.</div></div>
+  </div>
+
+  <!-- MÉTODO Y ECOSISTEMA -->
+  <div class="grupo">
+    <h2>Método y ecosistema <span class="cat">· contexto</span></h2>
+    <div class="term"><div class="t">Economía informal / semi-informal</div><div class="d">Actividad económica sin registro tributario o seguridad social formal; en Colombia supera el 50% de la ocupación.</div></div>
+    <div class="term"><div class="t">Micronegocio</div><div class="d">Pequeño negocio familiar o personal (tienda, taller, venta ambulante) que mueve dinero a diario.</div></div>
+    <div class="term"><div class="t">Buró de crédito / central de riesgo</div><div class="d">Empresa (como DataCrédito o TransUnion) que recopila el historial de deudas y pagos de las personas.</div></div>
+    <div class="term"><div class="t">DataCrédito Experian</div><div class="d">Principal buró de crédito en Colombia; calcula el score tradicional con historial formal.</div></div>
+    <div class="term"><div class="t">Open Finance</div><div class="d">Apertura de datos financieros entre entidades, con permiso del usuario, para compartir información vía API.</div></div>
+    <div class="term"><div class="t">Fintech</div><div class="d">Empresa que combina tecnología y finanzas para ofrecer servicios financieros más ágiles y accesibles.</div></div>
+    <div class="term"><div class="t">Neobanco</div><div class="d">Banco 100% digital, sin oficinas físicas, que opera por una aplicación.</div></div>
+    <div class="term"><div class="t">Espina de pescado (Ishikawa)</div><div class="d">Diagrama que organiza las causas de un problema; ayuda a separar la causa raíz de sus consecuencias.</div></div>
+    <div class="term"><div class="t"><span class="acro">BMC</span> — Business Model Canvas</div><div class="d">Lienzo de 9 bloques para describir en una página cómo una empresa crea y captura valor.</div></div>
+    <div class="term"><div class="t"><span class="acro">CRO / CTO</span></div><div class="d">Chief Risk Officer (director de riesgo) y Chief Technology Officer (director de tecnología): decisores del cliente B2B.</div></div>
+  </div>
+
+  <div class="footer">Glosario de referencia — Proyecto StatCredit AI · Universidad Externado de Colombia · Grupo 5 · Semestre 2026-II</div>
+
+</div>
+</body>
+</html>

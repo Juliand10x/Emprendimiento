@@ -6,120 +6,103 @@
 <title>StatCredit AI — Entrega 1</title>
 <style>
   :root{
-    --dark:#0A2240;
-    --accent:#0072CE;
-    --light:#F5F7FA;
-    --ink:#1A2634;
-    --muted:#5A6B7B;
-    --green:#228B34;
-    --red:#B42828;
-    --gold:#C8860A;
+    --dark:#0A2240; --accent:#0072CE; --light:#F5F7FA; --ink:#1A2634;
+    --muted:#5A6B7B; --green:#228B34; --red:#B42828; --gold:#C8860A;
+    --W:1280px; --H:720px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html,body{height:100%;}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:#0b1120;color:var(--ink);overflow:hidden;
-  }
-  #stage{position:relative;width:100%;height:100vh;height:100dvh;}
-  .slide{
-    position:absolute;inset:0;padding:4.5vh 5.5vw;opacity:0;visibility:hidden;
-    transform:translateX(40px);transition:all .45s ease;overflow:auto;
-    background:#fff;display:flex;flex-direction:column;
-  }
-  .slide.active{opacity:1;visibility:visible;transform:none;z-index:2;}
-  .wrap{max-width:1200px;margin:0 auto;width:100%;height:100%;display:flex;flex-direction:column;gap:2.4vh;flex:1;}
+  html,body{height:100%;background:#0b1120;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);overflow:hidden;}
 
-  /* top bar */
-  .kicker{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;flex:0 0 auto;}
+  /* ---------- STAGE fijo 1280x720, centrado y escalado al viewport ---------- */
+  #stage{position:fixed;top:50%;left:50%;width:var(--W);height:var(--H);
+    transform:translate(-50%,-50%);transform-origin:center center;background:#fff;overflow:hidden;}
+
+  .slide{position:absolute;inset:0;padding:44px 60px 52px;display:flex;flex-direction:column;
+    opacity:0;visibility:hidden;transition:opacity .35s ease;background:#fff;}
+  .slide.active{opacity:1;visibility:visible;z-index:2;}
+  .wrap{flex:1;display:flex;flex-direction:column;gap:18px;min-height:0;}
+
+  .kicker{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);
+    letter-spacing:.09em;text-transform:uppercase;flex:0 0 auto;}
   .brand{color:var(--accent);font-weight:800;}
 
-  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.05;color:var(--dark);}
-  h2{font-size:clamp(24px,3.6vw,42px);color:var(--dark);line-height:1.1;flex:0 0 auto;}
-  h3{font-size:clamp(17px,2vw,22px);color:var(--accent);margin-bottom:1.4vh;}
-  .sub{font-size:clamp(16px,2.1vw,24px);color:var(--muted);line-height:1.45;}
+  h1{font-size:56px;line-height:1.05;color:var(--dark);}
+  h2{font-size:33px;line-height:1.1;color:var(--dark);flex:0 0 auto;}
+  h3{font-size:18px;color:var(--accent);margin-bottom:10px;line-height:1.2;}
+  .sub{font-size:20px;color:var(--muted);line-height:1.4;}
 
-  .tag{display:inline-block;background:var(--dark);color:#fff;font-size:13px;padding:6px 14px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;margin-right:8px;margin-bottom:8px;}
+  .tag{display:inline-block;background:var(--dark);color:#fff;font-size:12px;padding:6px 13px;border-radius:20px;
+    letter-spacing:.05em;text-transform:uppercase;margin-right:8px;margin-bottom:6px;}
 
-  /* problem central box */
-  .problem{
-    background:linear-gradient(135deg,var(--dark),#123a66);color:#fff;
-    padding:3vh 3vw;border-radius:16px;font-size:clamp(17px,2.1vw,24px);line-height:1.5;
-    border-left:6px solid var(--accent);flex:0 0 auto;
-  }
+  .problem{background:linear-gradient(135deg,var(--dark),#123a66);color:#fff;padding:20px 26px;border-radius:14px;
+    font-size:18px;line-height:1.45;border-left:6px solid var(--accent);flex:0 0 auto;}
   .problem b{color:#7cc4ff;}
 
-  /* grids fill vertical space */
-  .grid{display:grid;gap:1.6vw;flex:1 1 auto;align-items:stretch;min-height:0;}
+  .grid{display:grid;gap:16px;flex:1 1 auto;align-items:stretch;min-height:0;}
   .g2{grid-template-columns:1fr 1fr;}
   .g3{grid-template-columns:1fr 1fr 1fr;}
-  .card{
-    background:var(--light);border-radius:16px;padding:3.2vh 2.2vw;
-    border:1px solid #e6ebf1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh;
-  }
-  .card h3{margin-bottom:0;}
-  .card p{font-size:clamp(15px,1.6vw,19px);line-height:1.6;color:var(--ink);}
-  .card ul,.card ol{padding-left:1.3em;font-size:clamp(15px,1.7vw,19px);line-height:1.65;color:var(--ink);}
-  .card li{margin-bottom:1.2vh;}
+  .g4{grid-template-columns:1fr 1fr 1fr 1fr;}
+  .card{background:var(--light);border-radius:14px;padding:20px 22px;border:1px solid #e6ebf1;
+    display:flex;flex-direction:column;justify-content:center;gap:8px;}
+  .card p{font-size:16px;line-height:1.5;color:var(--ink);}
+  .card ul,.card ol{padding-left:1.25em;font-size:16px;line-height:1.5;color:var(--ink);}
+  .card li{margin-bottom:8px;}
 
-  /* stat highlight inside cards */
-  .big{font-size:clamp(34px,4.4vw,56px);font-weight:800;line-height:1;color:var(--accent);}
+  .big{font-size:52px;font-weight:800;line-height:1;color:var(--accent);}
   .big.dark{color:var(--dark);}
   .big.green{color:var(--green);}
-  .small{font-size:clamp(13px,1.35vw,16px);line-height:1.5;color:var(--ink);}
+  .small{font-size:14px;line-height:1.45;color:var(--ink);}
 
-  /* tables fill */
   .tblwrap{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;min-height:0;}
-  table{width:100%;border-collapse:collapse;font-size:clamp(13px,1.4vw,17px);}
-  th{background:var(--dark);color:#fff;padding:1.8vh 14px;text-align:left;font-weight:700;font-size:clamp(13px,1.35vw,16px);}
-  td{padding:1.8vh 14px;border-bottom:1px solid #e3e9f0;vertical-align:middle;line-height:1.5;}
+  table{width:100%;border-collapse:collapse;font-size:14px;}
+  th{background:var(--dark);color:#fff;padding:11px 12px;text-align:left;font-weight:700;font-size:13px;}
+  td{padding:10px 12px;border-bottom:1px solid #e3e9f0;vertical-align:middle;line-height:1.4;}
   tr:nth-child(even) td{background:var(--light);}
   .pos{color:var(--green);font-weight:700;}
   .neg{color:var(--red);font-weight:700;}
   .mit{color:var(--gold);font-weight:600;}
 
-  /* root cause + causes (Ishikawa-based, sin diagrama) */
-  .rootcause{
-    background:linear-gradient(135deg,#7a1a1a,var(--red));color:#fff;
-    padding:2.4vh 2.4vw;border-radius:16px;font-size:clamp(16px,2vw,23px);font-weight:800;
-    display:flex;align-items:center;justify-content:space-between;gap:2vw;flex:0 0 auto;
-  }
-  .rootcause .lbl{font-size:clamp(12px,1.2vw,14px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85;}
-  .causegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4vw;flex:1 1 auto;align-items:stretch;}
-  .cause{background:var(--light);border:1px solid #e6ebf1;border-top:5px solid var(--accent);border-radius:14px;padding:2.6vh 1.4vw;display:flex;flex-direction:column;justify-content:center;gap:1vh;}
-  .cause b{font-size:clamp(14px,1.5vw,18px);color:var(--dark);line-height:1.25;}
-  .cause small{font-size:clamp(12px,1.2vw,14px);color:var(--muted);line-height:1.4;}
+  .rootcause{background:linear-gradient(135deg,#7a1a1a,var(--red));color:#fff;padding:18px 24px;border-radius:14px;
+    font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:space-between;gap:20px;flex:0 0 auto;}
+  .rootcause .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85;line-height:1.4;}
+  .cause{background:var(--light);border:1px solid #e6ebf1;border-top:5px solid var(--accent);border-radius:12px;
+    padding:16px 16px;display:flex;flex-direction:column;justify-content:center;gap:6px;}
+  .cause b{font-size:16px;color:var(--dark);line-height:1.2;}
+  .cause small{font-size:13px;color:var(--muted);line-height:1.35;}
 
-  /* prototype flow */
-  .flow{display:flex;align-items:stretch;gap:1.2vw;flex:1 1 auto;min-height:0;}
-  .fbox{flex:1;border-radius:14px;padding:3vh 1.6vw;color:#fff;font-size:clamp(14px,1.5vw,19px);line-height:1.5;display:flex;flex-direction:column;justify-content:center;gap:1vh;}
-  .fbox small{display:block;font-size:clamp(12px,1.2vw,15px);opacity:.9;margin-top:6px;line-height:1.5;}
+  .flow{display:flex;align-items:stretch;gap:14px;flex:0 0 auto;}
+  .fbox{flex:1;border-radius:12px;padding:20px 18px;color:#fff;font-size:15px;line-height:1.4;
+    display:flex;flex-direction:column;justify-content:center;gap:6px;}
+  .fbox small{display:block;font-size:13px;opacity:.92;line-height:1.5;}
   .f1{background:#3a6ea5;}.f2{background:var(--accent);}.f3{background:var(--dark);}
-  .arrow{align-self:center;font-size:30px;color:var(--muted);}
-  pre{background:#0b1120;color:#d7e2ef;border-radius:12px;padding:2.6vh 2vw;font-size:clamp(11px,1.15vw,14px);line-height:1.7;overflow:auto;font-family:"SF Mono",Consolas,Menlo,monospace;flex:1 1 auto;}
+  .arrow{align-self:center;font-size:28px;color:var(--muted);}
+  pre{background:#0b1120;color:#d7e2ef;border-radius:12px;padding:20px 24px;font-size:14px;line-height:1.65;
+    font-family:"SF Mono",Consolas,Menlo,monospace;flex:1 1 auto;min-height:0;overflow:hidden;}
   .hl{color:#7cc4ff;}
 
-  /* title slide */
-  .cover{justify-content:center;}
-  .cover .wrap{justify-content:center;text-align:center;gap:0;}
-  .cover .inst{font-size:clamp(19px,2.7vw,30px);color:var(--dark);font-weight:800;letter-spacing:.04em;}
-  .cover .prog{font-size:clamp(13px,1.7vw,19px);color:var(--muted);margin-top:1.2vh;letter-spacing:.12em;text-transform:uppercase;}
-  .cover .rule{width:140px;height:5px;background:var(--accent);margin:3.4vh auto;border-radius:3px;}
-  .cover h1{font-size:clamp(40px,7vw,80px);margin-bottom:2.4vh;}
-  .cover .phrase{font-style:italic;color:var(--accent);font-size:clamp(17px,2.2vw,26px);margin-bottom:3vh;line-height:1.4;}
-  .cover .sub{max-width:820px;margin:0 auto 3.5vh;color:var(--ink);}
-  .cover .people{color:var(--muted);font-size:clamp(15px,1.8vw,20px);line-height:1.7;}
-  .cover .sem{color:var(--muted);font-size:14px;margin-top:2.6vh;letter-spacing:.12em;}
+  .cover{justify-content:center;text-align:center;}
+  .cover .wrap{justify-content:center;gap:0;}
+  .cover .inst{font-size:26px;color:var(--dark);font-weight:800;letter-spacing:.03em;}
+  .cover .prog{font-size:16px;color:var(--muted);margin-top:8px;letter-spacing:.12em;text-transform:uppercase;}
+  .cover .rule{width:130px;height:5px;background:var(--accent);margin:26px auto;border-radius:3px;}
+  .cover h1{font-size:72px;margin-bottom:16px;}
+  .cover .phrase{font-style:italic;color:var(--accent);font-size:23px;margin-bottom:22px;line-height:1.4;}
+  .cover .sub{max-width:760px;margin:0 auto 26px;color:var(--ink);}
+  .cover .people{color:var(--muted);font-size:17px;line-height:1.7;}
+  .cover .sem{color:var(--muted);font-size:13px;margin-top:18px;letter-spacing:.12em;}
 
-  .footer{position:absolute;bottom:2.2vh;left:5.5vw;right:5.5vw;display:flex;justify-content:space-between;font-size:13px;color:var(--muted);}
-  .src{font-size:clamp(12px,1.2vw,14px);color:var(--muted);font-style:italic;flex:0 0 auto;}
+  .footer{position:absolute;left:60px;right:60px;bottom:18px;display:flex;justify-content:space-between;
+    font-size:12px;color:var(--muted);}
+  .src{font-size:13px;color:var(--muted);font-style:italic;flex:0 0 auto;}
 
-  /* nav controls */
   #nav{position:fixed;bottom:18px;right:22px;z-index:50;display:flex;gap:8px;}
-  #nav button{width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.92);color:var(--dark);font-size:20px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.3);transition:.2s;}
+  #nav button{width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.92);color:var(--dark);
+    font-size:20px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.3);}
   #nav button:hover{background:var(--accent);color:#fff;}
   #counter{position:fixed;bottom:22px;left:22px;z-index:50;color:#cbd5e1;font-size:13px;letter-spacing:.1em;}
-  @media print{.slide{position:static;opacity:1;visibility:visible;transform:none;page-break-after:always;height:auto;overflow:visible;}}
+
+  body.pdfmode #nav,body.pdfmode #counter{display:none !important;}
 </style>
 </head>
 <body>
@@ -133,13 +116,9 @@
       <div class="rule"></div>
       <h1>StatCredit AI</h1>
       <div class="phrase">Motor SaaS B2B de Scoring Crediticio Alternativo &amp; XAI</div>
-      <div class="sub">
-        <b>El problema:</b> los bancos no tienen datos estructurados para evaluar el riesgo de los independientes.
-      </div>
-      <div class="people">
-        <b style="color:var(--dark);">Grupo 5</b><br>
-        Santiago Sandoval · Sebastián Ramos · Julián Duarte · Tomás Rincón · Julián Jiménez
-      </div>
+      <div class="sub"><b>El problema:</b> los bancos no tienen datos estructurados para evaluar el riesgo de los independientes.</div>
+      <div class="people"><b style="color:var(--dark);">Grupo 5</b><br>
+        Santiago Sandoval · Sebastián Ramos · Julián Duarte · Tomás Rincón · Julián Jiménez</div>
       <div class="sem">SEMESTRE 2026-II</div>
     </div>
   </section>
@@ -184,9 +163,7 @@
           <tr><td><b>Resultado</b></td><td>Rechaza al independiente sin historial.</td><td>Convierte <i>ausencia de evidencia</i> en prueba matemática de solvencia.</td></tr>
         </table>
       </div>
-      <div class="problem">
-        <b>Valor agregado:</b> no es falta de capacidad de pago, es falta de información estructurada. StatCredit AI transforma los datos que ya existen en evidencia auditable ante la Superfinanciera.
-      </div>
+      <div class="problem"><b>Valor agregado:</b> no es falta de capacidad de pago, es falta de información estructurada. StatCredit AI transforma los datos que ya existen en evidencia auditable ante la Superfinanciera.</div>
     </div>
     <div class="footer"><span>Problema central: falta de datos en los bancos</span><span>3 / 12</span></div>
   </section>
@@ -197,33 +174,26 @@
       <div class="kicker"><span>Entrega 1</span><span class="brand">StatCredit AI</span></div>
       <h2>3 · Necesidad vs. problema específico</h2>
       <div class="grid g2" style="flex:0 0 auto;">
-        <div class="card">
-          <h3>Necesidad general</h3>
-          <p>Acceso a crédito productivo formal, con tasas reguladas, para independientes y micronegocios solventes — sin caer en el gota a gota.</p>
-        </div>
-        <div class="card">
-          <h3>Problema específico</h3>
-          <p>Tienen actividad financiera diaria real, pero fragmentada y no incorporada a la evaluación crediticia.</p>
-        </div>
+        <div class="card"><h3>Necesidad general</h3>
+          <p>Acceso a crédito productivo formal, con tasas reguladas, para independientes y micronegocios solventes — sin caer en el gota a gota.</p></div>
+        <div class="card"><h3>Problema específico</h3>
+          <p>Tienen actividad financiera diaria real, pero fragmentada y no incorporada a la evaluación crediticia.</p></div>
       </div>
       <div class="rootcause">
         <span class="lbl">Problema raíz<br>(cabeza de la espina)</span>
         <span style="flex:1;text-align:center;">Falta de información estructurada en los bancos para evaluar el riesgo de los independientes</span>
         <span class="lbl" style="text-align:right;">→ exclusión y gota a gota<br>son consecuencias, no la raíz</span>
       </div>
-      <div class="causegrid">
+      <div class="grid g4">
         <div class="cause"><b>Fragmentación de datos</b><small>Billeteras aisladas · extractos en PDF.</small></div>
         <div class="cause"><b>Fricción operacional</b><small>15–20 extractos/día en Excel.</small></div>
         <div class="cause"><b>Economía informal urbana</b><small>&gt;50% de ocupación sin soporte.</small></div>
         <div class="cause"><b>Rigidez regulatoria SARC</b><small>Miedo a la "caja negra".</small></div>
       </div>
-      <div class="card" style="flex:0 0 auto;">
-        <h3>¿Qué están haciendo mal los bancos?</h3>
-        <ul style="display:flex;gap:3vw;flex-wrap:wrap;padding-left:0;list-style:none;">
-          <li style="margin:0;">✗ Infraestructura <b>legacy por lotes</b> (no consume APIs en tiempo real).</li>
-          <li style="margin:0;">✗ Temor a la <b>"caja negra"</b> ante SARC (Circular 026).</li>
-          <li style="margin:0;">✗ Sesgo cultural: <b>"nómina fija = seguridad"</b>.</li>
-        </ul>
+      <div class="card" style="flex:0 0 auto;flex-direction:row;gap:34px;flex-wrap:wrap;justify-content:center;">
+        <span><b style="color:var(--red);">✗</b> Infraestructura <b>legacy por lotes</b> (no consume APIs en tiempo real).</span>
+        <span><b style="color:var(--red);">✗</b> Temor a la <b>"caja negra"</b> ante SARC (Circular 026).</span>
+        <span><b style="color:var(--red);">✗</b> Sesgo cultural: <b>"nómina fija = seguridad"</b>.</span>
       </div>
     </div>
     <div class="footer"><span>Problema central: falta de datos en los bancos</span><span>4 / 12</span></div>
@@ -245,7 +215,7 @@
           <h3>Urbano</h3>
           <div class="big">≈ 40%</div>
           <p class="small">informalidad en 13 ciudades y áreas metropolitanas.</p>
-          <div class="big dark" style="margin-top:2vh;">18M+</div>
+          <div class="big dark">18M+</div>
           <p class="small">usuarios de Nequi en Colombia.</p>
         </div>
         <div class="card">
@@ -257,9 +227,7 @@
           </ul>
         </div>
       </div>
-      <div class="problem">
-        La informalidad no es sinónimo de insolvencia: es un mercado desatendido por falta de datos, no por falta de capacidad de pago.
-      </div>
+      <div class="problem">La informalidad no es sinónimo de insolvencia: es un mercado desatendido por falta de datos, no por falta de capacidad de pago.</div>
     </div>
     <div class="footer"><span>Problema central: falta de datos en los bancos</span><span>5 / 12</span></div>
   </section>
@@ -271,15 +239,15 @@
       <h2>5 · Competidores directos</h2>
       <div class="tblwrap">
         <table>
-          <tr><th>Competidor</th><th>Actividad</th><th>Producto</th><th>Opera</th><th>Ventas</th><th>Se parecen en…</th><th>Nos diferenciamos en…</th></tr>
-          <tr><td><b>Zest AI</b></td><td>Underwriting con IA explicable</td><td>ZAML (ML + fair lending)</td><td>EE. UU.</td><td>Privada (600+ modelos)</td><td>Scoring ML explicable para prestamistas</td><td>Ellos: lenders formales · Nosotros: datos transaccionales de informales (Nequi/DIAN) LatAm</td></tr>
-          <tr><td><b>Scienaptic AI</b></td><td>Plataforma de decisión crediticia IA</td><td>AI Decisioning Platform</td><td>EE. UU.</td><td>160+ prestamistas</td><td>IA explicable + cumplimiento regulatorio</td><td>Ellos: credit unions EE. UU. · Nosotros: inclusión de independientes LatAm + causalidad</td></tr>
-          <tr><td><b>Provenir</b></td><td>Decisión de riesgo crediticio</td><td>Decision Intelligence</td><td>60+ países (Brasil, México)</td><td>120+ clientes</td><td>API B2B de riesgo en tiempo real</td><td>Ellos: plataforma horizontal · Nosotros: scoring especializado en caja informal + SARC</td></tr>
-          <tr><td><b>Upstart</b></td><td>Préstamos personales con IA</td><td>Modelo ingreso/incumplimiento</td><td>EE. UU.</td><td>$842M (2024)</td><td>Modelo predictivo de riesgo no tradicional</td><td>Ellos: lender (riesgo de balance) · Nosotros: SaaS sin riesgo, enfocado en informales</td></tr>
-          <tr><td><b>Destacame</b></td><td>Scoring alternativo y crédito</td><td>Plataforma reporte + crédito</td><td>Chile (LatAm)</td><td>2M+ usuarios</td><td>Scoring alternativo para no bancarizados LatAm</td><td>Ellos: B2C repaso de deudas · Nosotros: B2B SaaS con XAI + causalidad</td></tr>
+          <tr><th>Competidor</th><th>Actividad</th><th>Producto</th><th>Opera</th><th>Escala</th><th>Se parecen en…</th><th>Nos diferenciamos en…</th></tr>
+          <tr><td><b>Kala</b></td><td>Crédito nativo en IA (ciclo completo)</td><td>Plataforma de crédito con IA</td><td>Colombia (Bogotá)</td><td>&gt;COP $1,5 billones · 100.000+ clientes</td><td>Usa IA para decidir crédito en segmentos no tradicionales</td><td>Es lender (asume riesgo de balance) · Nosotros: SaaS B2B de scoring sin riesgo, con SHAP + causalidad</td></tr>
+          <tr><td><b>R5</b></td><td>Préstamos online con colateral</td><td>Crédito con garantía de activos (carros/motos)</td><td>Colombia (Bogotá)</td><td>Fondeo privado</td><td>Evalúa riesgo con datos alternativos de segmentos bajos</td><td>Usa colateral físico · Nosotros: caja transaccional (Nequi/DIAN) sin colateral</td></tr>
+          <tr><td><b>Sempli</b></td><td>Crédito digital a micronegocios</td><td>Préstamos de capital de trabajo</td><td>Colombia</td><td>Fintech de crédito</td><td>Crédito ágil a micronegocios</td><td>Lender para pymes · Nosotros: proveemos el scoring XAI a las entidades</td></tr>
+          <tr><td><b>Addi</b></td><td>Buy Now, Pay Later (BNPL)</td><td>Crédito en punto de venta</td><td>Colombia, Brasil, México</td><td>BNPL regional</td><td>Modelo de riesgo con IA para consumo</td><td>BNPL al consumidor · Nosotros: capacidad de repago de independientes para entidades</td></tr>
+          <tr><td><b>DataCrédito Experian</b></td><td>Buró de crédito</td><td>Score DataCrédito (150–950)</td><td>Colombia (global)</td><td>&gt;$6.500M USD (global)</td><td>Emite score formal de riesgo</td><td>Score de historial formal pasado · Nosotros: score de caja transaccional actual + XAI</td></tr>
         </table>
       </div>
-      <p class="src">Los bancos tradicionales son <b>clientes B2B</b>, no competidores.</p>
+      <p class="src">Los bancos tradicionales son <b>clientes B2B</b>, no competidores. Fuentes: Colombia Fintech, Superintendencia de Sociedades.</p>
     </div>
     <div class="footer"><span>Problema central: falta de datos en los bancos</span><span>6 / 12</span></div>
   </section>
@@ -291,24 +259,13 @@
       <h2>6 · Preguntas clave del mercado</h2>
       <div class="grid g2">
         <div class="card"><h3>① ¿Qué hacen los clientes hoy?</h3>
-          <ul><li><b>B2B:</b> revisión manual (15–20 extractos/día) o rechazo sin herramientas.</li><li><b>B2B2C:</b> gota a gota (&gt;500% EA) o frenan su negocio.</li></ul>
-        </div>
-        <div class="card"><h3>④ ¿Qué tipo de mercado?</h3>
-          <ul><li><b>Mercado NUEVO / de nicho</b> (océano azul): scoring transaccional con XAI en LatAm; nadie lo hace así.</li></ul>
-        </div>
+          <ul><li><b>B2B:</b> revisión manual (15–20 extractos/día) o rechazo sin herramientas.</li><li><b>B2B2C:</b> gota a gota (&gt;500% EA) o frenan su negocio.</li></ul></div>
         <div class="card"><h3>② ¿Por qué el problema es difícil de resolver?</h3>
-          <ul>
-            <li>Datos transaccionales <b>heterogéneos y dispersos</b> (múltiples billeteras).</li>
-            <li>Modelos de ML <b>complejos de auditar</b> ante regulación.</li>
-          </ul>
-        </div>
+          <ul><li>Datos transaccionales <b>heterogéneos y dispersos</b> (múltiples billeteras).</li><li>Modelos de ML <b>complejos de auditar</b> ante regulación.</li></ul></div>
         <div class="card"><h3>③ ¿Por qué los bancos no lo han hecho?</h3>
-          <ul>
-            <li>Infraestructura <b>legacy por lotes</b>, no APIs en tiempo real.</li>
-            <li>Exigencia <b>SARC</b>: rechazo a la caja negra.</li>
-            <li><b>Sesgo de nómina</b> como único criterio.</li>
-          </ul>
-        </div>
+          <ul><li>Infraestructura <b>legacy por lotes</b>, no APIs en tiempo real.</li><li>Exigencia <b>SARC</b>: rechazo a la caja negra.</li><li><b>Sesgo de nómina</b> como único criterio.</li></ul></div>
+        <div class="card"><h3>④ ¿Qué tipo de mercado?</h3>
+          <ul><li><b>Mercado NUEVO / de nicho</b> (océano azul): scoring transaccional con XAI en LatAm; nadie lo hace así.</li></ul></div>
       </div>
     </div>
     <div class="footer"><span>Problema central: falta de datos en los bancos</span><span>7 / 12</span></div>
@@ -321,19 +278,16 @@
       <h2>7 · Tamaño de la industria (TAM / SAM / SOM)</h2>
       <div class="grid g3">
         <div class="card" style="border-top:6px solid var(--dark);">
-          <h3>TAM</h3>
-          <div class="big dark">$26.100M</div>
+          <h3>TAM</h3><div class="big dark">$26.100M</div>
           <p class="small">mercado global de Credit Scoring Software (2026), → $40.550M en 2030 (CAGR 11,9%).</p>
           <p class="src">The Business Research Company, 2026.</p>
         </div>
         <div class="card" style="border-top:6px solid var(--accent);">
-          <h3>SAM</h3>
-          <div class="big">≈ $25M /año</div>
+          <h3>SAM</h3><div class="big">≈ $25M /año</div>
           <p class="small">Colombia: ~13M informales (54,6% DANE) → ~5M independientes urbanos solventes × 2 evaluaciones/año × $2,50.</p>
         </div>
         <div class="card" style="border-top:6px solid var(--green);">
-          <h3>SOM</h3>
-          <div class="big green">$3,5M ARR</div>
+          <h3>SOM</h3><div class="big green">$3,5M ARR</div>
           <p class="small">a 3 años: 25 entidades B2B (suscripción $30K/año) + 1,4M consultas × $2,50.</p>
         </div>
       </div>
@@ -358,9 +312,11 @@
         <div class="card">
           <h3>Población beneficiaria (B2B2C)</h3>
           <ul>
-            <li><b>Edad/género:</b> hombres y mujeres, 22–55 años.</li>
+            <li><b>Edad / género:</b> hombres y mujeres, 22–55 años.</li>
             <li><b>Ingresos:</b> 2–10 SMMLV ($2,6M–$13M COP).</li>
             <li><b>Formación:</b> secundaria, técnica o profesionales autónomos.</li>
+            <li><b>Tamaño de familia:</b> hogares de 2–5 integrantes; el micronegocio es la unidad económica familiar.</li>
+            <li><b>Etnia específica:</b> población urbana diversa — mestizos, afrodescendientes e indígenas vinculados al comercio informal.</li>
             <li><b>Ubicación:</b> Bogotá, Medellín, Cali, Barranquilla, Bucaramanga.</li>
             <li><b>Estilo de vida:</b> comercio urbano, Nequi/Daviplata, QR, DIAN.</li>
           </ul>
@@ -401,12 +357,10 @@
     <div class="wrap">
       <div class="kicker"><span>Entrega 1</span><span class="brand">StatCredit AI</span></div>
       <h2>10 · ¿Por qué resuelve? + impactos sociales</h2>
-      <div class="card" style="flex:0 0 auto;">
-        <ul style="display:flex;gap:3vw;flex-wrap:wrap;padding-left:0;list-style:none;">
-          <li style="margin:0;">✔ Convierte flujos transaccionales en <b>evidencia actuarial</b> de repago.</li>
-          <li style="margin:0;">✔ Reportes <b>SHAP</b> defendibles ante SARC (Circular 026).</li>
-          <li style="margin:0;">✔ De <b>15 minutos a &lt; 2 segundos</b> por evaluación.</li>
-        </ul>
+      <div class="card" style="flex:0 0 auto;flex-direction:row;gap:28px;flex-wrap:wrap;justify-content:center;font-size:15px;">
+        <span>✔ Convierte flujos transaccionales en <b>evidencia actuarial</b>.</span>
+        <span>✔ Reportes <b>SHAP</b> defendibles ante SARC (Circular 026).</span>
+        <span>✔ De <b>15 min a &lt; 2 segundos</b> por evaluación.</span>
       </div>
       <div class="tblwrap">
         <table>
@@ -427,13 +381,9 @@
     <div class="wrap">
       <div class="rule"></div>
       <h1>El problema no es la capacidad de pago</h1>
-      <div class="problem" style="max-width:840px;margin:0 auto;">
-        Es la <b>falta de datos estructurados</b> en los bancos para medir el riesgo de los independientes.
-      </div>
-      <div class="phrase" style="font-size:clamp(20px,2.6vw,32px);margin-top:3vh;">
-        "No buscamos cambiar quién puede acceder al crédito;<br>buscamos cambiar la forma en que se mide quién puede pagarlo."
-      </div>
-      <div class="people" style="margin-top:4vh;">StatCredit AI · Grupo 5 · Semestre 2026-II</div>
+      <div class="problem" style="max-width:820px;margin:0 auto;">Es la <b>falta de datos estructurados</b> en los bancos para medir el riesgo de los independientes.</div>
+      <div class="phrase" style="font-size:28px;margin-top:22px;">"No buscamos cambiar quién puede acceder al crédito;<br>buscamos cambiar la forma en que se mide quién puede pagarlo."</div>
+      <div class="people" style="margin-top:30px;">StatCredit AI · Grupo 5 · Semestre 2026-II</div>
     </div>
   </section>
 
@@ -454,6 +404,13 @@
     slides.forEach((s,k)=>s.classList.toggle('active',k===i));
     counter.textContent=(i+1)+' / '+slides.length;
   }
+  function fit(){
+    const s=document.getElementById('stage');
+    const k=Math.min(window.innerWidth/1280, window.innerHeight/720);
+    s.style.transform='translate(-50%,-50%) scale('+k+')';
+  }
+  const m=location.hash.match(/^#(\d+)(?:-pdf)?$/);
+  if(m){ show(parseInt(m[1],10)-1); if(location.hash.endsWith('-pdf')){document.body.classList.add('pdfmode');} }
   document.getElementById('next').onclick=()=>show(i+1);
   document.getElementById('prev').onclick=()=>show(i-1);
   document.addEventListener('keydown',e=>{
@@ -462,6 +419,8 @@
     if(e.key==='Home')show(0);
     if(e.key==='End')show(slides.length-1);
   });
+  window.addEventListener('resize',fit);
+  fit();
   show(0);
 </script>
 </body>
