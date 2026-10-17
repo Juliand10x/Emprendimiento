@@ -322,42 +322,64 @@ De acuerdo con las indicaciones de la Sesi\'on 10, el modelo de negocio se const
 
 \vspace{0.4cm}
 
-\begin{table}[htbp]
-\centering
-\small
-\begin{tabularx}{\textwidth}{|X|X|}
-\hline
-\rowcolor{primary!10}
-\multicolumn{2}{|c|}{\textbf{\Large ZONA ENTREGAR VALOR (Portafolios 1 al 3)}} \\
-\hline
-\textbf{Bloque 1 (P1): Problema y Oportunidad} \newline
-\textit{\textquestiondown Qu\'e dolor real vale la pena resolver?} & 
-\textbf{Bloque 2 (P1): Segmentos de Actores} \newline
-\textit{\textquestiondown A qui\'en sirves y a qui\'en afectas?} \\
-\hline
-$\bullet$ Asimetr\'ia de informaci\'on: Bancos rechazan al 65\% de independientes solventes por falta de n\'omina fija. \newline
-$\bullet$ Cuello de botella operacional: Revisi\'on manual de extractos limita a 15--20 casos al d\'ia por analista. \newline
-$\bullet$ Exclusi\'on financiera empuja a micronegocios al cr\'edito usurero (``gota a gota'' al 20\%--40\% mensual). \newline
-$\bullet$ Temor a sanciones SARC por modelos opacos de ``caja negra''. & 
-$\bullet$ \textbf{Cliente que paga (B2B):} Neobancos, bancos peque\~nos y cooperativas financieras en Colombia que buscan crecer su cartera. \newline
-$\bullet$ \textbf{Beneficiario final (B2B2C):} 4,5 millones de trabajadores independientes y comerciantes urbanos con actividad digital (Nequi/Daviplata/DIAN). \newline
-$\bullet$ \textbf{Otros actores:} Analistas de cr\'edito, comit\'es de riesgo, gremios fintech y la Superintendencia Financiera. \\
-\hline
-\textbf{Bloque 3 (P2): Portafolio de Valor} \newline
-\textit{\textquestiondown Qu\'e valor multidimensional creas?} & 
-\textbf{Bloque 7 (P3): Canales y Relaci\'on con el Cliente} \newline
-\textit{\textquestiondown C\'omo te conocen, te compran y regresan?} \\
-\hline
-$\bullet$ \textbf{Core Business (Usuario):} Evaluaci\'on justa en $<2$ segundos con explicaci\'on transparente de factores de solvencia. \newline
-$\bullet$ \textbf{Econ\'omica (Profit):} Incremento del 20\% al 30\% en originaci\'on sana de cr\'edito para bancos peque\~nos. \newline
-$\bullet$ \textbf{Social (People):} Alternativa formal y digna frente a la usura informal. \newline
-$\bullet$ \textbf{Ambiental (Planet):} Cero papel; proceso 100\% en la nube y energ\'ia eficiente. & 
-$\bullet$ \textbf{Canales de Adquisici\'on:} Venta directa (\textit{Field Sales}) a comit\'es de riesgo, pruebas piloto (PoC) de 30 d\'ias y eventos en Colombia Fintech. \newline
-$\bullet$ \textbf{Canal de Entrega:} REST API segura con integraci\'on r\'apida en $<2$ semanas. \newline
-$\bullet$ \textbf{Relaci\'on y Confianza:} Onboarding guiado, soporte t\'ecnico 24/7 con SLA del 99,9\% y actualizaci\'on regulatoria continua bajo norma SARC. \\
-\hline
-\end{tabularx}
-\caption{Primer Esquema del Lienzo Canvas --- Consolidado de la Zona Entregar (P1 a P3).}
-\end{table}
+% Banner de la Zona Entregar del Canvas
+\begin{tcolorbox}[colback=primary,colframe=primary,arc=2mm,halign=center]
+    {\Large \textbf{\color{white} LIENZO CANVAS DE MODELO DE NEGOCIO}}\\[0.15cm]
+    {\normalsize \textbf{\color{white!90} ZONA ESTRAT\'EGICA: ENTREGAR VALOR (Portafolios P1 al P3)}}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+% Fila 1: Bloque 1 (Problema) y Bloque 2 (Segmentos de Actores)
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+    \begin{tcolorbox}[colback=lightgray!50,colframe=primary,arc=2mm,title={\textbf{\small BLOQUE 1 (P1): PROBLEMA Y OPORTUNIDAD}},coltitle=white,fonttitle=\bfseries]
+        \textit{\footnotesize \textquestiondown Qu\'e dolor real y urgente resolvemos?}\\[0.2cm]
+        \begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+            \item \textbf{Asimetr\'ia de informaci\'on:} El 65\% de trabajadores independientes solventes son rechazados por carecer de historial crediticio tradicional o certificados de n\'omina fija.
+            \item \textbf{Cuello de botella operacional:} Revisi\'on manual de extractos bancarios en PDF demora hasta 5 d\'ias y limita al analista a 15--20 solicitudes al d\'ia.
+            \item \textbf{Trampa de la usura:} La exclusi\'on financiera orilla a micronegocios al cr\'edito usurero informal (``gota a gota'' al 20\%--40\% mensual).
+            \item \textbf{Miedo regulatorio SARC:} Temor de entidades financieras a sanciones por modelos opacos de ``caja negra'' no auditables ante la Superfinanciera.
+        \end{itemize}
+    \end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+    \begin{tcolorbox}[colback=lightgray!50,colframe=primary,arc=2mm,title={\textbf{\small BLOQUE 2 (P1): SEGMENTOS DE ACTORES}},coltitle=white,fonttitle=\bfseries]
+        \textit{\footnotesize \textquestiondown A qui\'enes servimos y a qui\'enes impactamos?}\\[0.2cm]
+        \begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+            \item \textbf{Cliente B2B (Entidad que paga):} Neobancos, bancos peque\~nos y cooperativas de cr\'edito en Colombia que buscan colocar cartera sana con bajo riesgo.
+            \item \textbf{Beneficiario B2B2C (Usuario final):} 4,5 millones de micronegocios y profesionales independientes urbanos con historial de transacciones digitales (Nequi, Daviplata, DIAN).
+            \item \textbf{Actores del ecosistema:} Analistas de cr\'edito, comit\'es de riesgo, gremio Colombia Fintech y la Superintendencia Financiera.
+        \end{itemize}
+    \end{tcolorbox}
+\end{minipage}
+
+\vspace{0.4cm}
+
+% Fila 2: Bloque 3 (Portafolio de Valor) y Bloque 7 (Canales y Relación)
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+    \begin{tcolorbox}[colback=lightgray!50,colframe=secondary,arc=2mm,title={\textbf{\small BLOQUE 3 (P2): PORTAFOLIO DE VALOR}},coltitle=white,fonttitle=\bfseries]
+        \textit{\footnotesize \textquestiondown Qu\'e valor multidimensional entregamos?}\\[0.2cm]
+        \begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+            \item \textbf{Core Business (Usuario):} Scoring crediticio justo y explicable en $<2$ segundos a partir de flujos de caja reales, superando el sesgo de n\'omina fija.
+            \item \textbf{Econ\'omico (Profit):} Crecimiento del 20\%--30\% en originaci\'on crediticia sana y reducci\'on del 70\% en costos operativos de estudio.
+            \item \textbf{Social (People):} Inclusi\'on financiera formal y protecci\'on efectiva contra la extorsi\'on del gota a gota.
+            \item \textbf{Ambiental (Planet):} Cero papel; tr\'amite 100\% digital en la nube con arquitectura computacional eficiente.
+        \end{itemize}
+    \end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+    \begin{tcolorbox}[colback=lightgray!50,colframe=secondary,arc=2mm,title={\textbf{\small BLOQUE 7 (P3): CANALES Y RELACI\'ON}},coltitle=white,fonttitle=\bfseries]
+        \textit{\footnotesize \textquestiondown C\'omo conectamos, entregamos y fidelizamos?}\\[0.2cm]
+        \begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+            \item \textbf{Canales de Adquisici\'on:} Venta consultiva directa (\textit{Field Sales}) a comit\'es de riesgo, pruebas piloto (PoC) de 30 d\'ias con datos ciegos y eventos gremiales fintech.
+            \item \textbf{Canal de Entrega:} REST API segura, contenerizada y documentada para integraci\'on bancaria \textit{plug-and-play} en $<2$ semanas.
+            \item \textbf{Relaci\'on y Confianza:} Onboarding guiado, soporte anal\'itico 24/7 (SLA 99,9\%) y actualizaci\'on regulatoria continua bajo norma SARC.
+        \end{itemize}
+    \end{tcolorbox}
+\end{minipage}
 
 \end{document}
