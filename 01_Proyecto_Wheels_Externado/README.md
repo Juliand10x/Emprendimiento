@@ -44,9 +44,13 @@ Este directorio alberga la documentación estratégica, técnica y de negocio de
 01_Proyecto_Wheels_Externado/
 ├── README.md                                  # Este documento (Visión y mapa general del proyecto)
 │
-├── Entrega_3/                                 # Materiales, guion y soporte para la Entrega Oficial No. 3
-│   ├── README.md                              # Resumen ejecutivo de la Entrega 3
-│   └── Guion_Estructura_Presentacion_Entrega_3.md # Estructura slide por slide para la sustentación
+├── Entrega_3/                                 # 📌 CARPETA OFICIAL: Materiales para la Entrega No. 3
+│
+├── Portafolios_de_Evidencias/                 # 📌 PORTAFOLIOS DEL PROYECTO WHEELS
+│   └── Portafolio_4/                          # Portafolio 4: Capturar Valor (LaTeX, PDF y resumen)
+│       ├── Portafolio_de_Evidencias_4_Wheels_Externado.tex
+│       ├── Portafolio_de_Evidencias_4_Wheels_Externado.pdf
+│       └── README.md
 │
 └── 02_Documentacion_y_Modelo/                 # Especificaciones técnicas y formulación del problema
     ├── 01_Ficha_Tecnica_Problema_y_Pivote.md  # Caracterización a profundidad del dolor y justificación
@@ -62,3 +66,4 @@ Este directorio alberga la documentación estratégica, técnica y de negocio de
 3. **Algoritmo Inteligente de Matching de Rutas:** Agrupación automática por zonas (Norte, Chía, Suba, Calle 80, Salitre, Teusaquillo, Sur) y franjas horarias de clases (7:00 AM, 9:00 AM, 1:00 PM, 5:00 PM, etc.).
 4. **Reserva y Cuota Colaborativa Transparente:** Fijación de aportes sugeridos estándar según distancia y cobro automatizado digital para evitar disputas de efectivo.
 5. **Seguridad y Confianza en Ruta:** Calificación mutua (1 a 5 estrellas), comentarios verificados, seguimiento del viaje en mapa y botón de asistencia de seguridad.
+

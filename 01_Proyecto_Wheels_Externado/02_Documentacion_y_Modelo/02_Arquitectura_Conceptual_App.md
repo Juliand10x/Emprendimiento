@@ -54,3 +54,4 @@ sequenceDiagram
 - No es una tarifa de servicio comercial (evitando problemas regulatorios de transporte no autorizado).
 - Es una **cuota colaborativa de compensación de gastos** (combustible, desgaste, peajes y parqueadero).
 - Tarifas sugeridas transparentes basadas en zonas geográficas.
+

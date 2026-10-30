@@ -35,3 +35,4 @@ pdflatex -interaction=nonstopmode Portafolio_de_Evidencias_4_Wheels_Externado.te
 pdflatex -interaction=nonstopmode Portafolio_de_Evidencias_4_Wheels_Externado.tex
 ```
 *(Se recomienda ejecutar dos veces consecutivas para actualizar referencias cruzadas y numeración).*
+

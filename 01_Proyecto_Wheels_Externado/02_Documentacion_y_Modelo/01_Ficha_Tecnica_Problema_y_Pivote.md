@@ -64,3 +64,4 @@ flowchart TD
 | **Estudiante Conductor** | Subsidiar los altos costos de gasolina, parqueadero y peajes. | Publicar repetitivamente, lidiar con cobros y pasajeros impuntuales. | Rutas predecibles, pasajeros confirmados y pago garantizado. |
 | **Estudiante Pasajero** | Llegar cómodo, seguro y a tiempo a clase pagando menos que un Uber/taxi. | Mensajes ignorados, inseguridad al subir a carros desconocidos, plantones. | Reserva garantizada, conductor verificado y trazabilidad en ruta. |
 | **Universidad Externado** | Mitigar el colapso vial en los Cerros, fomentar la sostenibilidad y seguridad estudiantil. | Sin visibilidad ni control de los incidentes que ocurren en los grupos informales. | Datos de movilidad, fomento de comunidad y reducción de huella de carbono. |
+
