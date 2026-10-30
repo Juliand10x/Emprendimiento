@@ -1,0 +1,646 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{geometry}
+\geometry{top=2.3cm, bottom=2.3cm, left=2.3cm, right=2.3cm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, fit}
+
+% ---------------------------------------------------------
+% PALETA INSTITUCIONAL Y DEFINICIÓN DE COLORES
+% ---------------------------------------------------------
+\definecolor{primary}{RGB}{0, 51, 102}      % Azul Institucional Externado (#003366)
+\definecolor{secondary}{RGB}{232, 119, 34}  % Naranja Externado (#E87722)
+\definecolor{accent}{RGB}{0, 114, 206}      % Azul Tecnológico
+\definecolor{darkgray}{RGB}{40, 40, 40}
+\definecolor{lightgray}{RGB}{245, 247, 250}
+\definecolor{bordergray}{RGB}{205, 215, 225}
+\definecolor{success}{RGB}{46, 125, 50}     % Verde Validación (#2E7D32)
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    citecolor=secondary,
+    urlcolor=accent,
+    pdftitle={Portafolio de Evidencias No. 4 - Wheels Externado}
+}
+
+% ---------------------------------------------------------
+% ESTILOS DE CAJAS PERSONALIZADAS
+% ---------------------------------------------------------
+\newtcolorbox{externadobox}[2][]{
+    enhanced,
+    colback=lightgray,
+    colframe=primary,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    sharp corners=south,
+    arc=4mm,
+    boxrule=1.2pt,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    #1
+}
+
+\newtcolorbox{evidencebox}[2][]{
+    enhanced,
+    colback=secondary!6,
+    colframe=secondary,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    arc=3mm,
+    boxrule=1pt,
+    left=4mm, right=4mm, top=2.5mm, bottom=2.5mm,
+    #1
+}
+
+\newtcolorbox{kbibox}[2][]{
+    enhanced,
+    colback=success!6,
+    colframe=success,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    arc=3mm,
+    boxrule=1pt,
+    left=4mm, right=4mm, top=2.5mm, bottom=2.5mm,
+    #1
+}
+
+\begin{document}
+
+% ---------------------------------------------------------
+% PORTADA INSTITUCIONAL
+% ---------------------------------------------------------
+\begin{titlepage}
+    \centering
+    \vspace*{0.5cm}
+    {\Huge \textbf{\color{primary} UNIVERSIDAD EXTERNADO DE COLOMBIA}}\\[0.3cm]
+    {\Large \textbf{\color{secondary} PREGRADO EN CIENCIA DE DATOS --- EMPRENDIMIENTO}}\\[1.5cm]
+    
+    \rule{\linewidth}{0.8mm}\\[0.4cm]
+    {\Huge \textbf{PORTAFOLIO DE EVIDENCIAS NO. 4}}\\[0.3cm]
+    {\Large \textbf{Modelo de Negocio Consolidado (BMC), Unit Economics ($LTV/CAC$),\\An\'alisis de Impacto y Metas de Sostenibilidad ODS}}\\[0.4cm]
+    \rule{\linewidth}{0.8mm}\\[1.2cm]
+    
+    \begin{tcolorbox}[colback=primary!5,colframe=primary,arc=4mm,boxrule=1.5pt]
+        \centering \huge \color{primary}
+        \textbf{Wheels Externado} \\[0.2cm]
+        \large \color{darkgray}
+        \textit{Plataforma Inteligente de Carpooling Universitario y Movilidad Sostenible}
+    \end{tcolorbox}
+    
+    \vfill
+    
+    \begin{minipage}{0.85\textwidth}
+        \centering
+        \textbf{\large Integrantes (Grupo 5):}\\[0.35cm]
+        \textbf{Santiago Sandoval} \quad $\vert$ \quad \textbf{Sebasti\'an Ramos}\\[0.15cm]
+        \textbf{Juli\'an Duarte} \quad $\vert$ \quad \textbf{Tom\'as Rinc\'on} \quad $\vert$ \quad \textbf{Juli\'an Jim\'enez}
+    \end{minipage}
+    
+    \vfill
+    {\large \textbf{Octubre de 2026 --- Bogot\'a D.C., Colombia}}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ---------------------------------------------------------
+% NOTA METODOLÓGICA DE PIVOTE ESTRATÉGICO
+% ---------------------------------------------------------
+\section*{Declaraci\'on de Pivote Estrat\'egico y Trazabilidad}
+\addcontentsline{toc}{section}{Declaraci\'on de Pivote Estrat\'egico y Trazabilidad}
+
+\begin{externadobox}{Hito de Pivote Metodol\'ogico (Lean Startup \& Disciplined Entrepreneurship)}
+Siguiendo los principios de \textit{Customer Discovery} de Steve Blank y el marco de emprendimiento disciplinado de Bill Aulet (2017), el equipo identific\'o barreras de acceso corporativas insalvables en el proyecto inicial \textit{StatCredit AI} (acceso restringido a datos bancarios transaccionales y regulaci\'on prudencial SARC). 
+
+En consecuencia, el equipo ejecut\'o un \textbf{pivote estrat\'egico} hacia \textbf{Wheels Externado}, una soluci\'on de movilidad colaborativa de campus cerrado dise\~nada para resolver un problema directo, cr\'itico y validable de primera mano dentro de nuestra propia comunidad universitaria. El presente Portafolio No. 4 unifica y consolida los diagn\'osticos de industria, la investigaci\'on de campo con 12 entrevistas en profundidad (Campo 2), la modelaci\'on financiera rigurosa de ciclo de vida ($LTV$) y adquisici\'on ($CAC$), y la formalizaci\'on del \textit{Business Model Canvas} (BMC).
+\end{externadobox}
+
+\vspace{0.3cm}
+
+% =========================================================
+% PASO 0: LA IDEA
+% =========================================================
+\section{Paso 0. La Idea: Impulso del Mercado, Empuje Tecnol\'ogico o H\'ibrida}
+
+De acuerdo con Aulet (2017), los emprendimientos tecnol\'ogicos surgen por impulso del mercado (\textit{market pull}) o por empuje tecnol\'ogico (\textit{technology push}). \textbf{Wheels Externado} se clasifica formalmente como una \textbf{iniciativa h\'ibrida con fuerte dominancia del impulso del mercado}: responde a una necesidad no resuelta y altamente dolorosa que experimentan m\'as de 12.000 miembros de la comunidad externadista para llegar al campus en los cerros orientales, habilitada por tecnolog\'ias maduras de geolocalizaci\'on, optimizaci\'on de grafos y micropagos digitales.
+
+\subsection{Mini Lienzo de la Idea (Bill Aulet)}
+
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\textwidth}{p{3.8cm}X}
+\toprule
+\textbf{Casilla Metodol\'ogica} & \textbf{Formulaci\'on Estrat\'egica del Proyecto Wheels Externado} \\
+\midrule
+\textbf{1. Impulso del Mercado} & Esta idea es relevante para \textbf{la comunidad de estudiantes y conductores de la Universidad Externado de Colombia (~12.000 miembros)} porque producir\'a un valor significativo al \textbf{eliminar la incertidumbre de viaje, la saturaci\'on de mensajes y el riesgo de inseguridad de los grupos informales de WhatsApp, garantizando cupos reservados, rutas sincronizadas y transacciones digitales sin fricci\'on}. \textit{(Sustentaci\'on: en el Campo 2, el 100\% de los informantes reporta colapso diario de chats y cancelaciones)}. \\
+\midrule
+\textbf{2. Tecnolog\'ia Habilitadora} & La tecnolog\'ia que lo hace posible es \textbf{la integraci\'on de algoritmos de optimizaci\'on de rutas geoespaciales y matching en tiempo real, autenticaci\'on federada con correo institucional \texttt{@uexternado.edu.co} y pasarelas de micropago (Nequi / Daviplata / Wompi)}, y hoy es viable porque \textbf{el 100\% del segmento dispone de smartphones con GPS activo, adopci\'on masiva de billeteras m\'oviles y el h\'abito org\'anico de compartir veh\'iculo}. \\
+\midrule
+\textbf{3. \textquestiondown Por qu\'e Nosotros?} & Lo que hace al equipo especialmente capaz es la convergencia de tres activos: \textbf{(1) Acceso directo al mercado:} los 5 integrantes somos estudiantes activos que padecemos el trayecto diario y pertenecemos a los grupos de WhatsApp; \textbf{(2) Competencias t\'ecnicas en Ciencia de Datos:} dominio de arquitecturas en la nube, optimizaci\'on de redes viales y anal\'itica de grafos; \textbf{(3) Capacidad de iteraci\'on a costo cero:} pruebas r\'apidas en campus sin fricci\'on comercial. \\
+\bottomrule
+\end{tabularx}
+\caption{Mini Lienzo de la Idea estructurado seg\'un Aulet (2017).}
+\label{tab:mini_lienzo}
+\end{table}
+
+\vspace{0.2cm}
+
+% =========================================================
+% PASO 1: ANÁLISIS DE LA INDUSTRIA
+% =========================================================
+\section{Paso 1. An\'alisis de la Industria}
+
+El diagn\'ostico de la industria integra el \textbf{Diamante de Michael Porter} y el modelo de las \textbf{Cinco Fuerzas Competitivas}, evaluando con precisi\'on el atractivo y las barreras de entrada para Wheels Externado.
+
+\subsection{Condiciones del Entorno y Fuerzas Competitivas}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{1a. Condiciones de los factores y poder de negociaci\'on de los proveedores (Conductores):}  
+    Los recursos cr\'iticos son los veh\'iculos particulares con cupos vac\'ios que ya se desplazan al campus, la red vial bogotana (Calle 80, Calle 26, Autonorte, Suba, Carrera 7.ª) y la infraestructura cloud (AWS / Firebase). Los conductores externadistas poseen un poder de negociaci\'on \textbf{Medio-Alto}: su fin no es el lucro profesional sino amortizar parqueadero (\$22.000 COP) y gasolina. Si la app impone comisiones excesivas ($>\$1.500$) o retiene pagos, regresan a WhatsApp.  
+    \textbf{Conclusi\'on de Entrada:} \textit{Favorece la entrada condicionada a una baja fricci\'on operativa y un take-rate moderado que respete el ingreso del conductor}.
+
+    \item \textbf{1b. Condiciones de la demanda y poder de negociaci\'on de los clientes (Pasajeros):}  
+    La demanda experimenta dolores extremos: 90 a 150 minutos en transporte masivo, transbordos inseguros y fatiga f\'isica. El poder de negociaci\'on individual es \textbf{Bajo-Medio}, pero existe alta sensibilidad si la tarifa supera el techo mental de \$8.000 COP. La disposici\'on a pagar validada (\textit{Willingness to Pay}) muestra una prima del +33\% sobre los \$6.000 actuales por tener certeza de viaje y seguridad.  
+    \textbf{Conclusi\'on de Entrada:} \textit{Altamente favorable; existe una demanda cautiva e insatisfecha en busca de una soluci\'on formalizada}.
+
+    \item \textbf{1c. Industrias relacionadas, de apoyo y amenaza de sustitutos:}  
+    Sectores de apoyo: pasarelas fintech de bajo monto (Nequi, Daviplata, Transfiya) y plataformas cartogr\'aficas (Mapbox/Google Maps). Amenaza de sustitutos: \textbf{Alta en volumen, pero baja en valor relativo}. TransMilenio (\$3.200 COP) es econ\'omico pero colapsado y lento; Uber/DiDi (\$25.000-\$45.000 COP) son inviables para el d\'ia a d\'ia estudiantil; y los chats de WhatsApp carecen de garant\'ias.  
+    \textbf{Conclusi\'on de Entrada:} \textit{Favorece la entrada: no existe un sustituto que combine tarifa estudiantil, ruta directa puerta a campus y comunidad cerrada verificada}.
+
+    \item \textbf{1d. Estrategia, estructura y rivalidad competitiva:}  
+    El mercado de ride-hailing masivo libra una guerra de precios destructiva. Wheels Externado elude esta confrontaci\'on mediante una estrategia de nicho cerrado universitario (\textit{Blue Ocean Strategy}).
+\end{itemize}
+
+\subsection{Matriz Comparativa de Competidores en Movilidad Universitaria}
+
+A partir de la investigaci\'on del ecosistema universitario de Bogot\'a, se identifican iniciativas tecnol\'ogicas comparables en instituciones pares (como la Universidad de los Andes, la Pontificia Universidad Javeriana y la Universidad del Rosario), permitiendo un benchmarking riguroso:
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{p{2.3cm}p{2.3cm}p{2.5cm}p{1.8cm}p{2.6cm}X}
+\toprule
+\textbf{Competidor} & \textbf{Actividad / Campus} & \textbf{Problema que Resuelve} & \textbf{Tarifa / Escala} & \textbf{Similitud con Nosotros} & \textbf{Diferenciador Clave de Wheels Externado} \\
+\midrule
+\textbf{1. Vai} & App de carpooling estudiantil (\textbf{UniAndes}) & Conecta rutas hacia el campus de Los Andes & \$7.000 a \$9.000 COP / Cobertura UniAndes & Resegmentaci\'on por nicho, filtro institucional \texttt{@uniandes} y ruteo m\'ovil & Enfocado en Los Andes; no resuelve la asimetr\'ia de penalizaci\'on por ghosting que indemniza al conductor ni rutas hacia La Candelaria/Externado. \\
+\midrule
+\textbf{2. UniWheels} & Plataforma de carpooling universitario & Conecta miembros de comunidades acad\'emicas & \$6.000 a \$8.000 COP / Multicampus Bogot\'a & Correo institucional, reserva digital y c\'odigo PIN de abordaje & Enfoque gen\'erico multicampus; carece de filtro de g\'enero (\guillemotleft Solo Chicas\guillemotright), historial acumulado visible y adaptaci\'on a los horarios de clase del Externado. \\
+\midrule
+\textbf{3. Try My Ride} & Software B2B de movilidad sostenible & Gesti\'on institucional de viajes (\textbf{Javeriana, Rosario}) & Contratos B2B con universidades & Entorno institucional cerrado y medici\'on de huella de carbono & Plataforma r\'igida de compliance institucional; no resuelve la inmediatez P2P ni la liquidaci\'on instant\'anea a billeteras Nequi/Daviplata. \\
+\midrule
+\textbf{4. WhatsApp Wheels Externado / UniAndes} & Redes informales de carpooling entre pares & Conexi\'on r\'apida org\'anica en chats masivos & \$6.000 COP por puesto / ~400 viajes sem. & Misma comunidad estudiantil y tarifa base solidaria & WhatsApp carece de filtros de ruta, reservas garantizadas, verificaci\'on de identidad, reputaci\'on bilateral y pagos digitales. \\
+\midrule
+\textbf{5. InDrive / Uber} & Ride-hailing masivo bajo demanda & Transporte urbano puerta a puerta & \$20.000 a \$45.000 COP / Global Bogot\'a & Tecnolog\'ia de geolocalizaci\'on y reserva previa m\'ovil & Tarifa 3 a 5 veces m\'as cara (inviable para uso diario estudiantil) y plataforma abierta no verificada con alto riesgo percibido. \\
+\bottomrule
+\end{tabularx}
+\caption{Matriz comparativa de competidores en el ecosistema universitario de Bogot\'a.}
+\label{tab:competidores}
+\end{table}
+
+\subsection{1e. Tama\~no de la Industria y Mercado de Referencia}
+Seg\'un la C\'amara Colombiana de Inform\'atica y Telecomunicaciones (CCIT, 2025), el ecosistema de movilidad intermediada por plataformas en Colombia supera los \textbf{\$1,2 billones de COP anuales}. En Bogot\'a residen m\'as de 750.000 estudiantes de educaci\'on superior. Para la Universidad Externado de Colombia, con una matr\'icula activa de aproximadamente 12.000 estudiantes y una penetraci\'on estimada del 20\% en corredores de dif\'icil acceso (2.400 usuarios potenciales diarios), el volumen transaccional bruto anual del \textit{Beachhead} alcanza \textbf{\$4.600 millones de COP anuales} (considerando 160 d\'ias acad\'emicos y 4 trayectos semanales por usuario a \$6.000 COP).
+
+\vspace{0.3cm}
+
+% =========================================================
+% PASO 2: ÁRBOL DE CAUSAS (ISHIKAWA)
+% =========================================================
+\section{Paso 2. \'Arbol de Causas del Problema (Diagrama de Ishikawa)}
+
+\textbf{Problema Central Formulado:}  
+\begin{center}
+\textit{\textbf{\Large \color{primary} \guillemotleft Ineficiencia operativa, incertidumbre de cupo y riesgos de seguridad en la coordinaci\'on de viajes compartidos (Wheels) para estudiantes y conductores del Externado\guillemotright}}
+\end{center}
+
+A continuaci\'on se recrea visualmente la espina de pescado mediante \LaTeX/TikZ, clasificando rigurosamente las causas \textbf{duras} (factores f\'isicos, t\'ecnicos y procesales en la parte superior) y las causas \textbf{blandas} (factores psicol\'ogicos, conductuales y culturales en la parte inferior), destacando los hallazgos emp\'iricos validados en el Trabajo de Campo 2.
+
+\vspace{0.4cm}
+
+\begin{figure}[h!]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}[
+    >=Latex,
+    spine/.style={line width=2.8pt, color=primary, -{Latex[length=3.5mm]}},
+    bone/.style={line width=1.6pt, color=primary},
+    subbone/.style={line width=0.9pt, color=secondary, -{Latex[length=2.2mm]}},
+    headbox/.style={rectangle, rounded corners=3mm, draw=primary, fill=primary!10, line width=1.6pt, align=center, inner sep=9pt, text width=4.8cm, font=\bfseries\small\color{primary}},
+    categorybox/.style={rectangle, rounded corners=2mm, draw=secondary, fill=secondary!15, line width=1.2pt, align=center, inner sep=4pt, font=\bfseries\scriptsize\color{primary}},
+    bannerbox_duras/.style={draw=primary, rounded corners=2mm, fill=primary!8, line width=1pt, font=\bfseries\footnotesize\color{primary}, inner sep=4pt},
+    bannerbox_blandas/.style={draw=secondary, rounded corners=2mm, fill=secondary!8, line width=1pt, font=\bfseries\footnotesize\color{secondary}, inner sep=4pt}
+]
+
+    % Banners Superior e Inferior (Perfectamente separados de las categorías)
+    \node[bannerbox_duras, anchor=west] at (0.2, 4.3) {CAUSAS DURAS: Factores F\'isicos, Procesos y Tecnolog\'ia};
+    \node[bannerbox_blandas, anchor=west] at (0.2, -4.3) {CAUSAS BLANDAS: Factores Psicol\'ogicos, Culturales y Econ\'omicos};
+
+    % Espina dorsal central
+    \draw[spine] (0.2, 0) -- (16.2, 0);
+    
+    % Cabeza de pescado (Problema central a la derecha)
+    \node[headbox, anchor=west] at (16.4, 0) {PROBLEMA CENTRAL:\\[0.15cm] Ineficiencia operativa, incertidumbre de cupo y riesgos de seguridad en Wheels};
+    
+    % ==================== ESPINAS SUPERIORES (CAUSAS DURAS) ====================
+    % 1. Infraestructura
+    \draw[bone] (2.6, 0) -- (4.2, 3.2);
+    \node[categorybox, anchor=south] at (4.2, 3.3) {1. INFRAESTRUCTURA};
+    \draw[subbone] (3.67, 2.2) -- (1.4, 2.2);
+    \node[above, font=\scriptsize\sffamily, align=center] at (2.5, 2.2) {Ubicaci\'on cerros / v\'ias estrechas};
+    \draw[subbone] (3.13, 1.1) -- (0.9, 1.1);
+    \node[above, font=\scriptsize\sffamily, align=center] at (2.0, 1.1) {Parqueadero costoso (\$22k/d\'ia) [E5, E7]};
+    
+    % 2. Procesos y Métodos
+    \draw[bone] (7.6, 0) -- (9.2, 3.2);
+    \node[categorybox, anchor=south] at (9.2, 3.3) {2. PROCESOS Y M\'ETODOS};
+    \draw[subbone] (8.67, 2.2) -- (6.4, 2.2);
+    \node[above, font=\scriptsize\sffamily, align=center] at (7.5, 2.2) {Coordinaci\'on por texto libre ("yo")};
+    \draw[subbone] (8.13, 1.1) -- (5.9, 1.1);
+    \node[above, font=\scriptsize\sffamily, align=center] at (7.0, 1.1) {Fricci\'on efectivo / se\~nal Nequi [E11]};
+
+    % 3. Tecnología y Canales
+    \draw[bone] (12.6, 0) -- (14.2, 3.2);
+    \node[categorybox, anchor=south] at (14.2, 3.3) {3. TECNOLOG\'IA Y CANALES};
+    \draw[subbone] (13.67, 2.2) -- (11.4, 2.2);
+    \node[above, font=\scriptsize\sffamily, align=center] at (12.5, 2.2) {WhatsApp no filtra por ruta u hora};
+    \draw[subbone] (13.13, 1.1) -- (10.9, 1.1);
+    \node[above, font=\scriptsize\sffamily, align=center] at (12.0, 1.1) {Sepultamiento bajo 400 msgs [E3, E10]};
+
+    % ==================== ESPINAS INFERIORES (CAUSAS BLANDAS) ====================
+    % 4. Economía del Comportamiento
+    \draw[bone] (2.6, 0) -- (4.2, -3.2);
+    \node[categorybox, anchor=north] at (4.2, -3.3) {4. ECONOM\'IA COMPORTAMIENTO};
+    \draw[subbone] (3.13, -1.1) -- (0.9, -1.1);
+    \node[below, font=\scriptsize\sffamily, align=center] at (2.0, -1.1) {Asimetr\'ia de p\'erdidas econ\'omicas};
+    \draw[subbone] (3.67, -2.2) -- (1.4, -2.2);
+    \node[below, font=\scriptsize\sffamily, align=center] at (2.5, -2.2) {Conductor asume 100\% del vac\'io [E12]};
+
+    % 5. Factores Conductuales
+    \draw[bone] (7.6, 0) -- (9.2, -3.2);
+    \node[categorybox, anchor=north] at (9.2, -3.3) {5. FACTORES CONDUCTUALES};
+    \draw[subbone] (8.13, -1.1) -- (5.9, -1.1);
+    \node[below, font=\scriptsize\sffamily, align=center] at (7.0, -1.1) {Cultura del ghosting sin castigo};
+    \draw[subbone] (8.67, -2.2) -- (6.4, -2.2);
+    \node[below, font=\scriptsize\sffamily, align=center] at (7.5, -2.2) {Estr\'es e incertidumbre a las 5:30 am};
+
+    % 6. Cultura, Seguridad y Género
+    \draw[bone] (12.6, 0) -- (14.2, -3.2);
+    \node[categorybox, anchor=north] at (14.2, -3.3) {6. SEGURIDAD Y G\'ENERO};
+    \draw[subbone] (13.13, -1.1) -- (10.9, -1.1);
+    \node[below, font=\scriptsize\sffamily, align=center] at (12.0, -1.1) {Ausencia de verificaci\'on institucional};
+    \draw[subbone] (13.67, -2.2) -- (11.4, -2.2);
+    \node[below, font=\scriptsize\sffamily, align=center] at (12.5, -2.2) {Temor de pasajeras (env\'io placas) [E9]};
+
+\end{tikzpicture}
+}
+\caption{Diagrama de Espina de Pescado (Ishikawa) que modela las causas ra\'iz validadas en campo.}
+\label{fig:ishikawa}
+\end{figure}
+
+\subsection{An\'alisis Exhaustivo de las Causas y T\'ecnica de los \guillemotleft 5 Por Qu\'es\guillemotright}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Causa Ra\'iz del Colapso de WhatsApp (Causa Dura):}  
+    \textit{\textquestiondown Por qu\'e se pierden los cupos?} Porque los mensajes de oferta son sepultados por cientos de textos de charla.  
+    \textit{\textquestiondown Por qu\'e hay tantos textos?} Porque el canal mezcla m\'ultiples corredores viales y horarios en un solo grupo masivo.  
+    \textit{\textquestiondown Por qu\'e se mezclan?} Porque WhatsApp carece de arquitectura de base de datos relacional y de motor de filtrado por geocercas.  
+    \textbf{Validaci\'on de Campo:} 12 de 12 entrevistados reportaron haber perdido un cupo o una ruta por demorarse m\'as de 30 segundos en responder al chat (\textit{E1, E3, E10}).
+
+    \item \textbf{Causa Ra\'iz del Ghosting y Cancelaciones Tard\'ias (Causa Blanda):}  
+    \textit{\textquestiondown Por qu\'e los pasajeros cancelan 15 minutos antes?} Porque no sufren ninguna consecuencia material al hacerlo.  
+    \textit{\textquestiondown Por qu\'e no hay consecuencias?} Porque no existe un contrato ni un dep\'osito de garant\'ia previo a la carrera.  
+    \textit{\textquestiondown Por qu\'e el conductor queda desprotegido?} Porque la coordinaci\'on informal transfiere todo el riesgo operativo a la oferta vehicular.  
+    \textbf{Validaci\'on de Campo:} El conductor E12 relat\'o perder \$12.000 COP en un solo trayecto por dos cancelaciones a las 6:15 am, oblig\'andolo a pagar el parqueadero con recursos propios.
+\end{enumerate}
+
+\vspace{0.2cm}
+
+% =========================================================
+% PASO 3: PROBLEMA, MERCADO Y PROTOTIPO
+% =========================================================
+\section{Paso 3. Problema, Mercado y Primer Prototipo}
+
+\subsection{3.1 \textquestiondown Qu\'e hacen los clientes hoy?}
+En la actualidad, la comunidad externadista se autoorganiza a trav\'es de m\'as de 4 grupos masivos de WhatsApp administrados informalmente.
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Costo en Dinero:} El pasajero paga una tarifa est\'andar de \textbf{\$6.000 COP} por viaje (o acude a Uber/taxi por \$25.000-\$45.000 COP ante cancelaciones). El conductor recauda entre \textbf{\$18.000 y \$24.000 COP} diarios (3 a 4 puestos), dinero que se destina en un 100\% a cubrir el parqueadero oficial (\$22.000 COP) y amortizar combustible (\textit{Hip\'otesis H2 confirmada por 12/12 informantes}).
+    \item \textbf{Costo en Tiempo:} Los pasajeros incurren en \textbf{90 a 150 minutos diarios por trayecto} en TransMilenio/SITP frente a 40-50 minutos en Wheels (ahorro neto de 1 a 1,5 horas de viaje).
+    \item \textbf{Dolores Cr\'iticos Identificados:} (1) P\'erdida de clases por cancelaciones imprevistas; (2) Inseguridad al viajar con personas desconocidas; (3) P\'erdida de tiempo filtrando chats saturados.
+\end{itemize}
+
+\subsection{3.2 \textquestiondown Por qu\'e el problema es dif\'icil de resolver?}
+El problema no se ha resuelto formalmente debido a tres barreras estructurales:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Barrera T\'ecnica de Geocercas Din\'amicas:} Asignar rutas y sincronizar paradas en v\'ias con tr\'afico congestionado exige algoritmos de ruteo espacial que no pueden ejecutarse sobre mensajer\'ia plana.
+    \item \textbf{Barrera Econ\'omica del Transporte Tradicional:} A una tarifa de \$8.000 COP, un conductor profesional de taxi o plataforma no es rentable. El modelo \textbf{solo funciona bajo econom\'ia colaborativa de amortizaci\'on entre miembros de la misma sede f\'isica}.
+    \item \textbf{Dilema de Densidad en Mercados de Dos Lados (\textit{Two-Sided Market}):} Se requiere masa cr\'itica simult\'anea de oferta y demanda en microzonas geogr\'aficas a la misma hora pico (6:00 am - 7:30 am).
+\end{enumerate}
+
+\subsection{3.3 \textquestiondown Qu\'e tipo de mercado se est\'a abordando? (Steve Blank)}
+De acuerdo con la clasificaci\'on de Steve Blank (\textit{The Four Steps to the Epiphany}), Wheels Externado atiende un \textbf{MERCADO RESEGMENTADO POR NICHO INSTITUCIONAL (\textit{Resegmented Market --- Niche Strategy})}:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Justificaci\'on:} La categor\'ia general de transporte urbano ya existe y est\'a madura en Bogot\'a. Sin embargo, Wheels Externado resegmenta el mercado al aislar a una poblaci\'on institucional cerrada con atributos \'unicos: confianza respaldada por credenciales universitarias, rutas comunes hacia una sede \'unica y sincronizaci\'on horaria con las clases.
+    \item \textbf{Implicaci\'on en CAC y Ventas:} A diferencia de un mercado nuevo (que demanda cuantiosos recursos para educar al consumidor) o un mercado existente masivo (donde el costo de pauta en Meta/Google es insostenible), un mercado resegmentado en comunidad cerrada permite un \textbf{Costo de Adquisici\'on de Clientes (CAC) m\'inimo}, pues los usuarios ya est\'an agrupados f\'isica y digitalmente.
+\end{itemize}
+
+\subsection{3.4 Primer Prototipo y las 4 Correcciones del Trabajo de Campo 2}
+El concepto inicial de 3 pantallas evaluado en campo (Descubrimiento y Reserva, Monedero Digital con Escrow y Calificaci\'on Bilateral) fue ajustado rigurosamente tras las 12 entrevistas:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Ajuste 1 (Historial Visible de Viajes):} Sustituci\'on de las estrellas simples por una m\'etrica visible de experiencia: \textit{\guillemotleft 62 viajes completados en el semestre\guillemotright} (\textit{Exigencia de E11 y E8}).
+    \item \textbf{Ajuste 2 (Penalizaci\'on Anti-Ghosting):} Bloqueo de saldo en custodia que indemniza directamente al conductor en un 80\% si el pasajero cancela con menos de 30 minutos de anticipaci\'on (\textit{Reclamado por E7 y E12}).
+    \item \textbf{Ajuste 3 (Seguridad de G\'enero):} Incorporaci\'on de un filtro y distintivo de \textit{\guillemotleft Conductoras Mujeres / Viajes Solo Chicas\guillemotright} para mitigar la vulnerabilidad en madrugadas (\textit{Requerimiento expl\'icito de E9}).
+    \item \textbf{Ajuste 4 (Filtro para Corredores Cortos):} Ampliaci\'on de paradas en zonas cercanas (Chapinero / Calle 72), donde el dolor es el desorden del chat y no la distancia (\textit{Hallazgo aportado por E10}).
+\end{enumerate}
+
+\vspace{0.3cm}
+
+% =========================================================
+% PASO 4: MODELO DE NEGOCIO (BMC TOTAL)
+% =========================================================
+\section{Paso 4. Modelo de Negocio (BMC Total) y Unit Economics}
+
+\subsection{4.0 Valores: El Eje Cero del Lienzo de Negocio}
+
+Los valores no constituyen una casilla aislada del lienzo; representan el \textbf{filtro transversal} que gobierna las decisiones del equipo:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Prop\'osito Trascendente:} Democratizar una movilidad universitaria digna, predecible, segura y sostenible para la Universidad Externado de Colombia, sustituyendo la incertidumbre por tiempo \'util de estudio y descanso.
+    \item \textbf{Valores en Acci\'on:} (1) \textit{Transparencia radical:} publicar en cada viaje el desglose exacto (\$6.800 COP al conductor y \$1.200 COP a la plataforma); (2) \textit{Confianza comunitaria:} exigencia irrestricta de correo \texttt{@uexternado.edu.co}; (3) \textit{Equidad:} la penalizaci\'on por incumplimiento indemniza al conductor y no \'unicamente a la plataforma.
+    \item \textbf{No Negociables:} Cero comercializaci\'on de datos personales o patrones de movilidad; cero tarifas din\'amicas especulativas en d\'ias de lluvia o ex\'amenes parciales; cero tolerancia a conductas de acoso.
+\end{itemize}
+
+\subsection{El Business Model Canvas Consolidado en 1 P\'agina}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|*{5}{>{\raggedright\arraybackslash}X|}}
+\hline
+\textbf{\color{primary}8. ASOCIACIONES CLAVE}\par\vspace{3pt}
+$\bullet$ \textbf{Universidad Externado:} Bienestar Universitario, Decanaturas y Parqueaderos.\par\vspace{2pt}
+$\bullet$ \textbf{Comunidad actual:} Administradores de grupos de WhatsApp existentes.\par\vspace{2pt}
+$\bullet$ \textbf{Billeteras m\'oviles:} Nequi, Daviplata y Wompi para micropagos.\par\vspace{2pt}
+$\bullet$ \textbf{Asistencia vial:} Convenios de cobertura y asistencia m\'edica inmediata. &
+\textbf{\color{primary}7. ACTIVIDADES CLAVE}\par\vspace{3pt}
+$\bullet$ Algoritmo de emparejamiento geoespacial y ruteo.\par\vspace{2pt}
+$\bullet$ Verificaci\'on institucional continua \texttt{@uexternado}.\par\vspace{2pt}
+$\bullet$ Dispersi\'on y custodia diaria de pagos y dep\'ositos.\par\vspace{2pt}
+$\bullet$ Soporte h\'ibrido y resoluci\'on de contingencias.\par
+\vspace{5pt}\hrule\vspace{5pt}
+\textbf{\color{primary}6. RECURSOS CLAVE}\par\vspace{3pt}
+$\bullet$ Flota de veh\'iculos de estudiantes (activos externos sin CAPEX).\par\vspace{2pt}
+$\bullet$ Algoritmo propietario y backend serverless.\par\vspace{2pt}
+$\bullet$ Equipo fundador Ciencia de Datos.\par\vspace{2pt}
+$\bullet$ Red hiperlocal de confianza y reputaci\'on. &
+\textbf{\color{primary}2. PROPUESTA DE VALOR}\par\vspace{3pt}
+$\bullet$ \textbf{Cupo garantizado:} Reserva anticipada la noche anterior sin estr\'es ni loter\'ia de chats.\par\vspace{2pt}
+$\bullet$ \textbf{Comunidad 100\% verificada:} Seguridad institucional exclusiva con correo institucional.\par\vspace{2pt}
+$\bullet$ \textbf{Liquidaci\'on inmediata:} Pago digital al conductor sin retenciones.\par\vspace{2pt}
+$\bullet$ \textbf{Rutas solo mujeres:} Viajes exclusivos para conductoras y pasajeras.\par\vspace{2pt}
+$\bullet$ \textbf{Amortizaci\'on justa:} Amortiza parqueadero (\$22.000 COP) y gasolina a tarifa de \$8.000 COP. &
+\textbf{\color{primary}4. RELACIONES CLIENTE}\par\vspace{3pt}
+$\bullet$ Confianza comunitaria verificada y sentido de pertenencia.\par\vspace{2pt}
+$\bullet$ Transparencia radical en costos desglosados (\$6.800/\$1.200).\par\vspace{2pt}
+$\bullet$ Compensaci\'on al conductor por cancelaci\'on tard\'ia (*ghosting*).\par\vspace{2pt}
+$\bullet$ Soporte humano y resoluci\'on \'agil de incidencias.\par
+\vspace{5pt}\hrule\vspace{5pt}
+\textbf{\color{primary}3. CANALES}\par\vspace{3pt}
+$\bullet$ Grupos de WhatsApp existentes (migraci\'on guiada).\par\vspace{2pt}
+$\bullet$ Embajadores en facultades e inducci\'on.\par\vspace{2pt}
+$\bullet$ App m\'ovil nativa iOS / Android. &
+\textbf{\color{primary}1. SEGMENTO CLIENTES}\par\vspace{3pt}
+\textbf{Plataforma de Dos Lados:}\par\vspace{2pt}
+$\bullet$ \textbf{Demanda (Pasajeros):} Estudiantes en corredores lejanos ($>60$\,min de viaje: Suba, Calle 80, Kennedy, Bosa, Facatativ\'a) que sufren demoras cr\'onicas.\par\vspace{2pt}
+$\bullet$ \textbf{Oferta (Conductores):} Estudiantes con autom\'ovil propio que amortizan parqueadero (\$22.000 COP) y combustible compartiendo cupos vac\'ios. \\
+\hline
+\multicolumn{2}{|>{\hsize=\dimexpr 2\hsize+2\tabcolsep+\arrayrulewidth\relax\raggedright\arraybackslash}X|}{\textbf{\color{primary}9. ESTRUCTURA DE COSTOS}\par\vspace{3pt}
+$\bullet$ Servidores cloud y base de datos gestionada: \$280.000 COP/mes.\par\vspace{2pt}
+$\bullet$ APIs de mapas y ruteo (Mapbox): \$120.000 COP/mes.\par\vspace{2pt}
+$\bullet$ Pasarela transaccional de micropago: \$200 COP por viaje.\par\vspace{2pt}
+$\bullet$ Licencias de tiendas y soporte operativo: \$65.000 COP/mes.\par\vspace{2pt}
+$\bullet$ CAC inicial de guerrilla en campus: \$6.000 COP/usuario activo.} &
+\multicolumn{3}{>{\hsize=\dimexpr 3\hsize+4\tabcolsep+2\arrayrulewidth\relax\raggedright\arraybackslash}X|}{\textbf{\color{primary}5. FUENTES DE INGRESO}\par\vspace{3pt}
+$\bullet$ \textbf{Take-rate transaccional por cupo completado:} \$1.200 COP por viaje (15\% sobre tarifa de \$8.000 COP).\par\vspace{2pt}
+$\bullet$ \textbf{Liquidaci\'on neta:} Pasajero paga \$8.000 COP; conductor recibe \$6.800 COP netos inmediatos.\par\vspace{2pt}
+$\bullet$ \textbf{Margen bruto de la plataforma:} 83,3\% (\$1.000 COP netos por carrera tras pasarela).\par\vspace{2pt}
+$\bullet$ \textbf{Cero costo fijo de suscripci\'on:} Acceso libre sin barreras de entrada para m\'axima adopci\'on.} \\
+\hline
+\end{tabularx}
+\caption{Lienzo de Modelo de Negocio (Business Model Canvas) consolidado de Wheels Externado.}
+\label{tab:canvas}
+\end{table}
+
+\subsection{1. Segmento de Clientes, Personas y Dimensionamiento TAM}
+
+\subsubsection{Mercado Cabeza de Playa (\textit{Beachhead Market})}
+Estudiantes de pregrado del Externado que viajan desde corredores de alta dispersi\'on geogr\'afica (Calle 80, Suba, Kennedy, Bosa, Fontib\'on, Facatativ\'a), con horarios fijos de 7:00 am y 9:00 am, junto con conductores externadistas que buscan amortizar parqueadero.
+
+\subsubsection{Personas Validadas en Campo}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Daniel (Conductor Amortizador --- Basado en E12 y E5):} 21 a\~nos, 7.° semestre de Ingenier\'ia Industrial, vive en Fontib\'on/Calle 26. Gasta \$22.000 COP diarios en parqueadero institucional. Su meta es llenar 3 o 4 puestos diarios para no pagar el parqueadero de su bolsillo, con transferencias digitales r\'apidas y sin ghosting.
+    \item \textbf{Camila (Pasajera de Larga Distancia --- Basada en E9 y E2):} 19 a\~nos, 3.er semestre de Derecho, vive en Timiza/Kennedy. Sale a las 5:20 am y gasta 100 minutos en transporte masivo. Busca asegurar su cupo la noche anterior, viajar con universitarios verificados y contar con opci\'on de viaje seguro solo con conductoras mujeres.
+\end{itemize}
+
+\subsubsection{Dimensionamiento del Mercado Total (TAM) --- C\'alculos Top-Down y Bottom-Up}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Enfoque Top-Down (Universidades de Cerros Orientales Bogot\'a):}  
+    Poblaci\'on estudiantil en universidades de la zona centro-oriental (Externado, Andes, Rosario, Am\'erica, Central): $\sim 65.000$ estudiantes. Con una tasa de adopci\'on potencial en carpooling del 15\% (9.750 viajes/d\'ia) y una comisi\'on diaria de \$2.000 COP en 160 d\'ias de clase:
+    $$\text{TAM Regional} = 9.750 \times \$2.000 \times 160 = \mathbf{\$3.120 \text{ millones de COP/a\~no}} \approx \mathbf{\$780.000 \text{ USD/a\~no}}.$$
+
+    \item \textbf{Enfoque Bottom-Up (Beachhead Cautivo Externado):}  
+    Comunidad del Externado: 12.000 alumnos. Poblaci\'on en corredores cr\'iticos: 20\% = 2.400 estudiantes activos. Frecuencia de uso esperada: 4 d\'ias/semana (8 viajes/semana $\times$ 32 semanas = 256 viajes/a\~no por usuario). Comisi\'on neta de plataforma: \$1.000 COP:
+    $$\text{TAM Beachhead} = 2.400 \text{ usuarios} \times 256 \text{ viajes/a\~no} \times \$1.000 \text{ COP} = \mathbf{\$614.400.000 \text{ COP/a\~no}} \approx \mathbf{\$153.600 \text{ USD/a\~no}}.$$
+\end{itemize}
+
+\subsection{2. Propuesta de Valor y Core del Negocio}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Core Inimitable (Aulet, Paso 10):} Red hiperlocal de confianza con verificaci\'on institucional obligatoria y algoritmo de coincidencia espacial sincronizado a bloques acad\'emicos. Las aplicaciones abiertas (Uber/InDrive) no pueden restringir su red a un campus sin quebrar su econom\'ia masiva.
+    \item \textbf{Valor Entregado al Usuario:} Ahorro de 10 horas semanales de transporte; ahorro de \$22.000 COP por viaje frente al taxi; cupo asegurado la noche anterior; y amortizaci\'on de \$18.000-\$24.000 COP diarios para el conductor.
+    \item \textbf{Valor Compartido con la Sociedad:} Reducci\'on de emisiones de $CO_2$ ($>45$ toneladas/a\~no); factor de ocupaci\'on elevado de 1,3 a 3,5 ocupantes/auto; y desincentivo del veh\'iculo individual hacia La Candelaria.
+\end{itemize}
+
+\subsection{3. Canales y Embudo de Ventas en el Tiempo (Aulet, Paso 18)}
+El proceso de adquisici\'on evoluciona estrat\'egicamente seg\'un Aulet:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Corto Plazo (A\~no 1 --- Venta Directa en Campus):} Venta personal de los 5 fundadores en plazoletas y cafeter\'ias, y migraci\'on asistida de los 4 grupos existentes de WhatsApp. Tasa de conversi\'on esperada: \textbf{40\%}.
+    \item \textbf{Mediano Plazo (A\~nos 2 y 3 --- Alianzas Institucionales):} Presencia oficial en semanas de inducci\'on de Bienestar Universitario y embajadores remunerados por facultad. Tasa de penetraci\'on: \textbf{25\%}.
+    \item \textbf{Largo Plazo (A\~nos 4 y 5 --- Viralidad y Crecimiento Org\'anico):} Efecto de red autom\'atico y programa de cr\'editos por referidos entre facultades. Tasa de conversi\'on: \textbf{35\%}.
+\end{itemize}
+
+\subsection{5. Fuentes de Ingreso y Valor de Vida del Cliente (LTV) --- Paso 17 de Aulet}
+
+\subsubsection{Modelo Unitario de Monetizaci\'on}
+El modelo se fundamenta en un \textbf{take-rate transaccional de \$1.200 COP (15\%)} sobre la tarifa validada de \$8.000 COP. Descontando \$200 COP de costos directos de procesamiento de pasarela y nube, la plataforma obtiene un \textbf{margen bruto del 83,3\% (\$1.000 COP netos por carrera)}.
+
+\subsubsection{Modelaci\'on Formal del LTV en Tres Escenarios (5 A\~nos, Plantilla Oficial Aulet)}
+La f\'ormula del LTV descuenta las ganancias anuales retenidas al costo de capital de capital propio ($r = 50\%$ anual seg\'un la gu\'ia de Aulet):
+$$\text{LTV} = \sum_{t=1}^{5} \frac{\text{Ingreso Anual} \times (\text{Tasa de Retenci\'on})^{t-1} \times \text{Margen Bruto}}{(1 + r)^t}$$
+
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{lcccccX}
+\toprule
+\textbf{Escenario} & \textbf{Viajes/Sem.} & \textbf{Viajes/A\~no} & \textbf{Ingreso/A\~no} & \textbf{Margen} & \textbf{Retenci\'on} & \textbf{LTV (5 A\~nos, $r=50\%$)} \\
+\midrule
+\textbf{Pesimista} & 3 viajes & 84 viajes & \$100.800 COP & 75,0\% & 70,0\% & \textbf{\$92.408,46 COP} \\
+\textbf{Esperado} & \textbf{4 viajes} & \textbf{128 viajes} & \textbf{\$153.600 COP} & \textbf{83,3\%} & \textbf{80,0\%} & \textbf{\$174.896,64 COP} \\
+\textbf{Optimista} & 6 viajes & 204 viajes & \$244.800 COP & 85,0\% & 85,0\% & \textbf{\$301.418,18 COP} \\
+\bottomrule
+\end{tabularx}
+\caption{Resultados de LTV calculados en la plantilla oficial de Excel de Aulet.}
+\label{tab:ltv}
+\end{table}
+
+\begin{kbibox}{Sensibilidad al Costo de Capital}
+Si el emprendimiento se financia mediante deuda estructurada a una tasa del $r = 12\%$ anual, el LTV del escenario esperado asciende a \textbf{\$325.495,98 COP}, evidenciando la robustez patrimonial del modelo.
+\end{kbibox}
+
+\subsection{9. Estructura de Costos, CAC y Cumplimiento de la Regla de las 3X}
+
+\subsubsection{Costo de Adquisici\'on de Clientes (CAC) por Horizontes}
+El CAC se calcul\'o dividiendo los gastos comerciales del per\'iodo entre los nuevos clientes activos:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Corto Plazo (A\~no 1):} Gastos de \$1.800.000 COP (material POP, pauta local y valor del tiempo comercial) entre 300 estudiantes = \textbf{CAC Medio de \$6.000 COP} (Rango: \$4.000 a \$8.000 COP).
+    \item \textbf{Mediano Plazo (A\~nos 2-3):} Gastos de \$2.500.000 COP anuales en embajadores entre 800 estudiantes = \textbf{CAC Medio de \$3.125 COP} (Rango: \$2.500 a \$4.500 COP).
+    \item \textbf{Largo Plazo (A\~nos 4-5):} Gastos de \$2.000.000 COP en bonos de referidos entre 1.200 estudiantes = \textbf{CAC Medio de \$1.666 COP} (Rango: \$1.200 a \$2.200 COP).
+\end{itemize}
+
+\subsubsection{Verificaci\'on de la Regla $LTV > 3 \times CAC$ (Bill Aulet)}
+
+\begin{table}[h!]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash\bfseries}X >{\centering\arraybackslash}p{2.3cm} >{\centering\arraybackslash}p{2.0cm} >{\centering\arraybackslash}p{2.3cm} >{\centering\arraybackslash}p{2.0cm} >{\centering\arraybackslash}p{3.0cm}}
+\toprule
+\textbf{Horizonte Temporal} & \textbf{CAC Rango} & \textbf{CAC Medio} & \textbf{LTV Esperado} & \textbf{Raz\'on $LTV/CAC$} & \textbf{Evaluaci\'on Regla 3X} \\
+\midrule
+Corto Plazo (A\~no 1) & \$4.000 -- \$8.000 & \$6.000 COP & \$174.897 COP & \textbf{29,15\,$\times$} & \textbf{\color{success}CUMPLE ($>3\times$)} \\
+Mediano Plazo (A\~nos 2-3) & \$2.500 -- \$4.500 & \$3.125 COP & \$174.897 COP & \textbf{55,97\,$\times$} & \textbf{\color{success}CUMPLE (Escalable)} \\
+Largo Plazo (A\~nos 4-5) & \$1.200 -- \$2.200 & \$1.666 COP & \$174.897 COP & \textbf{104,98\,$\times$} & \textbf{\color{success}CUMPLE (Sostenible)} \\
+\bottomrule
+\end{tabularx}
+\caption{Comparaci\'on temporal de unit economics y prueba de la regla de las 3X.}
+\label{tab:ltv_cac}
+\end{table}
+
+\begin{externadobox}{Conclusi\'on Financiera del \'Item 9.1 (Aulet, Paso 19)}
+La raz\'on $LTV / CAC$ de Wheels Externado en el escenario esperado alcanza \textbf{29,15$\times$ en el corto plazo y 104,98$\times$ en el largo plazo}, superando ampliamente el umbral m\'inimo de viabilidad ($3\times$). Incluso bajo el escenario pesimista m\'as severo (LTV de \$92.408 COP frente al CAC m\'as alto de \$8.000 COP), la relaci\'on se ubica en \textbf{11,55$\times$}, casi cuatro veces por encima de la norma. 
+
+Este comportamiento sobresaliente se fundamenta en que el negocio opera sobre un \textbf{mercado resegmentado de comunidad cerrada}: el costo de captaci\'on no depende de pauta digital masiva abierta, sino de la tracci\'on org\'anica en un campus f\'isico concentrado. Para mantener la oferta vehicular balanceada, el equipo reinvertir\'a el 15\% del margen bruto en el programa de incentivos para conductores.
+\end{externadobox}
+
+\subsection{10. Metas de Impacto Social y Medioambiental (Alineaci\'on ODS)}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{p{3.8cm}p{3.2cm}p{2.5cm}p{3.2cm}c}
+\toprule
+\textbf{Meta de Impacto} & \textbf{Indicador Clave} & \textbf{L\'inea Base} & \textbf{Meta a 2 A\~nos} & \textbf{ODS Vinculado} \\
+\midrule
+\textbf{1. Seguridad de G\'enero} & \% viajes de mujeres monitoreados en vivo y/o ruta solo chicas & 0\% (inseguridad y protocolos individuales en chat) & \textbf{100\% con monitoreo activo y filtro de conductoras} & \textbf{ODS 5: Igualdad G\'enero} \\
+\midrule
+\textbf{2. Bienestar y Tiempo \'Util} & Horas mensuales de viaje ahorradas por estudiante usuario & 0 horas ahorradas en transporte p\'ublico (2 h/viaje) & \textbf{25 a 35 horas mensuales recuperadas para estudio} & \textbf{ODS 8: Trabajo Decente} \\
+\midrule
+\textbf{3. Mitigaci\'on de Ghosting} & \% de viajes cancelados a menos de 30 min de la salida & $\sim 35\%$ de cancelaciones en chats informales & \textbf{Reducci\'on a menos del 3\% con penalizaci\'on} & \textbf{ODS 11: Comunidades} \\
+\midrule
+\textbf{4. Descarbonizaci\'on} & Toneladas de $CO_2$ evitadas por ocupaci\'on compartida & Ocupaci\'on vehicular actual: 1,3 personas/carro & \textbf{Ocupaci\'on a 3,5 pax/carro; $>45$ ton $CO_2$/a\~no evitadas} & \textbf{ODS 13: Acci\'on Clima} \\
+\midrule
+\textbf{5. Descongesti\'on Urbana} & Carros particulares diarios retirados hacia La Candelaria & Cientos de veh\'iculos con 1 solo ocupante buscando parqueo & \textbf{Retiro de m\'as de 150 autos diarios de circulaci\'on} & \textbf{ODS 11: Movilidad} \\
+\bottomrule
+\end{tabularx}
+\caption{Metas e indicadores de impacto alineados con los Objetivos de Desarrollo Sostenible.}
+\label{tab:ods}
+\end{table}
+
+\textbf{Mitigaci\'on de Riesgos Negativos:}  
+Para evitar fricciones por congesti\'on de tr\'afico, se implementa una geocerca con tolerancia de 7 minutos. Para prevenir el efecto rebote (estudiantes que dejen de usar bicicleta), el sistema no incentiva carpooling en trayectos menores a 3 kil\'ometros.
+
+\vspace{0.3cm}
+
+% =========================================================
+% ANEXOS OBLIGATORIOS
+% =========================================================
+\section*{Anexos Obligatorios}
+\addcontentsline{toc}{section}{Anexos Obligatorios}
+
+\subsection*{Anexo A. Instrumentos de Recolecci\'on (Cuestionario Filtro y Gu\'ia de Campo 2)}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Cuestionario de Filtro (5 Preguntas Cerradas):} (1) \textquestiondown Eres estudiante activo de pregrado o posgrado del Externado? (2) \textquestiondown Te desplazas hacia el campus al menos 2 veces por semana? (3) \textquestiondown En qu\'e corredor o zona vives? (4) \textquestiondown Has usado o publicado viajes en WhatsApp de Wheels? (5) \textquestiondown Cuentas con 25 minutos para la entrevista?
+    \item \textbf{Estructura de la Gu\'ia Semiestructurada (16 Preguntas, 6 Temas de Aulet y Blank):}  
+    Tema 1: Cliente y contexto (carrera, semestre, zona, medio habitual).  
+    Tema 2: El problema de movilidad hacia los cerros orientales.  
+    Tema 3: Soluci\'on actual (costos en dinero, tiempo y frustraciones en WhatsApp).  
+    Tema 4: Qui\'en decide, qui\'en paga y roles de compra.  
+    Tema 5: Relaci\'on esperada (conseguir, retener, hacer crecer y referidos).  
+    Tema 6: Concepto mostrado, disposici\'on a pagar (\$8.000) y solicitud formal de compromiso para Campo 3.
+\end{itemize}
+
+\subsection*{Anexo B. Tabla Consolidada de Supuestos Financieros (Aulet, Cap. 17)}
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{p{5cm}ccX}
+\toprule
+\textbf{Variable Financiera} & \textbf{Valor Base} & \textbf{Margen/Tasa} & \textbf{Sustentaci\'on y Fuente de Validaci\'on} \\
+\midrule
+Tarifa Pagada por Pasajero & \$8.000 COP & --- & WTP medio validado en Campo 2 ($N=12$) \\
+Compensaci\'on al Conductor & \$6.800 COP & 85,0\% & Amortiza parqueadero (\$22k) y combustible \\
+Comisi\'on Bruta Plataforma & \$1.200 COP & 15,0\% & Take-rate competitivo frente a apps masivas \\
+Costo Directo Transaccional & \$200 COP & 2,5\% & Pasarela API Wompi/Nequi + cloud el\'astico \\
+Margen Bruto de Servicio & \$1.000 COP & \textbf{83,3\%} & Ganancia neta de servicio por cupo \\
+Frecuencia de Uso Semanal & 4 viajes & --- & 2 viajes de ida y 2 de retorno semanales \\
+Semanas de Clase al A\~no & 32 semanas & --- & Calendario acad\'emico oficial U. Externado \\
+Tasa de Retenci\'on Anual & --- & \textbf{80,0\%} & Cohortes de pregrado cautivas 4-5 a\~nos \\
+Costo de Capital Propio ($r$) & --- & \textbf{50,0\%} & Est\'andar docente Aulet para fase temprana \\
+\bottomrule
+\end{tabularx}
+\caption{Par\'ametros oficiales incorporados en la plantilla financiera de Excel.}
+\label{tab:anexo_finanzas}
+\end{table}
+
+\subsection*{Anexo C. Resumen de los Primeros 10 Clientes Identificados (Campo 2)}
+Derivados del levantamiento emp\'irico y protegidos bajo la Ley 1581 de 2012: E1 (Pasajero, Derecho, Cll 80, 95\% adopci\'on); E2 (Pasajero, Ciencia de Datos, Facatativ\'a, 99\% adopci\'on); E3 (Pasajero, Administraci\'on, Suba, 90\% adopci\'on); E4 (Pasajera, Enfermer\'ia, Bosa, 85\% adopci\'on); E5 (Conductor, Econom\'ia, Cedritos, 95\% adopci\'on); E6 (Pasajero, Derecho, San Crist\'obal, 90\% adopci\'on); E7 (Conductor, Ciencia de Datos, Salitre, 99\% adopci\'on); E8 (Pasajero, Comunicaci\'on, Colina, 85\% adopci\'on); E9 (Pasajera, Derecho, Timiza, 100\% adopci\'on); E10 (Pasajero, Industrial, Chapinero, 90\% adopci\'on).
+
+\vspace{0.4cm}
+
+% =========================================================
+% REFERENCIAS APA
+% =========================================================
+\section*{Referencias Bibliogr\'aficas (Norma APA 7.\textsuperscript{a} Edici\'on)}
+\addcontentsline{toc}{section}{Referencias Bibliogr\'aficas}
+
+\begin{itemize}[leftmargin=*, label={}]
+    \item Aulet, B. (2017). \textit{Disciplined Entrepreneurship Workbook}. John Wiley \& Sons.
+    \item Blank, S. (2020). \textit{The Four Steps to the Epiphany: Successful Strategies for Products that Win} (5.\textsuperscript{a} ed.). K\&S Ranch Publishing.
+    \item C\'amara Colombiana de Inform\'atica y Telecomunicaciones [CCIT]. (2025). \textit{Informe Anual de Movilidad Colaborativa e Impacto de las Plataformas Digitales en Colombia}. Bogot\'a: CCIT.
+    \item Osterwalder, A., \& Pigneur, Y. (2010). \textit{Business Model Generation: A Handbook for Visionaries, Game Changers, and Challengers}. John Wiley \& Sons.
+    \item Porter, M. E. (2008). The Five Competitive Forces That Shape Strategy. \textit{Harvard Business Review}, 86(1), 78--93.
+    \item Secretar\'ia Distrital de Movilidad de Bogot\'a. (2024). \textit{Encuesta de Movilidad y H\'abitos de Desplazamiento en la Poblaci\'on Universitaria de Bogot\'a}. Alcald\'ia Mayor de Bogot\'a.
+    \item Universidad Externado de Colombia. (2026). \textit{Estad\'isticas Institucionales de Matr\'icula Estudiantil y Caracterizaci\'on Sociodemogr\'afica}. Bogot\'a: Secretar\'ia General.
+\end{itemize}
+
+\end{document}
