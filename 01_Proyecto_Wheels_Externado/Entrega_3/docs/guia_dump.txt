@@ -1,0 +1,329 @@
+Guía de la Entrega 3: Trabajo de campo 2 con clientes
+Curso de Emprendimiento · Pregrado en Ciencia de Datos · Universidad Externado de Colombia · Octubre de 2026
+1. Propósito de la entrega
+En el Trabajo de campo 2 cada equipo conversa con clientes reales de su segmento para conocerlos a fondo. Se busca entender cómo viven el problema, cómo lo resuelven hoy, quién decide la compra, por dónde se les llega y qué relación esperan con una empresa nueva. Al final de cada conversación se muestra el concepto de la solución para recoger una primera reacción.
+Esta entrega hace parte de una secuencia de tres trabajos de campo:
+El orden responde a lo que Steve Blank llama descubrimiento de clientes: primero se entiende al cliente y su contexto, y después se pone a prueba la solución. Bill Aulet recomienda lo mismo para esta etapa: mostrar una especificación de alto nivel o un folleto, que es fácil de cambiar a partir de lo que diga el cliente. Las conclusiones de los expertos del campo 1 se tratan aquí como hipótesis que el cliente confirma o corrige.
+Al terminar el campo, el equipo debe poder responder con evidencia:
+¿El cliente vive el problema como lo describimos y qué tan prioritario es para él?
+¿Cómo lo resuelve hoy y cuánto le cuesta en tiempo, dinero o esfuerzo?
+¿Quién usa, quién paga, quién recomienda y quién puede frenar la compra?
+¿Cómo se entera y cómo adquiere soluciones parecidas?
+¿Qué lo llevaría a probar, a quedarse y a recomendar una solución nueva?
+¿Qué valora más del concepto, qué le sobra y qué compromiso está dispuesto a dar para el campo 3?
+2. Diseño del trabajo de campo
+Antes de contactar al primer cliente, cada equipo deja por escrito el diseño de su investigación. Este diseño se presenta en la entrega y es la base para evaluar si los resultados son confiables.
+2.1 Objetivo de la investigación
+Se redacta un objetivo general y dos o tres objetivos específicos. Cada uno lleva verbo en infinitivo, objeto y complemento, y debe ser específico, medible, alcanzable, pertinente y con fecha. El objetivo general también deja claro qué decisión tomará el equipo con los resultados.
+Ejemplo con un negocio ficticio (software de agenda e inventario para peluquerías y barberías):
+Objetivo general: validar con 10 dueños de peluquerías y barberías de Bogotá cómo gestionan hoy las citas y los productos, quién decide la compra de herramientas para el negocio y qué acompañamiento esperan, mediante entrevistas presenciales entre el 16 y el 22 de octubre, para definir el canal de venta y el tipo de relación con el cliente antes de las pruebas de usuario.
+Objetivo específico 1: identificar con qué frecuencia pierden citas o se quedan sin productos y cuánto les cuesta.
+Objetivo específico 2: describir quién participa en la decisión de comprar una herramienta y por qué medio se enteran de ellas.
+Objetivo específico 3: determinar qué tipo de acompañamiento necesitarían para empezar a usar una herramienta nueva y para seguir usándola.
+Un objetivo como “conocer la opinión de los usuarios sobre la aplicación” es demasiado amplio: no dice con quién, cómo, cuándo ni para qué decisión.
+2.2 Hipótesis
+El equipo revisa lo que aprendió con los expertos en el campo 1 y lo convierte en tres hipótesis sobre el cliente:
+De problema: cómo vive el cliente el problema y qué tan importante es para él.
+De compra: quién decide, quién paga y por qué canal se compra.
+De relación: qué lo llevaría a probar la solución, qué lo haría quedarse y qué lo llevaría a recomendarla. Blank llama a estos tres momentos conseguir, retener y hacer crecer al cliente.
+Cada hipótesis se escribe con su criterio de aceptación, fijado antes de salir a campo: “Creemos que [quién] [hace o valora qué]. Lo daremos por validado si [número] de [total] [lo cuentan o lo hacen]”.
+Ejemplo: “Creemos que en las peluquerías pequeñas el dueño decide solo la compra de herramientas y se entera de ellas por recomendación de proveedores. Lo daremos por validado si al menos 6 de 10 dueños lo describen así al contar su última compra”.
+2.3 Tipo de investigación y métodos
+El Trabajo de campo 2 es una investigación primaria y cualitativa. El método principal es la entrevista semiestructurada: una guía con preguntas abiertas que se aplica igual a todos, con espacio para repreguntar.
+Si el equipo decide observar, la observación también necesita su propio diseño:
+Objetivo de la observación. Por ejemplo: identificar cuánto tiempo dedica el recepcionista a confirmar citas durante una jornada y qué herramientas usa.
+Qué se va a observar exactamente. Una lista corta de conductas o momentos: tareas que realiza, herramientas que usa, interrupciones, errores, tiempos, personas que intervienen.
+Dónde, cuándo y cuánto tiempo. Lugar, día, franja horaria y duración.
+Cómo se registra. Una hoja con tres columnas: lo que la persona hace, lo que dice y la hora. Las interpretaciones se anotan aparte.
+Permiso. Se pide autorización a la persona y al responsable del lugar. El observador no interviene ni ayuda.
+2.4 Población, criterios y muestra
+Población: las personas que corresponden a la Persona definida en las entregas anteriores, dentro del mercado inicial.
+Criterios de inclusión: las 3 a 5 características que debe cumplir alguien para entrar al estudio, por ejemplo rol, tipo de organización, frecuencia con que vive el problema o ubicación.
+Criterios de exclusión: familiares cercanos, amigos y compañeros de los integrantes del equipo, porque tienden a responder lo que creen que el equipo quiere oír (sesgo de deseabilidad social) y les cuesta ser objetivos; expertos ya entrevistados en el campo 1; y personas que no cumplen los criterios de inclusión. Las entrevistas a estas personas no cuentan dentro de la muestra.
+Muestra: 10 personas que se parezcan a la Persona y 2 personas de otros roles de la compra (quien paga, quien recomienda o quien puede vetar). Si el segmento tiene subgrupos importantes, se reparten cupos entre ellos y se explica por qué.
+2.5 Reclutamiento
+Dónde buscar: en los lugares donde el cliente ya se reúne, físicos o digitales: asociaciones, gremios, ferias, comunidades en redes, grupos de WhatsApp, eventos del sector. Aulet los llama lugares de encuentro.
+Mensaje de invitación: corto, honesto y sin vender. Modelo: “Hola, [nombre]. Somos estudiantes de Ciencia de Datos de la Universidad Externado y estamos investigando cómo [descripción del problema] en [tipo de cliente]. ¿Nos regalarías 30 minutos esta semana para conversar sobre tu experiencia? No vamos a venderte nada”.
+Cuestionario de filtro: máximo cinco preguntas cerradas que se aplican antes de agendar, para confirmar los criterios de inclusión.
+Referidos: al final de cada entrevista se pide el contacto de otra persona con el mismo perfil.
+2.6 Instrumentos
+El equipo prepara y anexa:
+El cuestionario de filtro.
+El texto de consentimiento informado (sección 3).
+La guía de entrevista con 12 a 18 preguntas organizadas por los seis temas de la sección 4.
+El concepto que se mostrará al final: una hoja o dos o tres imágenes que expliquen qué es la solución y qué beneficio ofrece. Debe ser visual, hablar de beneficios y ser fácil de modificar.
+La hoja de registro de cada entrevista (sección 6).
+La guía de observación, si el equipo decide observar.
+Antes del campo, la guía se prueba con una persona del segmento para ajustar las preguntas que no se entiendan. Esa entrevista de prueba no cuenta dentro de la muestra.
+2.7 Consideraciones éticas
+Toda entrevista empieza con el consentimiento informado de la persona.
+La participación es voluntaria y la persona puede retirarse en cualquier momento.
+Las grabaciones solo se hacen con autorización expresa.
+En los registros y en el informe se usan códigos (P1, P2…) en lugar de nombres.
+Los datos personales se tratan conforme a la Ley 1581 de 2012: se recoge solo lo necesario y se guarda en un lugar con acceso restringido al equipo.
+Con menores de edad o con poblaciones en situación de vulnerabilidad se siguen las indicaciones de la sección 3.3.
+2.8 Cronograma sugerido
+2.9 Plan de análisis
+Se define de antemano cómo se analizarán los datos:
+Las respuestas se registran en una hoja de cálculo con una fila por persona.
+Las respuestas abiertas se agrupan por temas y se cuenta cuántas personas mencionan cada uno.
+Cada hipótesis se compara con su criterio de aceptación.
+Se señalan las coincidencias y las diferencias frente a lo que dijeron los expertos en el campo 1.
+2.10 Ficha técnica del trabajo de campo
+Esta ficha resume el diseño y se incluye en la presentación.
+3. Protocolo de la entrevista
+Todas las entrevistas siguen el mismo protocolo para que los resultados se puedan comparar.
+3.1 Antes de la entrevista
+Confirmar la cita el día anterior, con hora, lugar o enlace y duración estimada (30 a 40 minutos).
+Definir roles: una persona conduce la conversación y otra toma notas. Si el equipo es de una sola persona, se graba con autorización.
+Llevar el kit: cuestionario de filtro, texto de consentimiento, guía de entrevista, concepto impreso o en pantalla, hoja de registro y grabadora o celular con batería.
+Releer las hipótesis para saber qué información no puede faltar.
+Buscar un lugar tranquilo, donde la persona se sienta cómoda para hablar.
+3.2 Apertura y consentimiento informado
+La entrevista empieza con una presentación breve y la lectura del consentimiento. El equipo puede adaptar este texto modelo:
+“Buenos días, [nombre]. Gracias por recibirnos. Somos [nombres], estudiantes del pregrado en Ciencia de Datos de la Universidad Externado de Colombia, y estamos haciendo una investigación para el curso de Emprendimiento sobre [tema del problema].
+La conversación dura alrededor de 30 minutos. Queremos conocer tu experiencia; aquí no hay respuestas correctas ni incorrectas. Tu participación es voluntaria y puedes dejar de responder o terminar la entrevista cuando quieras.
+Lo que nos cuentes se usará solo con fines académicos. En el informe no aparecerá tu nombre ni el de tu organización; usaremos un código. ¿Nos autorizas a grabar el audio para no perder detalles? La grabación solo la escuchará el equipo y la borraremos al terminar el curso.
+¿Tienes alguna pregunta antes de empezar? ¿Estás de acuerdo en participar?”
+La aceptación queda registrada, ya sea grabada al inicio del audio, con una firma en un formato impreso o en un formulario en línea. Si la persona no acepta la grabación, se toman notas a mano.
+3.3 Menores de edad y poblaciones en situación de vulnerabilidad
+En este trabajo de campo se recomienda entrevistar a los adultos responsables (padres, docentes, coordinadores, cuidadores) y dejar la participación directa de menores para el campo 3, cuando el equipo tenga todos los permisos.
+Si el equipo necesita hablar con menores de 18 años, debe cumplir todo lo siguiente:
+Avisar a la profesora antes de hacer cualquier contacto.
+Obtener el aval por escrito de la institución donde se hará la actividad (colegio, fundación, club).
+Obtener el consentimiento informado por escrito de los padres o tutores, explicando el propósito, las preguntas y el uso de la información.
+Pedir el asentimiento del menor con palabras sencillas y recordarle que puede no participar o retirarse sin ninguna consecuencia.
+Hacer la actividad con un adulto responsable presente, preferiblemente en grupo y en el espacio de la institución.
+No recoger nombres, fotos de rostros, números de contacto ni datos que permitan identificar al menor.
+Evitar preguntas sobre ingresos familiares, salud o situaciones personales delicadas.
+Con personas en situación de discapacidad, adultos mayores, poblaciones rurales o víctimas, además del consentimiento se cuida que el lugar y el formato sean accesibles, se usa un lenguaje claro, se permite la presencia de un acompañante si la persona lo pide y no se pregunta por diagnósticos ni por experiencias dolorosas que no sean necesarias para la investigación.
+3.4 Desarrollo de la conversación
+Durante toda la conversación:
+Se pregunta por hechos y experiencias pasadas.
+Se escucha más de lo que se habla, sin interrumpir ni completar las frases de la persona.
+Cuando la respuesta es corta o general, se pide un ejemplo concreto.
+Se evita explicar la idea del negocio antes del momento 6.
+Se anota lo que la persona dice con sus propias palabras y también sus reacciones.
+3.5 Presentación del concepto
+Se introduce con una frase como: “Te vamos a mostrar una idea en la que estamos trabajando. Está en una etapa muy temprana y nos sirve mucho que nos digas con franqueza qué te parece”.
+Se entrega la hoja, se deja que la persona la lea en silencio y se hacen las preguntas del tema 6. El equipo no defiende la idea ni corrige a la persona: si algo no se entendió, eso también es un hallazgo.
+3.6 Cierre
+Pedir un compromiso concreto para el campo 3 (ver tema 6).
+Pedir el contacto de otra persona con el mismo perfil.
+Preguntar si hay algo más que quiera agregar.
+Agradecer el tiempo y explicar qué sigue: si aceptó participar en el campo 3, cuándo lo contactarán.
+3.7 Después de la entrevista
+El mismo día, el equipo llena la hoja de registro (sección 6), compara las notas de quien entrevistó y de quien tomó notas, y decide si hay que ajustar alguna pregunta para la siguiente entrevista.
+4. Banco de preguntas por tema
+Cada equipo escoge de este banco entre 12 y 18 preguntas y las adapta a su negocio cambiando lo que está entre corchetes. Conviene incluir al menos dos preguntas de cada tema.
+Tema 1. El cliente y su contexto
+Permite confirmar o corregir el perfil de la Persona (Aulet, pasos 3 y 5).
+“¿Cuál es tu rol en [la empresa / el hogar / la organización] y cuánto tiempo llevas en él?”
+“Cuéntame cómo es un día normal para ti. ¿En qué se te va la mayor parte del tiempo?”
+“¿Qué es lo que más te preocupa este mes en relación con [área del problema]?”
+“Si tuvieras que ordenar estas cuatro cosas según lo que más te importa, ¿cómo quedarían?” (se muestran las prioridades que el equipo supone para la Persona)
+“¿Qué herramientas, aplicaciones o servicios usas a diario para tu trabajo o tu casa?”
+Tema 2. El problema
+Permite saber si el problema existe para el cliente, con qué frecuencia ocurre y qué consecuencias tiene (Blank, presentación del problema).
+“Cuéntame la última vez que te pasó [situación del problema]. ¿Qué pasó exactamente?”
+“¿Qué hiciste en ese momento? ¿Quién más estuvo involucrado?”
+“¿Cada cuánto te pasa algo así? ¿Cuántas veces en el último mes?”
+“¿Qué consecuencias tuvo: tiempo perdido, dinero, un problema con un cliente, con tu jefe o con tu familia?”
+“Si tuvieras que ponerle una cifra, ¿cuánto te costó esa última vez?”
+“De todas las cosas que tienes que resolver, ¿dónde queda esta: entre las primeras o más abajo?”
+Tema 3. Cómo lo resuelve hoy
+Permite conocer la alternativa real con la que compite la solución. Muchas veces esa alternativa es una hoja de cálculo, un cuaderno, una persona o simplemente aguantar el problema (Aulet, paso 11).
+“¿Qué haces hoy para resolverlo o para evitarlo?”
+“¿Me puedes mostrar cómo lo haces?” (si la persona lo permite)
+“¿Cuánto pagas por eso, en dinero o en horas a la semana?”
+“¿Qué es lo que más te molesta de cómo lo resuelves hoy?”
+“¿Has probado otras opciones? ¿Por qué las dejaste o por qué sigues con la actual?”
+“¿Has gastado dinero en el último año tratando de resolver esto? ¿En qué?”
+Tema 4. Quién decide y cómo compra
+Permite mapear la Unidad de Toma de Decisiones y el proceso de compra (Aulet, pasos 12 y 13).
+“La última vez que compraste o contrataste algo para resolver esto, ¿cómo fue el proceso, desde que lo pensaste hasta que lo pagaste?”
+“¿Quién tomó la decisión final? ¿Quién más opinó?”
+“¿Hay alguien que pueda frenar una compra así: un socio, un jefe, el área de compras, un familiar?”
+“¿Cómo te enteras de productos o servicios nuevos para esto: recomendaciones, redes sociales, ferias, proveedores, buscadores?”
+“¿A quién le crees más cuando te recomiendan algo para [área del problema]?”
+“¿Cómo prefieres pagar este tipo de cosas: una sola vez, mensual, anual, por uso?”
+“¿En qué momento del año o del mes se toman estas decisiones?”
+Tema 5. La relación que espera
+Es el centro de este trabajo de campo. Blank propone pensar la relación con el cliente en tres momentos: conseguirlo, retenerlo y hacerlo crecer.
+Conseguir
+“¿Qué te llevaría a probar algo nuevo para resolver esto?”
+“¿Qué necesitarías ver o saber para confiar en una empresa que está empezando?”
+“¿Preferirías probarlo gratis por un tiempo, ver una demostración o conocer el caso de alguien como tú?”
+Retener
+“Si empezaras a usar algo así, ¿cómo te gustaría recibir ayuda: por tu cuenta con un tutorial, por chat, con una persona asignada o en una comunidad de usuarios?”
+“¿Qué haría que dejaras de usarlo?”
+“¿Con qué frecuencia esperarías tener contacto con la empresa?”
+Hacer crecer
+“¿A quién se lo recomendarías si te funciona?”
+“¿Qué otra cosa relacionada te gustaría resolver después?”
+Tema 6. Concepto, valor y compromiso
+Se trabaja al final, después de presentar el concepto (Aulet, pasos 7, 8 y 9).
+“Con tus palabras, ¿qué es esto y para quién crees que es?”
+“¿Qué parte te serviría más? ¿Cuál te sobra?”
+“Comparado con lo que haces hoy, ¿qué cambiaría para ti? ¿Cuánto tiempo o dinero crees que te ahorraría?”
+“¿Qué le falta para que de verdad lo usaras?”
+“¿Cuánto pagas hoy por resolver esto? Frente a eso, ¿qué rango de precio te parecería razonable para algo así?”
+Compromiso: “En dos semanas vamos a probar un prototipo con algunas personas. ¿Te gustaría participar? ¿Qué día y por qué medio te contactamos?”
+Referido: “¿Conoces a alguien con una situación parecida que deberíamos entrevistar? ¿Nos podrías presentar?”
+Los compromisos que se pueden pedir, de menor a mayor fuerza, son: dar un referido, dejar un dato de contacto, aceptar participar en el campo 3 con fecha, compartir información o documentos para la prueba, firmar una carta de interés y hacer una reserva o un pago simbólico.
+Preguntas para repreguntar
+“¿Por qué?”
+“¿Me das un ejemplo?”
+“Mencionaste [palabra del entrevistado]. ¿Me cuentas más?”
+“¿Qué pasó después?”
+“¿Cómo te sentiste en ese momento?”
+Preguntas que conviene reformular
+5. Cómo adaptar el trabajo de campo según el modelo de negocio
+El diseño, el protocolo y el banco de preguntas son los mismos para todos. Según el modelo de negocio cambian tres cosas: a quién se entrevista, qué tema requiere más profundidad y qué compromiso es razonable pedir.
+5.1 Tabla general
+5.2 Ejemplos por modelo
+Los ejemplos usan negocios ficticios para mostrar cómo se adaptan las hipótesis y las preguntas.
+Consumidor final: suscripción de almuerzos saludables para personas que trabajan desde casa
+Hipótesis de relación: la persona probaría el servicio si recibe una primera semana con descuento y se quedaría si puede pausar la suscripción sin penalidad. Se valida si al menos 6 de 10 mencionan la flexibilidad como condición para quedarse.
+Preguntas adaptadas: “¿Qué almorzaste ayer y cómo lo resolviste?” · “¿Cuánto gastaste en almuerzos la semana pasada?” · “¿Qué te hizo cancelar la última suscripción que tuviste?”
+Pequeña empresa: software de agenda e inventario para peluquerías y barberías
+Hipótesis de compra: el dueño decide solo y se entera de herramientas por sus proveedores de productos. Se valida si al menos 6 de 10 lo describen así al contar su última compra.
+Preguntas adaptadas: “¿Cuántas citas se perdieron la semana pasada y por qué?” · “¿Cómo sabes hoy qué productos tienes que pedir?” · “¿Quién te recomendó la última herramienta que empezaste a usar?”
+Empresa grande: mantenimiento predictivo para flotas de transporte de carga
+Hipótesis de compra: el jefe de mantenimiento propone, el gerente de operaciones aprueba y tecnología exige una prueba con datos históricos antes de contratar. Se valida si al menos 4 de 6 describen ese recorrido.
+Preguntas adaptadas: “Cuénteme la última vez que un vehículo se varió en ruta. ¿Cuánto costó?” · “¿Cómo deciden hoy cuándo hacer mantenimiento?” · “¿Qué tendría que demostrar un proveedor nuevo para que lo dejaran hacer una prueba?”
+Entidad pública: sistema de turnos digitales para centros de salud públicos
+Hipótesis de compra: la herramienta se puede contratar por una modalidad de menor cuantía y la decisión se toma en el último trimestre del año. Se valida si al menos 2 de las personas que contratan lo confirman.
+Preguntas adaptadas: “¿Cómo se asignan hoy los turnos y cuánto esperan los usuarios?” · “La última vez que la entidad incorporó un software, ¿cómo fue el proceso?” · “¿Qué tendría que mostrar el proyecto al final del año para continuar?”
+Institución que paga por sus usuarios: programa de bienestar emocional que una empresa ofrece a sus empleados
+Hipótesis de compra: el área de gestión humana impulsa la compra para cumplir metas de clima laboral y la gerencia aprueba. Se valida si al menos 4 de 6 responsables de gestión humana lo describen así.
+Preguntas a la institución: “¿Qué programas de bienestar tienen hoy y cómo miden si funcionan?” · “¿Con qué presupuesto se financian y quién lo aprueba?”
+Preguntas al usuario: “¿Qué beneficio de tu empresa usaste el último mes?” · “¿Qué te haría sentir cómodo usando un servicio que paga tu empleador?”
+Plataforma de dos lados: plataforma que conecta a estudiantes universitarios con tutores
+Hipótesis de relación: el estudiante confía en un tutor si ve calificaciones de otros estudiantes de su misma carrera; el tutor participa si recibe pagos puntuales. Se valida si al menos 6 de 10 estudiantes y 3 de 5 tutores lo nombran como condición.
+Preguntas al estudiante: “¿Cómo encontraste la última ayuda para una materia difícil? ¿Cuánto pagaste?”
+Preguntas al tutor: “¿Cómo consigues hoy a tus estudiantes? ¿Qué problemas has tenido con los pagos?”
+5.3 Situaciones que aplican a cualquier modelo
+Temas sensibles (salud, discapacidad, finanzas personales, relaciones): consentimiento informado, datos con códigos y preguntas centradas en lo necesario para la investigación.
+Baja conectividad o baja alfabetización: entrevistas presenciales o por llamada, lenguaje sencillo y concepto en imágenes o explicado de viva voz.
+Información del cliente para el campo 3 (documentos, bases de datos, registros): explicar cómo se protege y pedir solo lo indispensable.
+Clientes difíciles de contactar: empezar por la red de contactos de la universidad, los gremios y las asociaciones, y pedir referidos en cada entrevista.
+6. Registro, análisis y decisión
+6.1 Registro de cada entrevista
+El mismo día de la entrevista se responde:
+¿Con qué perfil hablamos y qué tan bien encaja con la Persona, de 0 a 100 %?
+¿Qué aprendimos?
+¿Qué nos sorprendió?
+¿Qué hipótesis parece confirmarse, cuál parece caerse y sobre cuál no logramos concluir? ¿Por qué?
+¿En qué coincide y en qué se diferencia de lo que dijeron los expertos en el campo 1?
+¿Qué preguntas nuevas surgieron?
+¿Qué compromiso dio la persona y a quién nos refirió?
+¿Qué cambiaremos para la próxima entrevista?
+6.2 Base de datos del campo
+Las respuestas se organizan en una hoja de cálculo con una fila por persona entrevistada. Columnas sugeridas:
+Los nombres se reemplazan por códigos y la hoja se guarda en una carpeta de acceso restringido al equipo.
+6.3 Análisis
+Contar. Para cada hipótesis, cuántas personas de las entrevistadas la confirman. Se compara con el criterio de aceptación fijado en el diseño.
+Agrupar. Las respuestas abiertas se agrupan por temas que se repiten, y se cuenta cuántas personas mencionan cada uno.
+Citar. Se seleccionan dos o tres frases textuales que representen cada hallazgo.
+Contrastar. Se señala dónde coinciden y dónde difieren los clientes y los expertos del campo 1.
+Reconocer límites. Con 10 entrevistas los resultados son indicios. Se explican los sesgos posibles, por ejemplo si la mayoría de entrevistados llegó por un mismo contacto.
+6.4 Decisión
+Con base en el análisis, el equipo toma una de estas decisiones y la justifica:
+Perseverar: el problema, la forma de compra y la relación esperada se confirman. El equipo pasa al campo 3 con las personas que se comprometieron.
+Ajustar: el problema se confirma, pero cambia quién paga, el canal, la relación o lo que más se valora del concepto. El equipo ajusta el prototipo antes del campo 3.
+Pivotar: el problema no aparece en los clientes o el segmento no era el adecuado. El equipo replantea la Persona o el problema.
+En cualquier caso se actualizan en el Canvas los componentes de segmento de clientes, propuesta de valor, canales y relaciones con clientes.
+7. Qué entregar y cómo se evalúa
+Fecha y hora de entrega: jueves 22 de octubre de 2026, antes de las 11:55 p. m. Cada equipo presenta sus resultados en la clase del viernes 23 de octubre. La entrega consta de dos archivos, descritos en la sección 7.2.
+7.1 Estructura de la presentación
+Parte A. Diseño del trabajo de campo
+Punto de partida. El negocio en una frase, el segmento y lo que aprendieron con los expertos en el campo 1.
+Objetivo de la investigación. Objetivo general y objetivos específicos.
+Hipótesis. Las tres hipótesis (problema, compra y relación) con su criterio de aceptación.
+Tipo de investigación y métodos. Qué métodos usaron y por qué. Si hubo observación, su objetivo y qué observaron.
+Población y muestra. Criterios de inclusión y exclusión, muestra planeada y lograda, y el recorrido del reclutamiento: cuántas personas contactaron, cuántas pasaron el filtro y cuántas entrevistaron.
+Instrumentos y protocolo. La estructura de la guía de entrevista, el concepto que mostraron y cómo manejaron el consentimiento y la confidencialidad.
+Parte B. Resultados
+Quiénes participaron. Perfil de los entrevistados y qué tan bien encajan con la Persona.
+El problema. Lo que encontraron, con dos o tres citas textuales y su frecuencia.
+La solución actual. Qué usan hoy, cuánto les cuesta y qué les molesta.
+La decisión de compra. Quién usa, quién paga, quién recomienda, quién puede frenar y por qué canales se enteran.
+La relación con el cliente. Cómo conseguirlo, retenerlo y hacerlo crecer, y cómo queda el componente de relaciones con clientes del Canvas.
+Reacción al concepto y compromisos. Qué valoraron, qué sobró y cuántas personas aceptaron participar en el campo 3.
+Parte C. Conclusiones
+Resultado por hipótesis. Validada, no validada o sin conclusión, con el conteo frente al criterio (por ejemplo, “7 de 10 frente a un criterio de 6”).
+Decisión y cambios. Perseverar, ajustar o pivotar, y qué cambia en el Canvas.
+Limitaciones y siguiente paso. Sesgos posibles y qué se ajustará en el prototipo para las pruebas de usuario del campo 3.
+7.2 Archivos de la entrega
+Cada equipo carga en el aula virtual dos archivos, antes de las 11:55 p. m. del jueves 22 de octubre:
+Presentación en PowerPoint o PDF, con la estructura de la sección 7.1. Nombre del archivo: Entrega 3 - Equipo X - Presentación.
+Documento de anexos en Word, con estas partes en este orden. Nombre del archivo: Entrega 3 - Equipo X - Anexos.
+Ficha técnica del trabajo de campo (sección 2.10).
+Instrumentos: cuestionario de filtro, texto de consentimiento y guía de entrevista.
+Concepto mostrado a los clientes (imagen o captura).
+Base de datos del campo, como tabla, con códigos en lugar de nombres.
+Evidencia de los consentimientos y de los compromisos obtenidos (capturas de correos, mensajes o formularios).
+Guía y registros de observación, solo si el equipo hizo observación.
+Permisos de la institución y consentimientos de padres o tutores, solo si participaron menores de edad.
+7.3 Rúbrica
+Cada criterio corresponde a una parte de la presentación y a una sección de esta guía. Solo cuentan como válidas las entrevistas a personas que cumplen los criterios de inclusión; las entrevistas a familiares cercanos, amigos, compañeros o expertos del campo 1 no se tienen en cuenta.
+Trabajo de campo | Con quién | Qué se valida | Qué se muestra
+1 (realizado) | Expertos del sector | La existencia y relevancia del problema | La idea y el problema
+2 (esta entrega) | 10 clientes del segmento y 2 personas de otros roles de la compra | El problema desde la experiencia del cliente, la alternativa que usa hoy, la decisión de compra, los canales, la relación esperada y las primeras señales de valor | Un concepto sencillo al cierre: una hoja con la propuesta, dibujos o pantallas estáticas
+3 (en dos semanas) | Clientes del segmento | La comprensión y el uso del prototipo | El prototipo, con pruebas de usuario
+Método | Carácter | Para qué sirve en esta entrega
+Investigación secundaria | Apoyo previo | Llegar preparados: tamaño del sector, competidores, precios de referencia y normas, con fuentes citadas
+Entrevista semiestructurada | Obligatorio | Conocer al cliente en los seis temas de la sección 4
+Observación | Opcional | Ver cómo el cliente resuelve hoy el problema en su contexto real
+Encuesta corta | Opcional, después de las entrevistas | Confirmar con 30 o más personas un hallazgo puntual, por ejemplo el orden de prioridades
+Solicitud de compromiso | Obligatorio, al cierre | Distinguir el interés real del interés de cortesía
+Fecha | Actividad
+Viernes 16 de octubre | Objetivo, hipótesis, criterios, instrumentos y entrevista de prueba
+16 y 17 de octubre | Reclutamiento y agenda de entrevistas
+17 al 21 de octubre | Entrevistas y registro el mismo día
+Jueves 22 de octubre | Análisis, decisión y envío de la entrega antes de las 11:55 p. m.
+Viernes 23 de octubre | Presentación en clase
+Campo | Contenido
+Objetivo general
+Objetivos específicos
+Hipótesis y criterios de aceptación
+Tipo de investigación y métodos
+Población y criterios de inclusión y exclusión
+Muestra planeada y lograda
+Reclutamiento: lugares y canales
+Instrumentos
+Fechas y lugares de las entrevistas
+Responsables de entrevistar y de tomar notas
+Consideraciones éticas
+Limitaciones
+Momento | Duración | Qué se hace | Temas de la sección 4
+1. Romper el hielo | 3 min | Preguntas sencillas sobre su rol y su día a día | Tema 1
+2. El problema | 10 min | Se pide que cuente la última vez que vivió el problema, con detalles | Tema 2
+3. La solución actual | 5 min | Qué usa hoy, cuánto le cuesta y qué le molesta | Tema 3
+4. La compra | 5 min | Quién decide, cómo se entera de opciones nuevas y cómo paga | Tema 4
+5. La relación | 5 min | Qué lo llevaría a probar, quedarse y recomendar | Tema 5
+6. El concepto | 5 a 7 min | Se muestra la hoja y se recoge su reacción | Tema 6
+7. Cierre | 3 min | Compromiso, referidos y agradecimiento | Tema 6
+Pregunta poco útil | Por qué | Mejor preguntar
+“¿Te parece buena idea?” | Invita a responder por cortesía | “¿Qué parte te serviría más y cuál te sobra?”
+“¿Usarías una aplicación para esto?” | Pide imaginar el futuro | “¿Qué usaste la última vez que te pasó?”
+“¿Pagarías por esto?” | Casi todos responden que sí | “¿Cuánto pagas hoy por resolverlo?”
+“¿Verdad que sería más fácil con alertas automáticas?” | Sugiere la respuesta | “¿Cómo te enteras hoy de [situación]?”
+“¿Es fácil y barato?” | Junta dos preguntas en una | Preguntar por separado la facilidad y el costo
+Modelo | A quién entrevistar | Tema que requiere más profundidad | Compromiso razonable | Cuidado especial
+Consumidor final (B2C): la misma persona usa y paga | 10 personas como la Persona y 2 que influyen en su decisión (familia, pares, comunidad) | El problema y la solución actual: si el dolor es suficiente para cambiar un hábito | Dato de contacto, inscripción a la prueba, reserva simbólica, referido | Las respuestas por cortesía y la distancia entre lo que la gente dice y lo que hace
+Pequeña empresa (B2B pyme): el dueño usa y paga | 10 dueños o administradores y 2 de quienes influyen (contador, socio, proveedor) | La solución actual y su costo en tiempo o dinero | Compartir información del negocio para la prueba, segunda reunión | El dueño tiene poco tiempo: entrevistas cortas y en su lugar de trabajo
+Empresa mediana o grande (B2B): usa un área y paga otra | 6 a 8 usuarios del área y 2 a 4 de otros roles (quien aprueba el presupuesto, tecnología, jurídica o cumplimiento) | La decisión de compra: quién aprueba, qué requisitos exige y cuánto tarda | Reunión con otra área, prueba piloto acotada, acuerdo de confidencialidad | Llegar a personas con nombre y cargo; los ciclos de compra son largos
+Entidad pública (B2G): usa un funcionario y paga la entidad | 8 a 10 funcionarios usuarios y 2 de quienes aprueban o contratan | La compra: modalidad de contratación, presupuesto y calendario | Carta o correo de interés, acceso a información pública para la prueba | Los tiempos dependen del presupuesto anual y de los cambios de administración
+Institución que paga por sus usuarios (B2B2C): una empresa, un colegio, una cooperativa, una aseguradora | 6 a 8 personas de la institución que paga y 6 a 8 usuarios finales o sus representantes | Por qué pagaría la institución: qué meta, obligación o presupuesto cubre | Autorización para hacer la prueba con sus usuarios, carta de interés | Hay que validar a los dos actores: que al usuario le sirva y que la institución quiera pagar
+Plataforma de dos lados: conecta a quien ofrece con quien demanda | 8 a 10 del lado que paga y 4 a 5 del otro lado | Qué haría que cada lado llegue primero y qué confianza necesita en el otro | Del lado que paga, una reserva; del otro lado, compromiso de participar | Concentrar la mayoría de entrevistas en el lado que paga
+Código | Rol | Encaje con la Persona (%) | Vivió el problema (sí/no) | Frecuencia | Costo estimado | Solución actual | Quién decide | Canal por el que se entera | Relación preferida | Reacción al concepto | Compromiso | Cita clave
+P1
+Criterio | Dónde se evalúa | 1. Insuficiente | 2. Satisfactorio | 3. Bueno | 4. Excelente
+1. Diseño del trabajo de campo (25 %) | Diapositivas 1 a 6, sección 2 y ficha técnica | Falta el objetivo o las hipótesis | Objetivo e hipótesis presentes, pero sin criterios de aceptación o sin criterios de inclusión y exclusión | Objetivo, hipótesis con criterio, población, muestra, reclutamiento e instrumentos bien definidos | Además, el diseño parte de lo aprendido en el campo 1 y anticipa sus limitaciones
+2. Rigor en la ejecución (15 %) | Diapositivas 5 y 7, sección 3 y base de datos | Menos de 5 entrevistas válidas o sin consentimiento informado | Entre 5 y 9 entrevistas válidas, o registros incompletos | 10 entrevistas válidas con consentimiento y registro el mismo día | Además, entrevistas a otros roles de la compra y referidos documentados
+3. Hallazgos sobre el cliente (25 %) | Diapositivas 8 a 10, temas 1 a 4 | Opiniones generales sin evidencia | Problema descrito sin ejemplos ni frecuencias | Problema, solución actual y decisión de compra descritos con ejemplos, citas y conteos | Además, hallazgos que corrigen o precisan lo que creía el equipo o lo que dijeron los expertos
+4. Relación, concepto y compromisos (15 %) | Diapositivas 11 y 12, temas 5 y 6 | No se aborda la relación con el cliente | Descripción general de la relación, sin compromisos | Conseguir, retener y hacer crecer sustentados en las entrevistas, con reacción al concepto y compromisos para el campo 3 | Componente de relaciones con clientes del Canvas reescrito con evidencia y compromisos documentados
+5. Análisis y decisión (15 %) | Diapositivas 13 a 15, sección 6 | Sin conclusiones | Conclusiones que no se apoyan en los datos | Hipótesis evaluadas frente a su criterio, decisión justificada y Canvas actualizado | Además, sesgos reconocidos y ajustes concretos para el prototipo del campo 3
+6. Archivos de la entrega (5 %) | Sección 7.2 | Falta uno de los dos archivos | Archivos incompletos o desordenados | Presentación y documento de anexos completos y en el orden pedido | Además, anexos claros y fáciles de revisar
