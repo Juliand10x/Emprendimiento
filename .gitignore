@@ -13,4 +13,6 @@ Thumbs.db
 *.swp
 *~
 .vscode/
+*Zone.Identifier*
+*:Zone.Identifier
 
