@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Entrega 3 — Wheels Externado — Equipo 5 — Presentación</title>
+<style>
+  @page { size: 338mm 190mm; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Calibri,Arial,sans-serif; }
+  .slide { width:338mm; height:190mm; padding:12mm 16mm; page-break-after:always; position:relative; background:#fff; }
+  .slide:last-child { page-break-after:auto; }
+  .shead { border-bottom:3px solid #003366; padding-bottom:6px; margin-bottom:14px; display:flex; justify-content:space-between; align-items:baseline; }
+  .shead h2 { color:#003366; font-size:26px; }
+  .shead .tag { background:#e87722; color:#fff; padding:4px 14px; border-radius:16px; font-size:13px; font-weight:700; }
+  h3 { color:#003366; font-size:17px; margin:10px 0 6px; }
+  p, li { font-size:14.5px; line-height:1.45; color:#222; }
+  ul { margin-left:18px; } li { margin-bottom:5px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; margin-top:8px; }
+  th { background:#003366; color:#fff; padding:6px 8px; text-align:left; }
+  td { border:1px solid #ccd6e0; padding:5px 8px; vertical-align:top; }
+  tr:nth-child(even) td { background:#f4f7fa; }
+  .cols { display:flex; gap:16px; }
+  .col { flex:1; }
+  .box { border:2px solid #003366; border-radius:10px; padding:10px 14px; background:#f4f7fa; margin:8px 0; }
+  .box.orange { border-color:#e87722; background:#fdf3ec; }
+  .box.green { border-color:#2e7d32; background:#eef7ee; }
+  .kpi { text-align:center; border:2px solid #e87722; border-radius:10px; padding:10px; }
+  .kpi .num { font-size:34px; font-weight:800; color:#003366; }
+  .kpi .lbl { font-size:12.5px; color:#444; }
+  .quote { border-left:4px solid #e87722; padding:6px 12px; background:#fdf3ec; font-style:italic; font-size:13.5px; margin:6px 0; }
+  .foot { position:absolute; bottom:7mm; left:16mm; right:16mm; display:flex; justify-content:space-between; font-size:11px; color:#888; border-top:1px solid #dde; padding-top:4px; }
+  .part { text-align:center; padding-top:60mm; }
+  .part h1 { font-size:40px; color:#003366; }
+  .part p { font-size:18px; color:#555; margin-top:10px; }
+  .valid { color:#2e7d32; font-weight:800; }
+  .fail { color:#c62828; font-weight:800; }
+  .small { font-size:12px; color:#555; }
+</style>
+</head>
+<body>
+
+<!-- DIAPOSITIVA 1 -->
+<div class="slide">
+  <div class="shead"><h2>1. Punto de partida</h2><span class="tag">PARTE A · DISEÑO</span></div>
+  <div class="cols">
+    <div class="col">
+      <div class="box"><b>El negocio en una frase:</b> Wheels Externado es una app institucional de carpooling universitario que reemplaza a los grupos informales de WhatsApp con verificación de correo <b>@uexternado.edu.co</b>, reservas garantizadas, reputación y pagos digitales.</div>
+      <h3>Segmento</h3>
+      <ul>
+        <li><b>Mercado inicial:</b> comunidad estudiantil del Externado (~12.000 alumnos) que viaja al campus.</li>
+        <li><b>Plataforma de dos lados:</b> pasajeros (demanda) y conductores externadistas (oferta).</li>
+        <li><b>Corredores:</b> norte, occidente (Calle 80/La Floresta), sur, intermunicipal.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Qué aprendimos y por qué pivotamos</h3>
+      <ul>
+        <li><b>Pivote estratégico:</b> de StatCredit AI (validación bloqueada por regulación SARC y acceso a datos bancarios) a un problema cotidiano, accesible y validable de primera mano.</li>
+        <li><b>Límite declarado:</b> el Campo 1 (expertos) se realizó sobre la idea anterior; no hay expertos de movilidad previos. Las hipótesis parten de la observación directa del problema en la comunidad.</li>
+      </ul>
+      <div class="box orange"><b>Riesgo asumido y mitigado:</b> sin contraste experto en el diseño → se incorporarán 1-2 expertos en movilidad en el Campo 3.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>1/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 2 -->
+<div class="slide">
+  <div class="shead"><h2>2. Objetivo de la investigación</h2><span class="tag">PARTE A · DISEÑO</span></div>
+  <div class="box"><b>Objetivo general:</b> Validar con <b>12 estudiantes</b> del Externado (8 pasajeros y 4 conductores de Wheels) cómo gestionan hoy sus viajes al campus, quién y cómo decide el pago del trayecto, qué canales usan y qué relación esperan de una plataforma institucional, mediante <b>entrevistas semiestructuradas del 17 al 21 de octubre de 2026</b>, para tomar la decisión de <b>perseverar, ajustar o pivotar</b> el prototipo antes del Campo 3.</div>
+  <h3>Objetivos específicos</h3>
+  <ul>
+    <li><b>OE1:</b> Identificar la frecuencia, los dolores y los costos en tiempo y dinero que estudiantes y conductores enfrentan en su desplazamiento diario hacia el Externado.</li>
+    <li><b>OE2:</b> Describir quién usa, quién paga, quién recomienda y quién puede frenar la decisión de un Wheels, y por qué canales se enteran de las opciones disponibles.</li>
+    <li><b>OE3:</b> Determinar qué compromiso (reserva, prueba del prototipo, referido) estarían dispuestos a dar los usuarios para el Campo 3, y qué valor dan al concepto de una app institucional.</li>
+  </ul>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>2/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 3 -->
+<div class="slide">
+  <div class="shead"><h2>3. Hipótesis y criterios de aceptación</h2><span class="tag">PARTE A · DISEÑO</span></div>
+  <table>
+    <tr><th style="width:12%">Código</th><th>Hipótesis (fijada antes del campo)</th><th style="width:18%">Criterio de aceptación</th></tr>
+    <tr><td><b>H1<br>Problema</b></td><td>Creemos que los estudiantes y conductores del Externado viven el transporte al campus como un dolor de alta prioridad y consideran a los grupos de WhatsApp ineficientes e inseguros. Lo daremos por validado si al menos <b>10 de 12</b> lo reportan con ejemplos concretos.</td><td>≥ 10/12</td></tr>
+    <tr><td><b>H2<br>Compra</b></td><td>Creemos que el pasajero decide y paga individualmente el Wheels, que la tarifa de referencia es $6.000 COP y que estaría dispuesto a pagar una prima por certeza y seguridad; el conductor decide amortizar costos fijos. Lo daremos por validado si al menos <b>9 de 12</b> lo describen así al contar su último viaje.</td><td>≥ 9/12</td></tr>
+    <tr><td><b>H3<br>Relación</b></td><td>Creemos que el usuario probaría una app institucional verificada con correo @uexternado.edu.co si garantiza cupo, reputación y pagos digitales, y que daría un compromiso para el Campo 3. Lo daremos por validado si al menos <b>8 de 12</b> lo nombran como condición y al menos <b>4 de 12</b> aceptan participar en la prueba del prototipo.</td><td>≥ 8/12 y<br>≥ 4/12</td></tr>
+  </table>
+  <p class="small" style="margin-top:10px;">Formato Steve Blank: "Creemos que [quién] [hace o valora qué]. Lo daremos por validado si [número] de [total] [lo cuentan o lo hacen]".</p>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>3/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 4 -->
+<div class="slide">
+  <div class="shead"><h2>4. Tipo de investigación y métodos</h2><span class="tag">PARTE A · DISEÑO</span></div>
+  <table>
+    <tr><th>Método</th><th>Carácter</th><th>Para qué en esta entrega</th></tr>
+    <tr><td>Investigación secundaria</td><td>Apoyo previo</td><td>Tarifas de referencia ($6.000 campus), corredores de transporte, competidores (InDrive, grupos WhatsApp).</td></tr>
+    <tr><td><b>Entrevista semiestructurada</b></td><td><b>Obligatorio</b></td><td>Conocer al cliente en los 6 temas de la guía: contexto, problema, solución actual, decisión de compra, relación y reacción al concepto.</td></tr>
+    <tr><td>Observación</td><td>No realizado</td><td>Se descartó por tiempo; limitación declarada.</td></tr>
+    <tr><td>Solicitud de compromiso</td><td><b>Obligatorio, al cierre</b></td><td>Prueba del prototipo en el Campo 3 + referido, para distinguir interés real de cortesía.</td></tr>
+  </table>
+  <div class="box"><b>Protocolo:</b> guía de 16 preguntas idéntica para todos; repreguntas ("¿Por qué?", "¿Me das un ejemplo?"); preguntas prohibidas evitadas (Tabla 6 de la guía: no "¿te parece buena idea?" ni "¿pagarías por esto?"). Consentimiento leído y grabado al inicio de cada entrevista.</div>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>4/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 5 -->
+<div class="slide">
+  <div class="shead"><h2>5. Población, muestra y reclutamiento</h2><span class="tag">PARTE A · DISEÑO</span></div>
+  <div class="cols">
+    <div class="col">
+      <h3>Criterios de inclusión</h3>
+      <ul>
+        <li>Estudiante activo del Externado.</li>
+        <li>Usa o presta Wheels ≥ 1 vez por semana hacia el campus.</li>
+        <li>Vive o sale de un corredor de Bogotá/Sabana con cobertura.</li>
+        <li>Disponible 30 minutos para la entrevista.</li>
+      </ul>
+      <h3>Criterios de exclusión</h3>
+      <ul>
+        <li>Familiares, amigos íntimos y compañeros directos del equipo (sesgo de deseabilidad social).</li>
+        <li>Expertos ya entrevistados; ajenos al ecosistema Externado.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Muestra</h3>
+      <p><b>Planeada:</b> 10 pasajeros + 4 conductores (modelo plataforma de dos lados).</p>
+      <p><b>Lograda:</b> <b>12 válidas</b> (8 pasajeros + 4 conductores). Brecha asumida como limitación.</p>
+      <h3>Recorrido del reclutamiento</h3>
+      <table>
+        <tr><th>Etapa</th><th>N</th></tr>
+        <tr><td> contactados por invitación (grupos WhatsApp + red campus)</td><td>~25</td></tr>
+        <tr><td>Respondieron</td><td>~15</td></tr>
+        <tr><td>Aprobaron filtro y fueron entrevistados</td><td><b>12</b></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>5/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 6 -->
+<div class="slide">
+  <div class="shead"><h2>6. Instrumentos y protocolo</h2><span class="tag">PARTE A · DISEÑO</span></div>
+  <div class="cols">
+    <div class="col">
+      <h3>Estructura de la guía de entrevista</h3>
+      <ul>
+        <li><b>Tema 1:</b> cliente y contexto (2 preguntas).</li>
+        <li><b>Tema 2:</b> el problema (3 preguntas).</li>
+        <li><b>Tema 3:</b> cómo lo resuelve hoy (3 preguntas).</li>
+        <li><b>Tema 4:</b> quién decide y cómo compra (3 preguntas).</li>
+        <li><b>Tema 5:</b> relación: conseguir/retener/hacer crecer (3 preguntas).</li>
+        <li><b>Tema 6:</b> concepto, valor y compromiso (2 preguntas + compromiso y referido).</li>
+      </ul>
+      <p class="small">+ cuestionario de filtro (5 preguntas cerradas) y consentimiento informado (Anexos B y C).</p>
+    </div>
+    <div class="col">
+      <h3>Concepto mostrado al cierre</h3>
+      <div class="box orange">Hoja visual de 1 página: problema (WhatsApp saturado, cancelaciones, sin verificación), beneficios (cupos garantizados, comunidad verificada, reputación bilateral, pago digital) y 3 pantallas estáticas (ruta con reserva, calificación + pago, reporte de seguridad). Etiquetada como <b>"idea en etapa temprana"</b>, easy de modificar.</div>
+      <h3>Consentimiento y confidencialidad</h3>
+      <ul>
+        <li>Consentimiento leído y <b>grabado al inicio</b> de cada audio.</li>
+        <li>Participación voluntaria; retiro en cualquier momento.</li>
+        <li>Códigos E1-E12 en entregables (Ley 1581 de 2012).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>6/15</span></div>
+</div>
+
+<!-- PARTE B -->
+<div class="slide part">
+  <h1>Parte B. Resultados</h1>
+  <p>Quiénes participaron · El problema · La solución actual · La decisión de compra · La relación · Reacción al concepto</p>
+</div>
+
+<!-- DIAPOSITIVA 7 -->
+<div class="slide">
+  <div class="shead"><h2>7. Quiénes participaron</h2><span class="tag">PARTE B · RESULTADOS</span></div>
+  <table>
+    <tr><th>Cód.</th><th>Rol</th><th>Programa / semestre</th><th>Corredor</th><th>Encaje con Persona</th></tr>
+    <tr><td>E1</td><td>Pasajero</td><td>Derecho 6</td><td>La Floresta (Engativá)</td><td>90%</td></tr>
+    <tr><td>E2</td><td>Pasajero</td><td>Derecho 6</td><td>Calle 80 / Occidente</td><td>90%</td></tr>
+    <tr><td>E3</td><td>Pasajero</td><td>Economía 8</td><td>Salitre / Modelia</td><td>85%</td></tr>
+    <tr><td>E4</td><td>Pasajero</td><td>Derecho 6</td><td>Cedritos</td><td>90%</td></tr>
+    <tr><td>E5</td><td><b>Conductor</b></td><td>Ciencia de Datos 4</td><td>Gran Granada / Portal 80</td><td>95%</td></tr>
+    <tr><td>E6</td><td>Pasajero</td><td>Ciencia de Datos 5</td><td>Facatativá (intermunicipal)</td><td>85%</td></tr>
+    <tr><td>E7</td><td><b>Conductor</b></td><td>Comunicación 8</td><td>Cedritos</td><td>95%</td></tr>
+    <tr><td>E8</td><td>Pasajero</td><td>Derecho 4</td><td>San Cristóbal Norte</td><td>85%</td></tr>
+    <tr><td>E9</td><td>Pasajera</td><td>Enfermería 6</td><td>Bosa / Villa Sandra (sur)</td><td>80%</td></tr>
+    <tr><td>E10</td><td>Pasajero</td><td>Administración 3</td><td>Chapinero / Calle 72</td><td>75%</td></tr>
+    <tr><td>E11</td><td><b>Conductora</b></td><td>Derecho 7</td><td>Soacha (Compartir)</td><td>90%</td></tr>
+    <tr><td>E12</td><td><b>Conductor</b></td><td>Ing. Industrial 9</td><td>Fontibón / Calle 26</td><td>95%</td></tr>
+  </table>
+  <p class="small" style="margin-top:8px;"><b>Perfil agregado:</b> 8 pasajeros (67%) + 4 conductores (33%); 7 facultades; corredores norte, occidente, sur, centro e intermunicipal. Encaje promedio con la Persona: <b>87%</b>.</p>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>7/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 8 -->
+<div class="slide">
+  <div class="shead"><h2>8. El problema</h2><span class="tag">PARTE B · RESULTADOS</span></div>
+  <div class="cols">
+    <div class="col">
+      <div class="box green"><b>Conteo (12/12):</b> todos reportaron el problema con ejemplos y frecuencia. Frecuencia del dolor: casi diaria para conductores y pasajeros asiduos; 3-4 veces/semana para ocasionales.</div>
+      <h3>Dolores principales (menciones)</h3>
+      <ul>
+        <li><b>12/12</b> — Saturación y pérdida de mensajes en WhatsApp.</li>
+        <li><b>9/12</b> — Cancelaciones de última hora (<i>ghosting</i>).</li>
+        <li><b>8/12</b> — Incertidumbre horaria del conductor.</li>
+        <li><b>6/12</b> — Inseguridad / no saber quién viaja.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Citas textuales</h3>
+      <div class="quote">"En lo que uno abre el mensaje para responder 'yo', ya otros tres respondieron antes y se acabaron los cupos. Es una lotería." — E1</div>
+      <div class="quote">"Me dejan colgado con el puesto. Yo no me puedo devolver ni esperar 15 minutos porque llego tarde yo y los otros 3 pasajeros." — E7</div>
+      <div class="quote">"Bajar a las 5:30 am a esperar un carro que no sabes quién maneja… uno revisa la placa y se la manda a la mamá antes de subirse." — E9</div>
+    </div>
+  </div>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>8/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 9 -->
+<div class="slide">
+  <div class="shead"><h2>9. La solución actual</h2><span class="tag">PARTE B · RESULTADOS</span></div>
+  <div class="cols">
+    <div class="col">
+      <h3>Qué usan hoy</h3>
+      <ul>
+        <li><b>Pasajeros:</b> grupos de WhatsApp de Wheels Externado (+4 grupos; el mercado ya está congregado allí).</li>
+        <li><b>Conductores:</b> publican ruta y esperan "yo" en el chat; cobran $6.000/puesto en efectivo o Nequi directo.</li>
+      </ul>
+      <h3>Costo</h3>
+      <ul>
+        <li><b>Dinero:</b> tarifa $6.000 uniforme (pasajero); conductor recauda $18.000-$24.000 que cubren parqueadero ($22.000) + gasolina.</li>
+        <li><b>Tiempo:</b> pasajeros 90-150 min/día (hasta 2 h 30 min desde Sabana); conductores 45-90 min.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Qué les molesta</h3>
+      <ul>
+        <li>Sin filtros por ruta/hora: "quiero rutas por la 26 entre 6:30 y 7:00 am" — leer 400 mensajes para una ruta (E3, E10).</li>
+        <li>Efectivo sin cambio (billetes de $50.000) y señal caída al bajar del carro (E5).</li>
+        <li>Cero consecuencias por incumplir: el conductor pierde $12.000 con dos cupos vacíos (E12).</li>
+        <li>Alternativa externa: Uber/Taxi $25.000-$45.000 (caro) o TransMilenio (largo e inseguro).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>9/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 10 -->
+<div class="slide">
+  <div class="shead"><h2>10. La decisión de compra</h2><span class="tag">PARTE B · RESULTADOS</span></div>
+  <div class="cols">
+    <div class="col">
+      <table>
+        <tr><th>Actor</th><th>Rol en la decisión</th></tr>
+        <tr><td>Usuario pasajero</td><td>Usa y paga individualmente el cupo (decisión B2C inmediata).</td></tr>
+        <tr><td>Pares / grupo de WhatsApp</td><td>Recomiendan o frenan: la reputación informal del conductor viaja por el grupo (E4, E8).</td></tr>
+        <tr><td>Familia</td><td>Puede frenar por seguridad (madres que exigen conocer placa — E9).</td></tr>
+        <tr><td>Conductor</td><td>Decide oferta: entra si cubre costos fijos; sale si la comisión deja &lt; $5.000/cupo (E12).</td></tr>
+      </table>
+      <h3>Canales por los que se enteran</h3>
+      <ul>
+        <li><b>12/12:</b> grupos de WhatsApp de Wheels (canal #1).</li>
+        <li><b>7/12:</b> recomendación de compañeros de carrera/zona.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Validación económica</h3>
+      <div class="cols" style="gap:8px;">
+        <div class="kpi"><div class="num">$6.000</div><div class="lbl">Tarifa actual (12/12)</div></div>
+        <div class="kpi"><div class="num">$8.000</div><div class="lbl">WTP promedio (+33%)</div></div>
+        <div class="kpi"><div class="num">$1.000</div><div class="lbl">Comisión plataforma</div></div>
+      </div>
+      <p class="small" style="margin-top:10px;">Los conductores no buscan lucro: el recaudo cubre exactamente parqueadero + gasolina (amortización). Tasa de take-rate propuesta: 12.5%-15%.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>10/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 11 -->
+<div class="slide">
+  <div class="shead"><h2>11. La relación con el cliente</h2><span class="tag">PARTE B · RESULTADOS</span></div>
+  <div class="cols">
+    <div class="col">
+      <div class="box"><b>CONSEGUIR (12/12):</b> La verificación @uexternado.edu.co es condición unánime para probar; el cupo garantizado es el beneficio #1 (9/12). Canal de adquisición: los propios grupos de WhatsApp + referidos.</div>
+      <div class="box"><b>RETENER:</b> Conductor se queda si el pago es inmediato (E11) y la comisión no invade su margen (E12). Pasajero se queda si el conductor es puntual y calificado; dejaría por fricción de uso &gt; 1 minuto.</div>
+    </div>
+    <div class="col">
+      <div class="box"><b>HACER CRECER:</b> 8/12 ofrecieron referidos de su misma zona/corredor (conductores: contactos del Portal Sur y Kennedy). El crecimiento inicial es viral por corredor y por facultad.</div>
+      <h3>Componente "Relaciones con clientes" del Canvas (reescrito)</h3>
+      <p>Relación basada en <b>confianza institucional</b>: verificación obligatoria, reputación bilateral visible, soporte híbrido (bot FAQ + humano para emergencias) y <b>compensación por incumplimiento</b> (depósito que indemniza al conductor, no solo a la plataforma).</p>
+    </div>
+  </div>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>11/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 12 -->
+<div class="slide">
+  <div class="shead"><h2>12. Reacción al concepto y compromisos</h2><span class="tag">PARTE B · RESULTADOS</span></div>
+  <div class="cols">
+    <div class="col">
+      <h3>Qué valoraron (menciones / 12)</h3>
+      <ul>
+        <li>Pago centralizado — <b>7</b></li>
+        <li>Reserva con penalización — <b>6</b></li>
+        <li>Calificaciones bilaterales — <b>6</b></li>
+        <li>GPS en vivo / viaje compartido — <b>4</b></li>
+      </ul>
+      <h3>Qué sobró / ajustar</h3>
+      <ul>
+        <li>Botón de pánico redundante con soporte humano (E11).</li>
+        <li>Calibración obligatoria en cada viaje para usuarios frecuentes (E10).</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Qué le falta (lecciones para el prototipo)</h3>
+      <ul>
+        <li>Historial visible del conductor: "62 viajes este mes" (E11).</li>
+        <li>Control de cupos reservados vs. disponibles + avisos de cancelación (E12).</li>
+        <li>Filtro de conductoras mujeres / género visible (E9).</li>
+        <li>Calendario con clase y ruta recordada (E10).</li>
+      </ul>
+      <div class="box green"><b>Compromisos para el Campo 3:</b> 4 de 4 entrevistas complementarias (E9-E12) aceptaron probar el prototipo; 8/12 ofrecieron prueba o referido. Compromisos documentados en Anexo E.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>12/15</span></div>
+</div>
+
+<!-- PARTE C -->
+<div class="slide part">
+  <h1>Parte C. Conclusiones</h1>
+  <p>Resultado por hipótesis · Decisión y cambios · Limitaciones y siguiente paso</p>
+</div>
+
+<!-- DIAPOSITIVA 13 -->
+<div class="slide">
+  <div class="shead"><h2>13. Resultado por hipótesis</h2><span class="tag">PARTE C · CONCLUSIONES</span></div>
+  <table>
+    <tr><th>Hipótesis</th><th>Criterio</th><th>Resultado</th><th>Estado</th></tr>
+    <tr><td><b>H1 — Problema</b></td><td>≥ 10/12</td><td>12/12 reportaron el dolor con ejemplos y frecuencia</td><td class="valid">✅ VALIDADA</td></tr>
+    <tr><td><b>H2 — Compra</b></td><td>≥ 9/12</td><td>12/12 describieron decisión individual, tarifa $6.000 y amortización del conductor</td><td class="valid">✅ VALIDADA</td></tr>
+    <tr><td><b>H3 — Relación</b></td><td>≥ 8/12 condición<br>≥ 4/12 compromiso</td><td>11/12 exigen verificación como condición; 8/12 aceptaron prueba o dieron referido</td><td class="valid">✅ VALIDADA</td></tr>
+  </table>
+  <div class="box orange" style="margin-top:12px;"><b>Hallazgo que corrige al equipo (y a la intuición del pivote):</b> el dolor no es solo de los corredores lejanos. En corredores cortos (Chapinero, Calle 72) el dolor principal no es la distancia sino la <b>falta de filtro y organización</b> (E10). El mercado es más amplio que el segmento inicial supuesto.</div>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>13/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 14 -->
+<div class="slide">
+  <div class="shead"><h2>14. Decisión y cambios en el Canvas</h2><span class="tag">PARTE C · CONCLUSIONES</span></div>
+  <div class="box green" style="text-align:center;"><b style="font-size:22px;">DECISIÓN: AJUSTAR</b><br>El problema, la forma de pago y la necesidad de verificación se confirman. El campo corrige 4 supuestos que obligan a ajustar el prototipo antes del Campo 3 (ni perseverar sin cambios, ni pivotar).</div>
+  <table>
+    <tr><th>Componente del Canvas</th><th>Cambio a partir del campo</th></tr>
+    <tr><td><b>Segmento de clientes</b></td><td>Se divide por corredor (norte/occidente/sur/intermunicipal) y se añade corredor corto (Chapinero). Subsegmento: pasajeras con requisitos de seguridad de género (E9).</td></tr>
+    <tr><td><b>Propuesta de valor</b></td><td>De "app de Wheels" a <b>"cupo garantizado y conductor verificado"</b> (beneficio #1 unánime).</td></tr>
+    <tr><td><b>Canales</b></td><td>Grupos de WhatsApp existentes como canal de adquisición inicial (el mercado ya está allí) + referidos (8/12).</td></tr>
+    <tr><td><b>Relación con clientes</b></td><td>Reputación bilateral + soporte híbrido (bot/humano) + compensación por incumplimiento al conductor.</td></tr>
+  </table>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>14/15</span></div>
+</div>
+
+<!-- DIAPOSITIVA 15 -->
+<div class="slide">
+  <div class="shead"><h2>15. Limitaciones y siguiente paso</h2><span class="tag">PARTE C · CONCLUSIONES</span></div>
+  <div class="cols">
+    <div class="col">
+      <h3>Sesgos y limitaciones reconocidas</h3>
+      <ul>
+        <li><b>Sin expertos de movilidad (Campo 1):</b> el Campo 1 correspondió a la idea anterior (StatCredit AI) por el pivote; las hipótesis parten de observación directa. Mitigación: expertos en el Campo 3.</li>
+        <li><b>Consentimiento tardío:</b> en las 8 primeras entrevistas no quedó registrado formalmente al inicio; se remedió con confirmación posterior y protocolo completo en E9-E12.</li>
+        <li><b>Reclutamiento:</b> red de contactos universitaria → posible homogeneidad de respuestas.</li>
+        <li><b>N=12:</b> resultados indiciarios, no estadísticamente representativos; sirven para decidir el prototipo, no para probar mercado.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Siguiente paso — Campo 3</h3>
+      <ul>
+        <li>Prueba de usabilidad del prototipo con los <b>8 usuarios comprometidos</b> (E9-E12 + referidos).</li>
+        <li>Prototipo con las <b>4 correcciones</b> del MVP: historial del conductor, control de cupos + avisos de cancelación, filtro de género, calendario de rutas.</li>
+        <li>1-2 entrevistas a <b>expertos en movilidad</b> para cerrar la limitación #1.</li>
+      </ul>
+      <div class="box orange"><b>Pregunta abierta para la clase:</b> ¿el depósito de compromiso debe ser $2.000 (barrera baja) o el valor total del viaje (máxima protección al conductor)? E7 y E12 lo proponen; E1, E2 y E10 muestran resistencia a pagar por adelantado.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Wheels Externado · Entrega 3 · Equipo 5</span><span>15/15</span></div>
+</div>
+
+</body>
+</html>

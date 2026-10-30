@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Concepto — Wheels Externado</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial,sans-serif; }
+  body { width:297mm; min-height:210mm; background:#fff; padding:14mm; }
+  .header { display:flex; justify-content:space-between; align-items:center; border-bottom:4px solid #003366; padding-bottom:10px; margin-bottom:16px; }
+  .logo { font-size:30px; font-weight:800; color:#003366; }
+  .logo span { color:#e87722; }
+  .tag { background:#003366; color:#fff; padding:6px 16px; border-radius:20px; font-size:13px; font-weight:600; }
+  .subtitle { text-align:center; font-size:15px; color:#444; margin-bottom:18px; font-style:italic; }
+  .cols { display:flex; gap:14px; }
+  .col { flex:1; }
+  .card { border:2px solid #d9e2ec; border-radius:12px; padding:12px; margin-bottom:12px; background:#f8fafc; }
+  .card h3 { color:#003366; font-size:15px; margin-bottom:8px; border-bottom:1px solid #d9e2ec; padding-bottom:5px; }
+  .phone { border:3px solid #333; border-radius:18px; background:#fff; padding:10px; height:355px; }
+  .phone .notch { width:60px; height:6px; background:#333; border-radius:3px; margin:0 auto 8px; }
+  .phone h4 { text-align:center; color:#003366; font-size:13px; margin-bottom:8px; }
+  .ride { border:1px solid #d9e2ec; border-radius:8px; padding:7px; margin-bottom:7px; font-size:11px; }
+  .ride .route { font-weight:700; color:#333; }
+  .ride .meta { color:#666; font-size:10px; margin-top:2px; }
+  .badge { display:inline-block; background:#e87722; color:#fff; border-radius:4px; padding:1px 6px; font-size:10px; font-weight:700; }
+  .badge.green { background:#2e7d32; }
+  .btn { background:#e87722; color:#fff; text-align:center; border-radius:8px; padding:7px; font-weight:700; font-size:12px; margin-top:8px; }
+  .stars { color:#f4b400; font-size:13px; }
+  ul { list-style:none; }
+  ul li { font-size:13px; margin-bottom:9px; padding-left:22px; position:relative; color:#222; }
+  ul li::before { content:"✓"; position:absolute; left:0; color:#2e7d32; font-weight:800; }
+  .pain { background:#fdecea; border-left:4px solid #c62828; padding:8px 10px; border-radius:6px; font-size:12px; color:#8d2020; margin-bottom:8px; }
+  .note { margin-top:14px; text-align:center; font-size:12px; color:#666; background:#fff8e1; border:1px dashed #e87722; border-radius:8px; padding:8px; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">🛞 Wheels <span>Externado</span></div>
+    <div class="tag">💡 Idea en etapa temprana — tu opinión nos importa</div>
+  </div>
+  <div class="subtitle">Una app institucional para coordinar los viajes compartidos del Externado, que hoy se organizan por WhatsApp.</div>
+
+  <div class="cols">
+    <div class="col">
+      <div class="card">
+        <h3>¿Qué problema resuelve?</h3>
+        <div class="pain">🚫 Mensajes de WhatsApp que se pierden entre stickers y spam; el cupo se acaba en milisegundos.</div>
+        <div class="pain">🚫 Cancelaciones 5 minutos antes: el pasajero pierde la clase, el conductor pierde el cupo.</div>
+        <div class="pain">🚫 Nadie sabe quién se sube al carro: sin verificación, sin calificaciones, sin respaldo.</div>
+        <div class="pain">🚫 Efectivo sin cambio y Nequi sin señal al bajar del carro.</div>
+      </div>
+      <div class="card">
+        <h3>¿Qué beneficios ofrece?</h3>
+        <ul>
+          <li><b>Cupo garantizado:</b> reservas con confirmación, no es un "yo" a ver quién llega primero.</li>
+          <li><b>Comunidad verificada:</b> solo correo <b>@uexternado.edu.co</b>. Sabes con quién viajas.</li>
+          <li><b>Reputación bilateral:</b> conductores y pasajeros se califican; los irresponsables quedan fuera.</li>
+          <li><b>Pago digital:</b> Nequi/Daviplata desde la app. Sin billetes de $50.000 ni señal en el sótano.</li>
+          <li><b>Ruta clara:</b> ves la ruta, la hora de salida y al conductor antes de bajar de tu casa.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="phone">
+        <div class="notch"></div>
+        <h4>🏠 Rutas para ti — Mañana</h4>
+        <div class="ride">
+          <div class="route">La Floresta → Externado · 6:15 am</div>
+          <div class="meta">👤 Andrés M. · ⭐ 4.8 · 3 cupos · <span class="badge">$6.000</span></div>
+        </div>
+        <div class="ride">
+          <div class="route">Calle 80 (Portal 80) → Externado · 6:40 am</div>
+          <div class="meta">👤 Juan José M. · ⭐ 4.9 · 1 cupo · <span class="badge">$6.000</span></div>
+        </div>
+        <div class="ride">
+          <div class="route">Cedritos → Externado · 6:20 am</div>
+          <div class="meta">👤 Sebastián Z. · ⭐ 4.7 · 2 cupos · <span class="badge">$6.000</span></div>
+        </div>
+        <div class="btn">✅ Reservar cupo — llega a tu celular la confirmación</div>
+      </div>
+
+      <div class="phone" style="margin-top:12px;">
+        <div class="notch"></div>
+        <h4>⭐ Tu viaje de hoy</h4>
+        <div class="ride">
+          <div class="route">Sebastián Z. — Cedritos → Externado</div>
+          <div class="meta">Llegó 6:18 am (prometió 6:20) · Carro limpio y seguro</div>
+          <div class="stars">★★★★★</div> <span style="font-size:10px;color:#666;"> puntual, maneja bien, buena actitud</span>
+        </div>
+        <div class="ride">
+          <div class="route">Pago: <b>$6.000</b> debitado de tu saldo Nequi en la app</div>
+          <div class="meta">Sin efectivo · Sin discusión de cambio ✓</div>
+        </div>
+        <div class="btn">🛡️ ¿Problema? Reportar · Botón de seguridad</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">📌 Esto es un concepto en construcción: una hoja, no un producto terminado. Cuéntanos con franqueza: ¿qué parte te serviría más, cuál te sobra y qué le falta para que de verdad lo usaras?</div>
+</body>
+</html>

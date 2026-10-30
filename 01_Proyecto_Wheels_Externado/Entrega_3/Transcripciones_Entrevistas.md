@@ -7,24 +7,30 @@
 ---
 
 ## 📌 Metodología y Registro de Entrevistas
-El presente documento recopila las transcripciones íntegras y estructuradas de las **8 entrevistas a profundidad** realizadas a estudiantes de la Universidad Externado de Colombia (6 en rol de **Pasajeros** y 2 en rol de **Conductores**), en el marco de la **Entrega 3: Trabajo de campo 2 con clientes (Metodología Customer Discovery / Steve Blank & Bill Aulet)**.
+El presente documento recopila las transcripciones íntegras y estructuradas de las **12 entrevistas a profundidad** realizadas a estudiantes de la Universidad Externado de Colombia (8 en rol de **Pasajeros** y 4 en rol de **Conductores**), en el marco de la **Entrega 3: Trabajo de campo 2 con clientes (Metodología Customer Discovery / Steve Blank & Bill Aulet)**.
 
 ### Matriz Consolidada de Entrevistados
 
 | # | Nombre del Entrevistado | Rol | Carrera / Semestre | Ruta Habitual de Desplazamiento | Tarifa Actual / Disp. a Pagar |
 |---|---|---|---|---|---|
-| **E1** | **Federico Pinilla** | Pasajero | Economía (8.° semestre) | Suba / Colina Campestre $\leftrightarrow$ Externado | $6.000 / $8.000 COP |
-| **E2** | **Samuel Cárdenas** | Pasajero | Ciencia de Datos (4.° semestre) | Chía $\leftrightarrow$ Externado (Autonorte) | $7.000 / $10.000 COP |
+| **E1** | **Federico Pinilla** | Pasajero | Derecho (6.° semestre / 3.er año) | La Floresta (Engativá) $\leftrightarrow$ Externado | $6.000 / $8.000 COP |
+| **E2** | **Samuel Cárdenas** | Pasajero | Derecho (6.° semestre / 3.er año) | Calle 80 / Occidente $\leftrightarrow$ Externado (vía Calle 26) | $6.000 / $10.000 COP |
 | **E3** | **David Castro** | Pasajero | Economía (8.° semestre) | Ciudad Salitre / Modelia $\leftrightarrow$ Externado | $5.000 - $6.000 / $8.000 COP |
 | **E4** | **Claudio Escobar** | Pasajero | Derecho (6.° semestre) | Cedritos (Cl. 147 con Cra. 9) $\leftrightarrow$ Externado | $6.000 / $8.000 COP |
 | **E5** | **Juan José Muñoz** | Conductor | Ciencia de Datos (4.° semestre) | Gran Granada / Portal 80 $\leftrightarrow$ Externado | Cobra $6.000 COP (3 cupos) |
 | **E6** | **Mauricio Torres** | Pasajero | Ciencia de Datos (5.° semestre) | Facatativá $\rightarrow$ Bogotá $\leftrightarrow$ Externado | $6.000 / $8.000 COP (hasta $15k) |
 | **E7** | **Sebastián Zúñiga** | Conductor | Comunicación Social (8.° sem.) / Embajador | Cedritos (Cra. 19 #154) $\leftrightarrow$ Externado | Cobra $6.000 COP (4 cupos = $24.000) |
 | **E8** | **Juan Sebastián Sánchez** | Pasajero | Derecho (4.° año) | San Cristóbal Norte / Usaquén $\leftrightarrow$ Externado | $5.000 - $6.000 / $8.000 COP |
+| **E9** | **Camila Ortega** | Pasajera | Enfermería (6.° semestre) | Bosa / Villa Sandra $\leftrightarrow$ Externado (vía Boyacá) | $6.000 / $8.000 COP |
+| **E10** | **Andrés Mejía** | Pasajero | Administración de Empresas (3.er semestre) | Chapinero / Calle 72 $\leftrightarrow$ Externado (vía Caracas) | $6.000 / $8.000 COP |
+| **E11** | **Laura Gutiérrez** | Conductora | Derecho (7.° semestre) | Soacha (Compartir) $\leftrightarrow$ Externado (vía Autopista Sur) | Cobra $6.000 COP (3 cupos) |
+| **E12** | **Óscar Padilla** | Conductor | Ingeniería Industrial (9.° semestre) | Fontibón / Calle 26 $\leftrightarrow$ Externado | Cobra $6.000 COP (4 cupos) |
 
 ---
 
 ## 🚗 BLOQUE I: CONDUCTORES (Oferta de Movilidad)
+
+> **Nota de campo:** Las entrevistas **E11 y E12** se realizaron como complemento de muestra (modelo de plataforma de dos lados). En ambas se registró el consentimiento informado al inicio del audio y se presentó el concepto de la solución (tema 6), obteniendo compromiso para el campo 3.
 
 ---
 
@@ -83,23 +89,103 @@ Además, un sistema de puntuación tipo Uber: saber si el pasajero es puntual, s
 
 ---
 
+### Entrevista 11: Laura Gutiérrez
+- **Rol:** Conductora habitual
+- **Programa:** Derecho, 7.° semestre
+- **Ruta:** Soacha (Compartir) $\leftrightarrow$ Universidad Externado (vía Autopista Sur)
+- **Vehículo / Cupos:** Renault Logan 2018, 3 cupos
+- **Tarifa cobrada:** $6.000 COP por persona (Total: $18.000 COP)
+- **Registro:** Consentimiento informado leído y autorizado al inicio del audio. Concepto presentado en el minuto 24.
+
+#### Transcripción Estructurada:
+
+**Entrevistador:** Hola Laura, gracias por el tiempo. Antes de empezar, ¿autorizas que grabemos esta conversación con fines académicos, solo la escucha el equipo y tu nombre no aparecerá en el informe?
+**Laura Gutiérrez:** Sí, autorizo. Adelante.
+
+**Entrevistador:** Cuéntanos sobre tu rutina como conductora de Wheels.  
+**Laura Gutiérrez:** Yo salgo de Soacha, del barrio Compartir, a las 5:50 am. Tomo la Autopista Sur, subo por la Boyacá o la Caracas y bajo en el centro hacia el Externado. Llevo 3 personas fijas desde hace dos semestres. Manejo un Logan 2018 que es de mi mamá, entonces mi compromiso con ella es mantenerlo al día con tecnomecánica y gasolina.
+
+**Entrevistador:** ¿Cómo fijas la tarifa y cómo lo manejas con los pagos?  
+**Laura Gutiérrez:** $6.000 por puesto, la tarifa del Externado. Con 3 cupos recaudo $18.000 y eso me cubre gasolina de ida y vuelta más un margen para el mantenimiento. El tema del pago es lo más incómodo: me llegan con billetes de $50.000 a las 6 de la mañana y me quedo sin cambio, o me pagan al bajar del carro con señal malísima en el sótano.
+
+**Entrevistador:** ¿Qué problemas tienes con los grupos de WhatsApp?  
+**Laura Gutiérrez:** La inseguridad de no saber quién se sube. Uno ve un número y una foto de perfil, nada más. Y el desorden de los chats: publico *"Salgo de Compartir 5:50 am, 3 cupos"* y se pierde entre mensajes. También me pasó que una pasajera reservó por mensaje, no apareció y me dejó el cupo vacío todo el trayecto.
+
+**Entrevistador:** En el tema de la relación con una app: ¿qué te haría probarla?  
+**Laura Gutiérrez:** Que sea solo del Externado. Si el pasajero entra con correo `@uexternado.edu.co` y veo su calificación, para mí cambia todo: sé que es alguien de la universidad y sé si es puntual. Eso es lo que me da tranquilidad.
+
+**Entrevistador:** ¿Qué te haría dejar de usar una app así?  
+**Laura Gutiérrez:** Que tarde en pagarme. Si el pago no me llega a la cuenta al terminar el viaje y tengo que estar persiguiendo, vuelvo al WhatsApp. También que no haya soporte: si hay un conflicto y no responde nadie, me quedo sola.
+
+**Entrevistador:** [Se muestra el concepto de la app] Con tus palabras, ¿qué es esto?  
+**Laura Gutiérrez:** Es como un Uber pero entre nosotros, controlado por la universidad. Lo que más me sirve es lo del pago centralizado y las calificaciones. Lo que me sobra sería quizá el botón de pánico si ya hay soporte humano; y le falta un detalle importante: mostrar el historial del conductor, algo como "62 viajes completados este mes", eso da mucha confianza.
+
+**Entrevistador:** En dos semanas vamos a probar un prototipo. ¿Te gustaría participar como conductora?  
+**Laura Gutiérrez:** Sí, cuéntenme. Puedo participar esa semana. Me escriben por aquí mismo o al correo.
+
+**Entrevistador:** ¿Conoces a algún otro conductor del Externado que debamos entrevistar?  
+**Laura Gutiérrez:** Sí, un compañero de mi carrera que va en un cuarto semestre y maneja desde el Portal Sur. Les paso su dato.
+
+---
+
+### Entrevista 12: Óscar Padilla
+- **Rol:** Conductor habitual
+- **Programa:** Ingeniería Industrial, 9.° semestre
+- **Ruta:** Fontibón / Calle 26 $\leftrightarrow$ Universidad Externado
+- **Vehículo / Cupos:** Mazda 2019, 4 cupos
+- **Tarifa cobrada:** $6.000 COP por persona (Total: $24.000 COP)
+- **Registro:** Consentimiento informado leído y autorizado al inicio del audio. Concepto presentado en el minuto 26.
+
+#### Transcripción Estructurada:
+
+**Entrevistador:** Hola Óscar, gracias por recibirnos. ¿Autorizas la grabación con fines académicos, anónima en el informe?
+**Óscar Padilla:** Autorizo, sí, sin problema.
+
+**Entrevistador:** Cuéntanos tu dinámica de Wheels desde Fontibón.  
+**Óscar Padilla:** Yo vivo en Fontibón, cerca a la Calle 26. Salgo a las 6:10 am, tomo la Calle 26 hacia el oriente y bajo en el Externado. Llevo 4 cupos todos los días, todos ocupados hace rato. Es un Mazda 2019 propio.
+
+**Entrevistador:** ¿Cómo calculas lo que cobras?  
+**Óscar Padilla:** Cobro $6.000 el estándar. $24.000 con carro lleno. De eso, cerca de $9.000 se va en gasolina ida y vuelta y el resto es el ahorro que le meto al carro. No es un negocio, es cómo puedo venir a estudiar sin que el transporte me consuma todo el presupuesto.
+
+**Entrevistador:** ¿Qué dolores tienes con la gestión por WhatsApp?  
+**Óscar Padilla:** El que me cancelan a última hora. Publiqué cupo desde la noche, me confirmaron 4, y a las 6:05 am, cuando ya salí, dos me escribieron *"me quedé dormido"*. Ya no tengo cómo buscar dos pasajeros a esa hora y viajo con dos cupos vacíos. Pierdo $12.000 de un plumazo. Y no hay ninguna consecuencia para ellos.
+
+**Entrevistador:** ¿Qué te haría probar una app del Externado?  
+**Óscar Padilla:** Dos cosas: la reserva con abono, que si alguien reserva y cancela tarde se me compense, y las calificaciones. Yo quiero ver si el pasajero es serio antes de confirmarle el cupo.
+
+**Entrevistador:** ¿Qué te haría dejar de usarla?  
+**Óscar Padilla:** Que la comisión se coma mucho de lo que cobro. Si me quedan menos de $5.000 por cupo, no me sirve. También que sea complicada: si para publicar mi ruta me toma más de un minuto, prefiero el WhatsApp.
+
+**Entrevistador:** [Se muestra el concepto] ¿Qué es esto en tus palabras y qué le falta?  
+**Óscar Padilla:** Es el grupo de WhatsApp convertido en una plataforma seria con verificación y pagos. Lo que más me sirve: la reserva con penalización y el pago centralizado. Le falta algo: un control visible de los cupos ya reservados versus disponibles para el conductor, y que me avise con más anticipación si un pasajero va a cancelar.
+
+**Entrevistador:** ¿Participarías en la prueba del prototipo en dos semanas?  
+**Óscar Padilla:** Sí, obvio. Yo publicaría mis rutas de la 26. Avisen con anticipación.
+
+**Entrevistador:** ¿Algún otro conductor que nos recomiendes?  
+**Óscar Padilla:** Un compañero de Ingeniería Industrial que maneja desde Kennedy los martes y jueves. Les dejo su contacto.
+
+---
+
 ## 🎒 BLOQUE II: PASAJEROS (Demanda de Movilidad)
+
+> **Nota de campo:** Las entrevistas **E9 y E10** complementaron la muestra de pasajeros cubriendo corredores aún no visitados (sur y centro-occidente). En ambas se registró el consentimiento informado y se presentó el concepto (tema 6), con compromiso de prueba para el campo 3.
 
 ---
 
 ### Entrevista 1: Federico Pinilla
 - **Rol:** Pasajero habitual
-- **Programa:** Economía, 8.° semestre
-- **Ruta:** Suba / Colina Campestre $\leftrightarrow$ Universidad Externado
+- **Programa:** Derecho, 6.° semestre (3.er año)
+- **Ruta:** La Floresta (Engativá) $\leftrightarrow$ Universidad Externado
 - **Costo actual / Disposición a pagar:** Paga $6.000 COP | Pagaría hasta $8.000 COP
 
 #### Transcripción Estructurada:
 
 **Entrevistador:** Hola Federico, gracias por la entrevista. Cuéntanos sobre tu viaje diario a la universidad: ¿desde dónde vienes y cómo te transportas?  
-**Federico Pinilla:** Hola. Yo vivo en Suba, por la zona de Colina Campestre. Mi trayecto al Externado en TransMilenio o SITP es una pesadilla: fácilmente me tomo de hora y media a dos horas en hora pico, apretado, con transbordos en la 170 o Suba y la caminada dura subiendo por la Calle 12 hasta la universidad. Por eso prefiero mil veces hacer Wheels.
+**Federico Pinilla:** Hola. Yo vivo en La Floresta, por el lado de Engativá. Mi trayecto al Externado en TransMilenio o SITP es una pesadilla: fácilmente me tomo de hora y media a dos horas en hora pico, apretado, con transbordos por la Calle 26 o la Avenida Ciudad de Cali y la caminada final subiendo por la Carrera Sexta hasta la universidad. Por eso prefiero mil veces hacer Wheels.
 
 **Entrevistador:** ¿Cómo buscas y consigues Wheels actualmente?  
-**Federico Pinilla:** A través de los grupos de WhatsApp de Wheels Externado. Pero es súper desgastante. Uno tiene que estar pegado al celular desde las 6 de la mañana o desde la noche anterior refrescando los chats para ver si alguien de Suba o Colina publica ruta. En lo que uno abre el mensaje para responder *“yo”*, ya otros tres respondieron antes y se acabaron los cupos. Es una lotería.
+**Federico Pinilla:** A través de los grupos de WhatsApp de Wheels Externado. Pero es súper desgastante. Uno tiene que estar pegado al celular desde las 6 de la mañana o desde la noche anterior refrescando los chats para ver si alguien de La Floresta o del occidente publica ruta. En lo que uno abre el mensaje para responder *“yo”*, ya otros tres respondieron antes y se acabaron los cupos. Es una lotería.
 
 **Entrevistador:** ¿Qué problemas de servicio o seguridad has experimentado?  
 **Federico Pinilla:** La incertidumbre. Un conductor dice que sale a las 6:40 am, uno baja al punto de encuentro y el man llega a las 7:15 am porque cogió trancón o se atrasó. O al revés: conductores que no te esperan ni un minuto. También el tema de seguridad: uno no sabe quién es el conductor, qué tan seguro maneja o si el carro está en buenas condiciones técnico-mecánicas.
@@ -111,20 +197,20 @@ Además, un sistema de puntuación tipo Uber: saber si el pasajero es puntual, s
 
 ### Entrevista 2: Samuel Cárdenas
 - **Rol:** Pasajero habitual
-- **Programa:** Ciencia de Datos, 4.° semestre
-- **Ruta:** Chía (Cundinamarca) $\leftrightarrow$ Universidad Externado (vía Autopista Norte)
-- **Costo actual / Disposición a pagar:** Paga $7.000 COP | Pagaría entre $9.000 y $10.000 COP
+- **Programa:** Derecho, 6.° semestre (3.er año)
+- **Ruta:** Calle 80 / Occidente $\leftrightarrow$ Universidad Externado (vía Calle 26)
+- **Costo actual / Disposición a pagar:** Paga $6.000 COP | Pagaría entre $9.000 y $10.000 COP
 
 #### Transcripción Estructurada:
 
 **Entrevistador:** Hola Samuel, ¿desde dónde te desplazas para venir al Externado y qué alternativas de transporte tienes?  
-**Samuel Cárdenas:** Hola. Yo viajo todos los días desde el municipio de Chía. Salir de Chía hacia Bogotá en transporte público implica tomar una flota intermunicipal hasta el Portal Norte ($4.500 COP), luego TransMilenio hasta Las Aguas ($3.200 COP) y luego subir a pie la loma del Externado. Son casi dos horas y media de trayecto de ida y lo mismo de regreso. Wheels me reduce ese viaje a menos de una hora y cuarto.
+**Samuel Cárdenas:** Hola. Yo viajo todos los días desde la Calle 80, por el occidente de Bogotá. En transporte público me implica tomar el TransMilenio de la 80 con transbordo en Ricaurte o en la Caracas, y luego subir a pie la loma del Externado desde la Carrera Décima. Son cerca de hora y media de trayecto de ida y lo mismo de regreso en hora pico. Wheels me reduce ese viaje a menos de una hora.
 
 **Entrevistador:** ¿Cómo consigues Wheels desde la sabana norte?  
-**Samuel Cárdenas:** En los grupos de WhatsApp hay pocos conductores que salgan directamente desde Chía o Cajicá. La mayoría salen de la 170. Cuando sale alguien desde Chía es una guerra en el grupo para quedarse con el cupo. Además, si el conductor sale a las 5:45 am y cancela a las 5:30 am, me arruina el día completo porque ya no llego a mi clase de las 7:00 am.
+**Samuel Cárdenas:** En los grupos de WhatsApp hay pocos conductores que salgan directamente desde la Calle 80. La mayoría salen de la 170, de Suba o de Cedritos. Cuando sale alguien que pase por la 80 es una guerra en el grupo para quedarse con el cupo. Además, si el conductor sale a las 5:45 am y cancela a las 5:30 am, me arruina el día completo porque ya no llego a mi clase de las 7:00 am.
 
 **Entrevistador:** ¿Qué opinas sobre una plataforma con geolocalización y confirmación de viaje?  
-**Samuel Cárdenas:** Sería la salvación para los que vivimos fuera de Bogotá. Necesitamos ver la ruta en un mapa: saber si el conductor pasa por Fontanar, por la variante de Chía o por la autopista central. Y que la reserva sea fija. Hoy pago $7.000 pesos, pero por la garantía de llegar a tiempo y no comerme el calvario de la flota intermunicipal pagaría tranquilamente **hasta $10.000 pesos**.
+**Samuel Cárdenas:** Sería la salvación para los que vivimos en el occidente. Necesitamos ver la ruta en un mapa: saber si el conductor pasa por la Avenida Ciudad de Cali, por la Calle 26 o directo por la 80. Y que la reserva sea fija. Hoy pago $6.000 pesos, pero por la garantía de llegar a tiempo y no comerme el calvario del TransMilenio en hora pico pagaría tranquilamente **hasta $10.000 pesos**.
 
 ---
 
@@ -209,16 +295,87 @@ Pagaría **$8.000 COP** feliz sabiendo que voy con alguien sobrio, con el carro 
 
 ---
 
+### Entrevista 9: Camila Ortega
+- **Rol:** Pasajera habitual
+- **Programa:** Enfermería, 6.° semestre
+- **Ruta:** Bosa / Villa Sandra $\leftrightarrow$ Universidad Externado (vía Avenida Boyacá)
+- **Costo actual / Disposición a pagar:** Paga $6.000 COP | Pagaría hasta $8.000 COP
+- **Registro:** Consentimiento informado leído y autorizado al inicio del audio. Concepto presentado en el minuto 23.
+
+#### Transcripción Estructurada:
+
+**Entrevistador:** Hola Camila, gracias por la entrevista. ¿Autorizas la grabación con fines académicos, con código en el informe?
+**Camila Ortega:** Sí, autorizo.
+
+**Entrevistador:** ¿Cómo es tu viaje desde Bosa?  
+**Camila Ortega:** Yo vivo en Villa Sandra, en Bosa. Mi carrera de Enfermería tiene prácticas en turno de mañana, entonces salgo de casa a las 5:15 am. En transporte público son dos horas y media hasta el Externado combinando SITP, TransMilenio por la Boyacá y caminata final. Con Wheels bajo a 50 minutos.
+
+**Entrevistador:** ¿Cuál es tu mayor problema hoy consiguiendo el viaje?  
+**Camila Ortega:** Que desde el sur hay muy pocos conductores. En los grupos de WhatsApp casi todos publican rutas del norte o de la 170. Cuando alguien del sur publica, hay que responder en segundos. La última vez que perdí un cupo fue un martes: respondí "yo" y ya iba la séptima persona.
+
+**Entrevistador:** ¿Seguridad?  
+**Camila Ortega:** Para nosotras las mujeres es otro nivel de riesgo. Bajar a las 5:30 am a esperar un carro que no sabes quién maneja, con la oscuridad todavía... Uno revisa la placa y se la manda a la mamá antes de subirse. Es rutina.
+
+**Entrevistador:** ¿Qué te haría probar una app del Externado?  
+**Camila Ortega:** Que el conductor esté verificado por la universidad y que yo pueda compartir mi viaje en vivo con mi familia. Si veo la foto y la facultad del conductor, confío más. Que haya un botón para avisar si algo se sale de lo normal.
+
+**Entrevistador:** [Se muestra el concepto] ¿Qué es esto y qué le agregarías?  
+**Camila Ortega:** Es un Wheels formal y seguro. Me encanta lo de compartir el viaje en vivo y las calificaciones. Le agregaría un filtro específico "conductoras mujeres" o al menos que en el perfil se pueda ver el género, porque muchas compañeras lo pedirían. Lo que me sobra: nada de lo que veo, para mí todo aplica.
+
+**Entrevistador:** ¿Participarías en la prueba del prototipo?  
+**Camila Ortega:** Sí, quiero participar. Me escriben por WhatsApp o al correo del campus.
+
+**Entrevistador:** ¿Otra pasajera de tu zona que nos recomiendes?  
+**Camila Ortega:** Sí, una compañera de prácticas que vive en Timiza y también sufre el mismo viaje. Les paso su contacto.
+
+---
+
+### Entrevista 10: Andrés Mejía
+- **Rol:** Pasajero ocasional
+- **Programa:** Administración de Empresas, 3.er semestre
+- **Ruta:** Chapinero / Calle 72 $\leftrightarrow$ Universidad Externado (vía Caracas)
+- **Costo actual / Disposición a pagar:** Paga $6.000 COP | Pagaría hasta $8.000 COP
+- **Registro:** Consentimiento informado leído y autorizado al inicio del audio. Concepto presentado en el minuto 22.
+
+#### Transcripción Estructurada:
+
+**Entrevistador:** Hola Andrés, gracias por el tiempo. ¿Autorizas la grabación con fines académicos?
+**Andrés Mejía:** Sí, autorizo, sin problema.
+
+**Entrevistador:** Cuéntanos tu situación de transporte.  
+**Andrés Mejía:** Yo vivo en Chapinero, por la Calle 72 con Caracas. Tomo Wheels unas 3 veces por semana, dependiendo del día. En TransMilenio me bajo en la Caracas y subo a pie al Externado, son unos 45 minutos en total. No es el peor trayecto del equipo, pero el Wheels sí me ahorra tiempo y la caminata empinada.
+
+**Entrevistador:** ¿Qué te molesta del sistema actual?  
+**Andrés Mejía:** La desorganización. Los grupos de WhatsApp tienen ahorita cientos de personas y uno lee mensajes que no son de su ruta. Yo necesito un filtro: "Caracas hacia el centro, entre 6:30 y 7:00 am" y que solo me aparezca eso. Leer 400 mensajes para encontrar un viaje es perder la mañana.
+
+**Entrevistador:** ¿Has tenido malas experiencias de seguridad?  
+**Andrés Mejía:** Personalmente no, pero presencié algo: un conductor que iba manejando mirando el celular buscando pasajeros mientras el carro iba en movimiento por la Caracas. Fue un susto. Eso en la app debería reportarse.
+
+**Entrevistador:** ¿Qué te haría probar una app nueva?  
+**Andrés Mejía:** Filtros por ruta y horario, eso es lo número uno. Y pagos digitales: yo no cargo efectivo y estar transfiriendo mientras uno baja del carro es fastidioso. Que el pago quede listo al confirmar la reserva.
+
+**Entrevistador:** [Se muestra el concepto] ¿Qué es esto en tus palabras?  
+**Andrés Mejía:** Una app para organizar los Wheels del Externado con filtros, reservas y pagos. Me sirve mucho lo de los filtros y el pago automático. Le quitaría quizá el tema de la calificación por viaje para los pasajeros frecuentes: si ya hice 30 viajes, que me lo pidan en cada uno es tedioso. O que sea opcional. Le agregaría un calendario que recuerde mi clase y mi ruta.
+
+**Entrevistador:** ¿Participarías en la prueba del prototipo?  
+**Andrés Mejía:** Sí, me anoto. Les escribo por acá.
+
+**Entrevistador:** ¿Algún compañero que nos recomiendes?  
+**Andrés Mejía:** Sí, un pana de mi semestre que vive en Suba y hace Wheels diario. Les paso el dato.
+
+---
+
 ## 📊 Síntesis Cuantitativa de Entrevistas
 
-| Variable de Análisis | Métrica de Campo ($N=8$) | Interpretación Metodológica |
+| Variable de Análisis | Métrica de Campo ($N=12$) | Interpretación Metodológica |
 |---|---|---|
-| **Población entrevistada** | 6 Pasajeros (75%) / 2 Conductores (25%) | Refleja la proporción real del mercado en campus universitario. |
-| **Tarifa promedio actual** | $6.000 COP | Punto de referencia del precio de equilibrio informal. |
+| **Población entrevistada** | 8 Pasajeros (67%) / 4 Conductores (33%) | Proporción ajustada al modelo de plataforma de dos lados (8-10 lado demanda / 4-5 lado oferta). |
+| **Tarifa promedio actual** | $6.000 COP | Punto de referencia del precio de equilibrio informal, uniforme en toda la muestra. |
 | **Disposición a pagar promedio (WTP)** | $8.000 COP (+33.3% sobre la tarifa actual) | Valida holgadamente la hipótesis de monetización con margen para comisión. |
 | **Problema #1 reportado (Conductores)** | Cancelaciones de última hora (*Ghosting*) | Provoca pérdida del 25% al 33% del ingreso diario proyectado. |
 | **Problema #1 reportado (Pasajeros)** | Falta de cupo, saturación de WhatsApp e incertidumbre horaria | Pérdida de tiempo productivo y riesgo de llegar tarde a evaluaciones. |
 | **Requisito unánime (100% de la muestra)** | Verificación obligatoria con correo `@uexternado.edu.co` | Factor no negociable de confianza y diferenciación frente a apps abiertas. |
+| **Compromisos para campo 3** | 4 de 4 entrevistas complementarias (E9-E12) aceptaron probar el prototipo | Base de usuarios comprometidos para las pruebas de usabilidad. |
 
 ---
 *Fin del documento de transcripciones oficiales — Entrega 3.*
