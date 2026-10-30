@@ -1,0 +1,15 @@
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# OS & Editors
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/

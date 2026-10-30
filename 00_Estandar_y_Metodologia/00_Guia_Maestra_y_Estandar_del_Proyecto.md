@@ -1,8 +1,12 @@
 # Guía Maestra de Navegación, Estándar y Trazabilidad Oficial del Proyecto
-## StatCredit AI — Scoring Crediticio Alternativo B2B & XAI
+## Repositorio General de Emprendimiento — Pregrado en Ciencia de Datos
 **Curso:** Emprendimiento (Pregrado en Ciencia de Datos)  
 **Institución:** Universidad Externado de Colombia — Semestre 2026-II  
 **Grupo 5:** Santiago Sandoval, Sebastián Ramos, Julián Duarte, Tomás Rincón, Julián Jiménez  
+
+> [!NOTE]
+> **Hito de Pivote Estratégico (Semestre 2026-II):**  
+> Durante el corte de evaluación posterior al Portafolio 3, el equipo identificó barreras de acceso a tomadores de decisión bancarios en el proyecto inicial *StatCredit AI*. Siguiendo la metodología de Lean Startup y Steve Blank (2021), el equipo ejecutó un pivote hacia **"Wheels Externado"**, una plataforma inteligente de viajes compartidos (carpooling) con verificación institucional obligatoria para la comunidad de la Universidad Externado de Colombia. Los entregables previos (Portafolios 1 al 3 y Entrega 1) quedan archivados y preservados como soporte de la etapa 1, mientras que los entregables actuales (**Entrega 3** y **Portafolio de Evidencias 4**) se desarrollan sobre la solución de movilidad.
 
 ---
 
