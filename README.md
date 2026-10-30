@@ -53,46 +53,34 @@ Emprendimiento/
 ├── README.md                                      # Cuadro de mando principal y registro del pivote
 ├── .gitignore                                     # Configuración de exclusiones git
 │
-├── 00_Estandar_y_Metodologia/                     # Guías maestras docentes y manual de estilo
-│   ├── 00_Guia_Maestra_y_Estandar_del_Proyecto.md # Documento normativo máster del curso
-│   └── 00_Estandar_Redaccion_y_Metodologia.md     # Manual narrativo y metodológico
+├── 00_Estandar_y_Metodologia/                     # Guías docentes y manual de estilo
+│   ├── 00_Guia_Maestra_y_Estandar_del_Proyecto.md
+│   └── 00_Estandar_Redaccion_y_Metodologia.md
 │
 ├── 01_Proyecto_Wheels_Externado/                  # 🚗 PROYECTO ACTIVO: Carpooling Universitario
-│   ├── README.md                                  # Mapa general y especificaciones del proyecto
-│   ├── Entrega_3/                                 # 📌 CARPETA OFICIAL: Materiales para la Entrega 3
-│   ├── Portafolios_de_Evidencias/                 # 📌 PORTAFOLIOS OFICIALES DEL PROYECTO WHEELS
-│   │   └── Portafolio_4/                          # Portafolio 4 (LaTeX compilable, PDF y README)
-│   │       ├── Portafolio_de_Evidencias_4_Wheels_Externado.tex
-│   │       ├── Portafolio_de_Evidencias_4_Wheels_Externado.pdf
-│   │       └── README.md
-│   └── 02_Documentacion_y_Modelo/                 # Ficha técnica del dolor, justificación y arquitectura
-│       ├── 01_Ficha_Tecnica_Problema_y_Pivote.md
-│       └── 02_Arquitectura_Conceptual_App.md
+│   ├── README.md                                  # Contexto, pivote e idea del proyecto
+│   ├── Entrega_3/                                 # 📌 Carpeta para Entrega 3
+│   └── Portafolio_de_Evidencias_4/                # 📌 Carpeta para Portafolio de Evidencias 4
 │
-├── Proyecto_StatCredit_AI/                        # 🏛️ PROYECTO PREVIO (Archivado y Preservado)
+├── Proyecto_StatCredit_AI/                        # 🏛️ PROYECTO PREVIO (Archivado)
 │   ├── 01_Talleres_y_Contratos/                   # Talleres iniciales y Term Sheet
 │   ├── 02_Presentaciones_y_Diapositivas/          # Diapositivas Entrega 1, Glosario y recursos
-│   └── Portafolios_de_Evidencias/                 # Portafolios históricos de StatCredit AI
-│       ├── Portafolio_1/                          # Ideación y Problem Framing
-│       ├── Portafolio_2/                          # Validación inicial y experimentos
-│       └── Portafolio_3/                          # Validación de campo y Lienzo Canvas (P1 a P3)
+│   └── Portafolios_de_Evidencias/                 # Portafolios históricos (1, 2 y 3)
+│       ├── Portafolio_1/
+│       ├── Portafolio_2/
+│       └── Portafolio_3/
 │
-├── 03_Materiales_de_Clase/                        # Presentaciones magistrales y circulares
-│   └── README.md
-│
-└── 04_Lecturas_y_Bibliografia/                   # Artículos científicos y marcos teóricos
-    └── README.md
+├── 03_Materiales_de_Clase/
+└── 04_Lecturas_y_Bibliografia/
 ```
 
 ---
 
 ## 🌿 5. Configuración de Ramas en GitHub
 
-Para organizar el trabajo colaborativo en GitHub, el repositorio cuenta con las siguientes ramas de trabajo:
-
-1. **`main`**: Rama principal estable con la estructura integral, documentación unificada y archivos archivados de StatCredit AI.
-2. **`entrega-3`**: Rama de trabajo enfocada en el desarrollo de la **Entrega No. 3** (`01_Proyecto_Wheels_Externado/Entrega_3/`).
-3. **`portafolio-4`**: Rama de trabajo dedicada al **Portafolio de Evidencias No. 4** (`01_Proyecto_Wheels_Externado/Portafolios_de_Evidencias/Portafolio_4/`).
+1. **`main`**: Rama principal del repositorio.
+2. **`entrega-3`**: Rama para trabajar lo relacionado con la Entrega 3 (`01_Proyecto_Wheels_Externado/Entrega_3/`).
+3. **`portafolio-4`**: Rama para trabajar lo relacionado con el Portafolio de Evidencias 4 (`01_Proyecto_Wheels_Externado/Portafolio_de_Evidencias_4/`).
 
 ---
 *Universidad Externado de Colombia — Pregrado en Ciencia de Datos — 2026*
