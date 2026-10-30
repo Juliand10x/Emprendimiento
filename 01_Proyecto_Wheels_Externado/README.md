@@ -22,5 +22,9 @@ El objetivo es formalizar y facilitar el proceso que hoy se hace por WhatsApp, o
 ---
 
 ## 📂 Carpetas de Trabajo
-- **`Entrega_3/`**: Espacio para los insumos y entregables correspondientes a la Entrega 3.
-- **`Portafolio_de_Evidencias_4/`**: Espacio para los documentos y avances correspondientes al Portafolio de Evidencias No. 4.
+- **`Entrega_3/`**: Espacio para los insumos y entregables correspondientes a la Entrega 3 (Trabajo de campo 2 con clientes).
+  - `Transcripciones_Entrevistas.md`: Transcripciones íntegras y estructuradas de las 8 entrevistas de campo (conductores y pasajeros).
+  - `Informe_Resultados_Validacion_Entrega_3.md`: Informe ejecutivo de validación de campo, customer discovery, personas, Willingness to Pay y backlog de MVP.
+  - `Audios/`: Archivos fuente de audio y video de las 8 entrevistas.
+  - `Guia Entrega 3_Trabajo de campo 2- con clientes_ok .docx`: Guía oficial docente de la entrega.
+- **`Portafolio_de_Evidencias_4/`**: Espacio para los documentos y avances correspondientes al Portafolio de Evidencias No. 4 (Fuentes de ingresos y LTV).
