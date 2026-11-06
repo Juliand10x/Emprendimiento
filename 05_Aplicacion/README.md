@@ -1,45 +1,85 @@
-# wheels · demo (solo Universidad Externado de Colombia)
+# wheels · prototipo (Universidad Externado de Colombia)
 
-App web para celular, estilo Uber, para viajes compartidos entre la comunidad Externadista.
-**Demo sin base de datos:** conductores, viajes y pagos son simulados; lo único que se guarda
-(perfil, historial, promo) queda en el navegador (`localStorage`).
+App web móvil para **compartir cupos de carro** dentro de la comunidad Externadista.
+El campus es el punto fijo: los viajes van **hacia el Externado** (mañana) o **salen
+del Externado** hacia puntos de la ciudad (tarde/noche).
 
-## Cómo abrirla
-1. Doble clic en `iniciar.bat` (necesita Python instalado). Abre `http://localhost:8000`.
-2. En el celular: conecta el celular al mismo WiFi y entra a `http://IP-DE-TU-PC:8000`
-   (o usa el modo celular del navegador: F12 → icono de celular).
-   Para "instalarla" como app: menú del navegador → *Agregar a pantalla de inicio*.
+**Sin servidor todavía:** todo corre en el navegador y los datos se guardan en
+`localStorage`. Los conductores/pasajeros de ejemplo son ficticios, pero el flujo
+completo (oferta → reserva → PIN → recorrido → comisión) es funcional.
+
+## Cómo abrirla en local
+
+### WSL / Linux
+```bash
+cd "05_Aplicacion"
+./iniciar.sh            # equivale a: python3 -m http.server 8000
+```
+Abre **http://localhost:8000** en el navegador de Windows (WSL2 reenvía localhost solo).
+
+### Windows
+Doble clic en `iniciar.bat` (requiere Python).
+
+### Celular (misma WiFi)
+Entra desde el celular a `http://IP-DE-TU-PC:8000` y usa "Agregar a pantalla de inicio"
+para probarla como app.
+
+### Atajos de URL
+| URL | Qué hace |
+|---|---|
+| `?guest=1` | entra directo como pasajero demo |
+| `?guest=1&role=driver` | entra directo como conductor demo |
+| `?map=osm` | fuerza el mapa de respaldo (OpenStreetMap) |
+| `?reset=1` | borra los datos de la demo y arranca de cero |
 
 ## Cómo entrar
-- Correo permitido: solo `@uexternado.edu.co` o `@est.uexternado.edu.co` (cualquier otro se rechaza).
-- Código de verificación de la demo: **1234**.
-- Botón "Entrar como invitado" para probar rápido.
+1. Elige **Soy pasajero** o **Soy conductor** (la app tiene dos interfaces separadas).
+2. Usa un correo `@uexternado.edu.co` o `@est.uexternado.edu.co`.
+3. Código de la demo: **1234**.
+4. También hay "Entrar como invitado" para pruebas rápidas.
 
-## Qué tiene (adaptado de Uber)
-Pasajero: elegir recogida (porterías del campus) y destino, buscar lugares, opciones **Compartido / Directo**
-con tarifa en COP, método de pago, promos (`WHEELS50`, `UNI10`), buscar conductor, PIN de abordaje,
-conductor llegando en el mapa, chat, llamar, compartir viaje, botón de seguridad (123 + contacto de confianza),
-cancelar, viaje en curso, recibo, calificación y propina, historial, viajes programados (repetibles),
-billetera, cuenta.
-Conductor (demo): conectarse, recibir solicitud con cuenta regresiva, aceptar, ir por el pasajero,
-pedir PIN, llevarlo y ver ganancias.
+Un mismo correo puede tener ambos roles: desde **Cuenta → Cambiar de rol** vuelves a
+la pantalla de selección.
 
-## Google Maps
-Por defecto usa un mapa de respaldo (OpenStreetMap). Para usar Google Maps:
-1. En Google Cloud crea un proyecto y activa facturación (hay crédito gratis mensual).
-2. Activa **Maps JavaScript API**, **Routes API** y **Places API (New)**.
-3. Crea una API key y **restríngela** (HTTP referrers: `http://localhost:8000/*` y tu dominio).
-4. Pégala en `config.js` → `GOOGLE_MAPS_API_KEY: "tu_llave"`.
-Si la llave falla, la app vuelve sola al mapa de respaldo.
-> La ruta de Google Maps no pudo probarse sin llave; el mapa de respaldo sí fue probado de punta a punta.
+## Reglas del modelo (resumen)
+- **El conductor publica una oferta**, no se pide un viaje al estilo Uber.
+- Elige **2 a 4 puntos de encuentro** (estaciones de TransMilenio o sitios conocidos) **de una misma zona y a máximo 3 km entre sí**: la oferta lleva a una zona, no reparte a la gente por toda la ciudad.
+- La oferta se cierra llena, o antes si el conductor ya tiene **2 o más pasajeros**.
+- Rumbo al campus: se publica **el día anterior** (mínimo 12 h en el prototipo) y los
+  pasajeros **no pueden cancelar en las últimas 2 h**; solo queda el botón de
+  **Emergencia** (libera el cupo a la lista de espera y cobra el recargo de no-show).
+- Regreso desde el campus: **se publica mínimo 1 h antes**, se puede cancelar hasta
+  5 min antes y el conductor cierra la oferta cuando termina el recorrido.
+- Los pasajeros ven ofertas con **puntos a máximo 2 km** de su zona de referencia.
+- **Lista de espera:** si alguien cancela, el cupo se reasigna automáticamente.
+- **Ingreso de Wheels:** 8 % por cupo completado (solo si el viaje se hace).
 
-## Pruebas rápidas
-- `?fast=6` acelera las simulaciones. `?map=osm` fuerza el mapa de respaldo. `?guest=1` entra directo.
+Todos los valores están en `config.js` → `OFFERS` y `PRICING`.
 
-## Lo que sigue (cuando lo pidas)
-Base de datos real, logins con correo institucional verificado de verdad, perfiles guardados,
-pagos reales y conductores reales.
+## Qué incluye
+- Selección de rol + login con correo institucional + código.
+- Interfaz pasajero: feed de ofertas, filtro al campus / del campus, zona de
+  referencia, detalle con distancia a pie, reserva, PIN, cancelación con reglas,
+  lista de espera y actividad.
+- Interfaz conductor: panel, publicación de ofertas (2-4 puntos, hora, cupos,
+  precio sugerido), gestión de pasajeros, simulación de recorrido y ganancias con
+  comisión.
+- Seguridad (PIN, compartir viaje, contacto, línea 123), pagos demo y promos.
+
+## Qué falta (siguiente etapa)
+- Backend real: autenticación con correo, base de datos, matching en servidor.
+- Notificaciones push y ubicación en vivo.
+- Pagos reales (Nequi/PSE) y verificación de documentos del conductor.
+- Panel administrativo y métricas del negocio.
+
+## Deploy
+Es 100 % estático (HTML/CSS/JS + Leaflet vendorizado). Opciones:
+- **Netlify (arrastrar la carpeta `05_Aplicacion`)**: publica tal cual.
+- **Netlify conectando el repo**: configura `base = "05_Aplicacion"` y `publish = "."`.
+- **GitHub Pages**: publica la carpeta y abre `index.html`.
 
 ## Archivos
-`index.html` · `styles.css` · `app.js` (pantallas y flujos) · `maps.js` (Google/Leaflet) ·
-`data.js` (lugares, conductores ficticios) · `config.js` (llave, precios) · `vendor/leaflet`.
+`index.html` · `styles.css` · `app.js` (roles, ofertas y flujos) · `maps.js`
+(Google/Leaflet) · `data.js` (puntos, conductores y pasajeros ficticios) ·
+`config.js` (reglas y precios) · `vendor/leaflet` · `icons/`.
+`docs/MODELO.md` explica el algoritmo de reparto y las reglas con más detalle.

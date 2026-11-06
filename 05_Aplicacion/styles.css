@@ -203,3 +203,47 @@ hr.sep { border: 0; height: 1px; background: var(--line); margin: 12px 0; }
 .stat b { display: block; font-size: 20px; letter-spacing: -.3px; }
 .stat span { font-size: 12px; color: var(--muted); }
 .map-note { position: absolute; z-index: 12; left: 12px; right: 12px; bottom: 8px; text-align: center; font-size: 11px; color: #555; pointer-events: none; }
+
+/* =====================================================================================
+   PROTOTIPO v0.2 · roles, ofertas y reglas de cancelación
+   ===================================================================================== */
+.screen .body h3 { margin: 16px 0 8px; font-size: 12.5px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); font-weight: 700; }
+
+/* pantalla de roles */
+.role-grid { display: grid; gap: 12px; margin-bottom: 12px; }
+.role-card { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; width: 100%; text-align: left; background: #17171b; border: 1px solid #2b2b33; border-radius: 20px; padding: 18px; color: #fff; transition: transform .1s, border-color .2s; }
+.role-card:active { transform: scale(.985); border-color: var(--accent); }
+.role-card svg.i { width: 30px; height: 30px; color: var(--accent); margin-bottom: 4px; }
+.role-card b { font-size: 19px; letter-spacing: -.2px; }
+.role-card span { color: #a4a4ab; font-size: 13.5px; line-height: 1.45; }
+.screen.welcome .demo-note { margin-top: 14px; }
+
+/* tarjetas de oferta */
+.offer { width: 100%; display: block; text-align: left; background: #fff; border: 1.5px solid var(--line); border-radius: 16px; padding: 14px; margin-bottom: 10px; }
+.offer:active { background: #fafafa; }
+.offer .pr { font-weight: 800; font-size: 18px; white-space: nowrap; }
+.badge.muted-badge { background: var(--soft); color: var(--muted); }
+
+/* puntos de encuentro */
+.zone-label { margin: 14px 0 6px; font-size: 11px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; color: var(--muted); }
+.zone-tag { display: inline-flex; align-items: center; gap: 5px; background: var(--soft); color: var(--muted); border-radius: 999px; padding: 5px 10px; font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+.zone-tag svg.i { width: 14px; height: 14px; }
+.pt { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; background: var(--soft); border: 2px solid transparent; border-radius: 13px; padding: 11px 12px; margin-bottom: 8px; }
+.pt.on { background: #fff; border-color: var(--ink); }
+.pt.off { opacity: .4; }
+.pt .dist { font-weight: 800; font-size: 13px; white-space: nowrap; }
+.pt svg.i { width: 18px; height: 18px; color: var(--ok); }
+
+/* avisos y bloqueos */
+.notice { display: flex; align-items: flex-start; gap: 8px; background: var(--soft); border-radius: 12px; padding: 12px; margin: 10px 0; font-size: 13px; line-height: 1.45; color: var(--muted); }
+.notice svg.i { width: 17px; height: 17px; margin-top: 1px; }
+.notice.lock { background: #fff7e6; color: #8a5a00; }
+.notice.lock svg.i { color: #b87a00; }
+
+/* pasajeros de la oferta (vista conductor) */
+.pax { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
+.pax:first-of-type { border-top: 0; }
+.pax .btn.sm { padding: 8px 12px; }
+
+/* contador / estado */
+.empty.sm { padding: 18px 10px; font-size: 13.5px; }

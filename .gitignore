@@ -16,3 +16,6 @@ Thumbs.db
 *Zone.Identifier*
 *:Zone.Identifier
 
+# Proyectos fuera del repo (descartados, no se versionan)
+01_Proyecto_StatCredit_AI/
+
