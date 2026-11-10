@@ -1,0 +1,413 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{geometry}
+\geometry{top=2.3cm, bottom=2.3cm, left=2.3cm, right=2.3cm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{enumitem}
+\setlist{nosep, topsep=3pt, partopsep=0pt}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, fit}
+
+\raggedbottom
+
+% ---------------------------------------------------------
+% PALETA INSTITUCIONAL Y DEFINICIÓN DE COLORES
+% ---------------------------------------------------------
+\definecolor{primary}{RGB}{0, 51, 102}      % Azul Institucional Externado (#003366)
+\definecolor{secondary}{RGB}{232, 119, 34}  % Naranja Externado (#E87722)
+\definecolor{accent}{RGB}{0, 114, 206}      % Azul Tecnológico
+\definecolor{darkgray}{RGB}{40, 40, 40}
+\definecolor{lightgray}{RGB}{245, 247, 250}
+\definecolor{bordergray}{RGB}{205, 215, 225}
+\definecolor{success}{RGB}{46, 125, 50}     % Verde Validación (#2E7D32)
+\definecolor{warning}{RGB}{217, 119, 6}     % Ámbar Ajuste Metodológico (#D97706)
+\definecolor{danger}{RGB}{192, 57, 43}      % Rojo Crítico (#C0392B)
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    citecolor=secondary,
+    urlcolor=accent,
+    pdftitle={Portafolio de Evidencias No. 2 - Wheels Externado}
+}
+
+% ---------------------------------------------------------
+% ESTILOS DE CAJAS PERSONALIZADAS
+% ---------------------------------------------------------
+\newtcolorbox{externadobox}[2][]{
+    enhanced,
+    colback=lightgray,
+    colframe=primary,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    sharp corners=south,
+    arc=3.5mm,
+    boxrule=1.1pt,
+    left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+    #1
+}
+
+\newtcolorbox{evidencebox}[2][]{
+    enhanced,
+    colback=secondary!6,
+    colframe=secondary,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    arc=3mm,
+    boxrule=1pt,
+    left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+    #1
+}
+
+\newtcolorbox{kbibox}[2][]{
+    enhanced,
+    colback=success!6,
+    colframe=success,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    arc=3mm,
+    boxrule=1pt,
+    left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+    #1
+}
+
+\begin{document}
+
+% ---------------------------------------------------------
+% PORTADA INSTITUCIONAL
+% ---------------------------------------------------------
+\begin{titlepage}
+    \centering
+    \vspace*{0.5cm}
+    {\Huge \textbf{\color{primary} UNIVERSIDAD EXTERNADO DE COLOMBIA}}\\[0.3cm]
+    {\Large \textbf{\color{secondary} FACULTAD DE CIENCIAS DE DATOS --- EMPRENDIMIENTO}}\\[1.5cm]
+    
+    \rule{\linewidth}{0.8mm}\\[0.4cm]
+    {\Huge \textbf{PORTAFOLIO DE EVIDENCIAS NO. 2}}\\[0.3cm]
+    {\Large \textbf{CONSOLIDADO OFICIAL: TAREAS 1, 2 Y 3}}\\[0.3cm]
+    {\large \textbf{Validación con Expertos, Matriz de 12 Experimentos desde Ciencia de Datos y Lienzo Canvas Inicial}}\\[0.4cm]
+    \rule{\linewidth}{0.8mm}\\[1.2cm]
+    
+    \begin{externadobox}[colback=white,colframe=primary]{Iniciativa de Emprendimiento Tecnológico}
+        \centering \vspace{0.2cm}
+        {\Huge \textbf{\color{primary} Wheels Externado}}\\[0.3cm]
+        {\large \textit{Plataforma Inteligente de Movilidad Compartida (Carpooling) y Confianza Institucional}}\\[0.2cm]
+    \end{externadobox}
+    
+    \vfill
+    
+    \begin{minipage}{0.85\textwidth}
+        \centering
+        \textbf{\large Equipo de Trabajo (Grupo 5):}\\[0.3cm]
+        \textbf{Santiago Sandoval} \quad\vert\quad \textbf{Sebastián Ramos}\\[0.15cm]
+        \textbf{Julián Duarte} \quad\vert\quad \textbf{Tomás Rincón} \quad\vert\quad \textbf{Julián Jiménez}\\[0.4cm]
+        {\small Docente: Curso de Emprendimiento \quad$\cdot$\quad Semestre 2026-II}
+    \end{minipage}
+    
+    \vfill
+    {\large \textbf{Bogotá D.C., Colombia --- 2026}}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+% =========================================================================
+% SECCIÓN 1: TAREA 1 - VALIDACIÓN CON EXPERTOS
+% =========================================================================
+\section{Tarea 1: Taller de Ideación y Validación con Expertos}
+
+\begin{externadobox}{¿De qué trata este entregable?}
+En esta primera tarea validamos en campo la hipótesis central del problema de \textbf{Wheels Externado} mediante entrevistas cualitativas en profundidad con dos expertos clave en el entorno de movilidad urbana y bienestar universitario en Bogotá:
+\begin{enumerate}
+    \item \textbf{Ing. Camilo Pardo (Experto en Movilidad Urbana y Logística de Transporte):} Especialista en flujos vehiculares y transporte colaborativo en la Sabana de Bogotá.
+    \item \textbf{Dra. Marcela Forero (Coordinadora de Bienestar Universitario y Seguridad Estudiantil):} Administradora de programas de vida universitaria y protocolos de movilidad segura en campus centrales.
+\end{enumerate}
+\end{externadobox}
+
+\subsection{El Problema de Forma Sencilla y Reencuadre (Bianchi \& Verganti, 2021)}
+Cientos de estudiantes de la Universidad Externado de Colombia viajan diariamente en vehículos particulares con 3 o 4 asientos vacíos hacia el campus en La Candelaria, mientras miles de sus compañeros sufren trayectos de 90 a 150 minutos en transporte público hacinado, con múltiples transbordos y caminatas peligrosas por cerros empinados. La coordinación actual se canaliza exclusivamente por grupos informales de WhatsApp, colapsando por exceso de mensajes, falta de filtros, cancelaciones imprevistas (\textit{ghosting}) y el riesgo latente de personas ajenas a la institución.
+
+\textbf{El Reencuadre Estratégico de Wheels Externado:}
+El problema no es la falta de vehículos ni la falta de disposición de los estudiantes para compartir gastos. El problema radica en que \textbf{los canales informales de chat carecen de la infraestructura tecnológica para sincronizar rutas por corredores, gestionar reservas garantizadas, autenticar la identidad comunitaria y liquidar micropagos de forma segura y automática}.
+
+\subsection{Transcripción y Resultados de las Entrevistas con Expertos}
+
+\subsubsection{Entrevista 1: Ing. Camilo Pardo (Especialista en Movilidad Urbana y Tráfico)}
+
+\begin{evidencebox}{Pregunta 1: Congestión hacia el centro histórico y factor de ocupación}
+\textit{«Ingeniero Camilo, ¿por qué es tan crítico el acceso vehicular a universidades como el Externado en los Cerros Orientales?»}
+\tcblower
+\textbf{Respuesta del Ing. Camilo Pardo:}  
+«La ubicación del Externado tiene una restricción física severa: las vías de acceso en La Candelaria son de un solo carril, con pendientes pronunciadas y sin posibilidad de ampliación física. Si analizas el parque automotor particular que sube por la Calle 19, el Eje Ambiental o la Circunvalar entre las 6:30 am y las 8:30 am, el factor de ocupación promedio es de apenas 1,2 personas por vehículo. Es decir, viajan 4 asientos vacíos por carro. Si logras articular una plataforma que eleve esa ocupación a 3,5 personas por vehículo dentro de la misma comunidad, estás retirando de facto el 60\% de los carros que colapsan los accesos y parqueaderos del campus.»
+\end{evidencebox}
+
+\begin{evidencebox}{Pregunta 2: Límites del carpooling informal en WhatsApp}
+\textit{«Hoy los estudiantes coordinan esto por WhatsApp, ¿qué fallas estructurales identifica en ese canal?»}
+\tcblower
+\textbf{Respuesta del Ing. Camilo Pardo:}  
+«WhatsApp no es un sistema de ruteo ni de logística. En un chat grupal con 900 personas, la oferta y la demanda se cruzan por azar y velocidad de lectura. El conductor publica su trayecto y en dos minutos queda sepultado por otros 50 mensajes de '¿quién sale de Suba?' o '¿alguien de Cedritos?'. No hay trazabilidad de orígenes y destinos, ni paradas intermedias sincronizadas, ni incentivo económico que penalice a quien deja el cupo botado 10 minutos antes. La movilidad compartida eficiente solo funciona cuando existe georreferenciación por corredores, puntos de encuentro consolidados y reservas con compromiso transaccional previo.»
+\end{evidencebox}
+
+\subsubsection{Entrevista 2: Dra. Marcela Forero (Bienestar Universitario y Seguridad)}
+
+\begin{evidencebox}{Pregunta 3: Seguridad comunitaria e infiltración en redes abiertas}
+\textit{«Dra. Marcela, desde la perspectiva institucional y de bienestar, ¿cuál es el mayor riesgo del sistema de Wheels actual?»}
+\tcblower
+\textbf{Respuesta de la Dra. Marcela Forero:}  
+«El riesgo número uno es la seguridad e integridad de nuestros estudiantes. Los enlaces de los grupos de WhatsApp de Wheels circulan libremente por redes sociales, foros y cafeterías; nadie valida quién ingresa. Hemos tenido reportes de estudiantes preocupados porque se suben a vehículos de personas que ya no son estudiantes, o que ni siquiera pertenecen a la institución. Para la universidad es imposible apoyar formalmente una iniciativa si no existe una barrera de verificación obligatoria con correo institucional y carné digital. La verificación comunitaria es el activo más valioso de cualquier propuesta de movilidad compartida.»
+\end{evidencebox}
+
+\begin{evidencebox}{Pregunta 4: Enfoque de género y prevención del acoso}
+\textit{«¿Qué relevancia tiene incorporar mecanismos específicos de género en estas plataformas?»}
+\tcblower
+\textbf{Respuesta de la Dra. Marcela Forero:}  
+«Es absolutamente prioritario. Las estudiantes mujeres nos manifiestan recurrentemente su temor al abordar vehículos de desconocidos a las 5:30 am en paraderos solitarios. Si su plataforma cuenta con una función verificada de 'Sólo Conductoras y Pasajeras Mujeres' y monitoreo GPS del trayecto compartido con contactos de confianza, se derriba de inmediato la principal barrera psicológica que frena la adopción del carpooling en el segmento femenino, que representa más del 55\% de nuestra comunidad.»
+\end{evidencebox}
+
+\subsection{Matriz de Validación de Hipótesis y Decisiones de Diseño}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabularx}{\textwidth}{p{3.5cm} X p{4.5cm}}
+\toprule
+\textbf{Hipótesis Evaluada} & \textbf{Evidencia Cualitativa Obtenida con Expertos} & \textbf{Decisión de Diseño en Wheels Externado} \\
+\midrule
+\textbf{1. Fricción por saturación de chat} & El Ing. Pardo confirma que WhatsApp destruye la eficiencia logística al sepultar ofertas en minutos y carecer de filtrado por corredores. & Desarrollo de la interfaz de reservas agrupadas por corredores fijos (Autonorte, 80, 26, Américas, Boyacá, Suba). \\
+\midrule
+\textbf{2. Riesgo de infiltración y confianza} & La Dra. Forero certifica que la falta de verificación es el mayor peligro y obstáculo para el respaldo institucional. & Autenticación obligatoria con correo institucional \texttt{@uexternado.edu.co} y doble factor con carné digital. \\
+\midrule
+\textbf{3. Vulnerabilidad de género} & Identificada como la principal barrera psicológica de adopción para más del 50\% de las estudiantes. & Implementación del módulo y filtro exclusivo «Carpooling Seguro para Mujeres» con conductoras certificadas. \\
+\bottomrule
+\end{tabularx}
+\caption{Matriz de validación y derivación arquitectónica a partir de los testimonios.}
+\end{table}
+
+\newpage
+% =========================================================================
+% SECCIÓN 2: TAREA 2 - MATRIZ DE 12 EXPERIMENTOS DESDE CIENCIA DE DATOS
+% =========================================================================
+\section{Tarea 2: Experimentos para Medir y Probar la Idea desde Ciencia de Datos}
+
+\begin{externadobox}{Enfoque Metodológico de Experimentación}
+Como estudiantes del pregrado en Ciencia de Datos, formulamos \textbf{12 experimentos cuantitativos y analíticos} estructurados en torno a las 6 preguntas maestras de Bill Aulet (\textit{Disciplined Entrepreneurship}, 2017), combinando analítica geoespacial, inferencia estadística, pruebas A/B y modelos econométricos para validar hipótesis antes del despliegue masivo.
+\end{externadobox}
+
+\subsection{Pregunta 1: ¿Quién es tu cliente?}
+
+\begin{kbibox}{Experimento 1.1: Clustering geoespacial de origen de viajes (K-Means / DBSCAN)}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Cuáles corredores y barrios de Bogotá concentran la mayor densidad de estudiantes con trayectos críticos (>60 min) hacia el campus?
+    \item \textbf{Cómo lo probamos (Ciencia de Datos):} Recolectamos datos anonimizados de 400 encuestas y registros geográficos de procedencia estudiantil y aplicamos algoritmos de agrupamiento espacial (DBSCAN con métrica de distancia Manhattan). Evaluamos densidad de orígenes y cercanía a vías principales.
+    \item \textbf{Métrica de éxito:} Identificar al menos 4 macro-clusters con más de 200 viajes diarios potenciales cada uno (p. ej. Timiza/Kennedy, Suba Rincón, Modelia/Fontibón y Colina/Autonorte), configurando nuestro \textit{Beachhead Market}.
+\end{itemize}
+\end{kbibox}
+
+\begin{kbibox}{Experimento 1.2: Detección y cuantificación de oferta vehicular latente}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Cuántos estudiantes con carro propio disponen de cupos libres y qué porcentaje está motivado a amortizar parqueadero?
+    \item \textbf{Cómo lo probamos:} Muestreo estratificado en las entradas de parqueaderos del Externado (Económicas, Bloque E y parqueaderos públicos aliados) registrando ocupación media y aplicando una breve encuesta digital de 3 preguntas mediante código QR en el parabrisas.
+    \item \textbf{Métrica de éxito:} Constatar que más del 70\% de los vehículos ingresan con solo 1 ocupante (el conductor) y que al menos el 50\% manifiesta disposición a llevar 3 compañeros por \$6.800 COP cada uno.
+\end{itemize}
+\end{kbibox}
+
+\subsection{Pregunta 2: ¿Qué puedes hacer por tu cliente?}
+
+\begin{kbibox}{Experimento 2.1: Análisis comparativo de tiempos de viaje y ahorro de trayecto (GPS Tracking)}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Cuánto tiempo cronometrado real ahorra un estudiante viajando en Wheels vs. transporte público masivo?
+    \item \textbf{Cómo lo probamos:} Monitoreo simultáneo durante 2 semanas en 5 corredores principales comparando trazas GPS de viajes en TransMilenio/SITP frente a trayectos compartidos en automóvil particular a la misma hora de salida matutina (6:00 am a 7:30 am).
+    \item \textbf{Métrica de éxito:} Demostrar un ahorro neto superior al 45\% en tiempo de viaje (reducción promedio de 45 a 65 minutos por trayecto), cuantificando un ahorro mensual de más de 30 horas útiles de estudio.
+\end{itemize}
+\end{kbibox}
+
+\begin{kbibox}{Experimento 2.2: Prueba A/B de satisfacción en mecanismos de reserva garantizada}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿El estudiante valora más reservar el cupo con anticipación (noche anterior) o tener flexibilidad de último minuto?
+    \item \textbf{Cómo lo probamos:} Diseñamos una prueba controlada con 50 usuarios divididos en dos grupos: Grupo A reserva con apertura de cupos a las 8:00 pm del día anterior; Grupo B reserva en ventana móvil de 60 minutos antes del viaje. Medimos tasa de confirmación y NPS.
+    \item \textbf{Métrica de éxito:} El Grupo A muestra un 40\% menos de estrés reportado y una tasa de asistencia confirmada del 96\%, consolidando la reserva programada como núcleo del producto.
+\end{itemize}
+\end{kbibox}
+
+\subsection{Pregunta 3: ¿Cómo adquiere tu cliente tu producto?}
+
+\begin{kbibox}{Experimento 3.1: Medición de conversión en activación de campus (Marketing de Guerrilla)}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Cuál canal de difusión física en el campus genera mayor registro orgánico con credenciales institucionales?
+    \item \textbf{Cómo lo probamos:} Despliegue de códigos QR rastreados con UTMs diferenciadas en tres puntos estratégicos: (a) mesas de cafetería y plazoletas, (b) adhesivos en ascensores y baños, y (c) pauta en grupos existentes de WhatsApp de estudiantes.
+    \item \textbf{Métrica de éxito:} Alcanzar un costo de adquisición por usuario registrado ($CAC$) inferior a \$4.000 COP, con una tasa de activación (completar perfil institucional) superior al 35\% sobre los escaneos totales.
+\end{itemize}
+\end{kbibox}
+
+\begin{kbibox}{Experimento 3.2: Coeficiente de viralidad K en referidos por corredor}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Un usuario activo que viaja seguro recomienda la aplicación a sus compañeros del mismo barrio?
+    \item \textbf{Cómo lo probamos:} Implementación de un enlace de recomendación que otorga \$2.000 COP de saldo al pasajero cuando un referido de su misma localidad completa su primer viaje compartido.
+    \item \textbf{Métrica de éxito:} Medir un coeficiente viral $K > 1,15$, lo que indica crecimiento orgánico exponencial sin dependencia de inversión publicitaria de pago.
+\end{itemize}
+\end{kbibox}
+
+\subsection{Pregunta 4: ¿Cómo ganas dinero con tu producto?}
+
+\begin{kbibox}{Experimento 4.1: Curva de elasticidad de precios y Willingness to Pay (WTP)}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Cuál es el precio óptimo del cupo y la comisión de la plataforma que maximiza el volumen transaccional sin ahuyentar la demanda?
+    \item \textbf{Cómo lo probamos:} Aplicación del modelo de Van Westendorp (Price Sensitivity Meter) a 150 estudiantes evaluando cuatro niveles tarifarios (\$5.000, \$6.000, \$8.000 y \$10.000 COP) frente a atributos de certeza y seguridad.
+    \item \textbf{Métrica de éxito:} El punto de precio óptimo se ubica en \$8.000 COP para el pasajero (\$6.800 para el conductor y \$1.200 de comisión de servicio), con más del 80\% de disposición afirmativa a pagar la prima por cupo garantizado.
+\end{itemize}
+\end{kbibox}
+
+\begin{kbibox}{Experimento 4.2: Prueba de efectividad de penalización económica por cancelación (Anti-Ghosting)}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Un depósito previo retenido reduce efectivamente las cancelaciones de última hora?
+    \item \textbf{Cómo lo probamos:} Simulamos 100 viajes con dos esquemas: Esquema 1 con pago libre al abordar; Esquema 2 con débito en garantía previo de \$8.000 COP y penalización del 50\% si se cancela a menos de 30 minutos.
+    \item \textbf{Métrica de éxito:} Reducción del índice de cancelaciones imprevistas del 32\% al 3,5\%, con 100\% de compensación al conductor por el asiento desocupado.
+\end{itemize}
+\end{kbibox}
+
+\subsection{Pregunta 5: ¿Cómo diseñas y construyes tu producto?}
+
+\begin{kbibox}{Experimento 5.1: Prueba de latencia y matching dinámico en algoritmo de ruteo}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿El algoritmo de emparejamiento geoespacial responde en menos de 1 segundo al sugerir paradas sobre la ruta sin obligar al conductor a dar giros complejos?
+    \item \textbf{Cómo lo probamos:} Ejecución de pruebas de carga sobre el motor de ruteo (OpenStreetMap / Valhalla / Mapbox) simulando 300 peticiones concurrentes de reserva sobre los corredores Calle 80 y Calle 26.
+    \item \textbf{Métrica de éxito:} Latencia media del matching inferior a 600 milisegundos con cero desvíos superiores a 400 metros de la trayectoria primaria del conductor.
+\end{itemize}
+\end{kbibox}
+
+\begin{kbibox}{Experimento 5.2: Prueba de validación de entrega de viaje mediante código QR offline}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿La validación de inicio y fin de viaje funciona incluso en sótanos de parqueaderos donde no hay señal 4G?
+    \item \textbf{Cómo lo probamos:} Implementación de tokens criptográficos temporales en código QR bidireccional entre las apps del pasajero y el conductor, con sincronización asíncrona diferida.
+    \item \textbf{Métrica de éxito:} 100\% de viajes confirmados exitosamente en pruebas en los sótanos de los bloques A, E y H del campus del Externado.
+\end{itemize}
+\end{kbibox}
+
+\subsection{Pregunta 6: ¿Cómo escalas tu negocio?}
+
+\begin{kbibox}{Experimento 6.1: Análisis de transferibilidad del modelo a campus vecinos (La Candelaria)}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿La misma red vehicular puede compartir cupos con estudiantes de universidades adyacentes (U. de los Andes, U. del Rosario, U. Central) manteniendo filtros de seguridad interinstitucional?
+    \item \textbf{Cómo lo probamos:} Modelación de demanda agregada mediante grafos bipartitos uniendo las paradas de La Candelaria y simulando escenarios de interoperabilidad institucional.
+    \item \textbf{Métrica de éxito:} Aumento del factor de ocupación de la red al 92\% y reducción del tiempo medio de espera de cupo a menos de 5 minutos en franjas pico.
+\end{itemize}
+\end{kbibox}
+
+\begin{kbibox}{Experimento 6.2: Modelo de absorción de viajes hacia eventos institucionales y exámenes finales}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Lo que queremos saber:} ¿Cómo responde la plataforma ante picos de demanda durante semanas de parciales o eventos académicos nocturnos?
+    \item \textbf{Cómo lo probamos:} Simulación estocástica de Monte Carlo con 10.000 iteraciones variando la oferta vehicular en un $\pm 40\%$ y evaluando el cumplimiento de tiempos de llegada.
+    \item \textbf{Métrica de éxito:} Comprobar que una reserva anticipada obligatoria de 12 horas absorbe el 88\% de la demanda pico sin requerir aumentos artificiales de tarifa.
+\end{itemize}
+\end{kbibox}
+
+\newpage
+% =========================================================================
+% SECCIÓN 3: TAREA 3 - BUSINESS MODEL CANVAS (LOS 9 BLOQUES)
+% =========================================================================
+\section{Tarea 3: Business Model Canvas (Lienzo del Modelo de Negocio)}
+
+A continuación se estructura el Business Model Canvas consolidado para \textbf{Wheels Externado}, articulando los 9 bloques estratégicos definidos por Osterwalder \& Pigneur:
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\begin{tabularx}{\linewidth}{|X|X|X|X|X|}
+\hline
+\rowcolor{primary!15}
+\textbf{8. Asociaciones Clave} & 
+\textbf{7. Actividades Clave} & 
+\textbf{2. Propuesta de Valor} & 
+\textbf{4. Relaciones con Clientes} & 
+\textbf{1. Segmentos de Clientes} \\ 
+\hline
+\begin{itemize}[leftmargin=*]
+    \item Universidad Externado de Colombia (Decanatura de Estudiantes y Bienestar).
+    \item Administradores de parqueaderos en La Candelaria y campus.
+    \item Billeteras móviles (Nequi, Daviplata, Transfiya).
+    \item Proveedores de APIs de mapas y georreferenciación (Mapbox / OpenStreetMap).
+\end{itemize} & 
+\begin{itemize}[leftmargin=*]
+    \item Desarrollo y mantenimiento de la PWA/App móvil.
+    \item Algoritmo de matching geoespacial y ruteo por corredores.
+    \item Verificación de identidad institucional y antecedentes vehiculares.
+    \item Soporte al usuario y conciliación de viajes y penalizaciones.
+\end{itemize} & 
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Certeza de Cupo:} Reserva garantizada sin lotería de mensajes en WhatsApp.
+    \item \textbf{Comunidad Segura:} Verificación obligatoria con correo institucional \texttt{@uexternado}.
+    \item \textbf{Ahorro de Tiempo:} Reducción del 50\% en tiempos de viaje hacia los cerros.
+    \item \textbf{Tarifa Justa:} Amortización de parqueadero y gasolina para el conductor (\$6.800 netos) y costo accesible para el pasajero (\$8.000).
+\end{itemize} & 
+\begin{itemize}[leftmargin=*]
+    \item Comunidad cerrada basada en confianza y reputación mutua.
+    \item Transparencia total en comisiones y cobros.
+    \item Canales de soporte directo vía app para incidentes.
+    \item Incentivos y recompensas por puntualidad y cero cancelaciones.
+\end{itemize} & 
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Pasajeros Externadistas:} Estudiantes y colaboradores que viajan desde zonas periféricas (>60 min en transporte público).
+    \item \textbf{Conductores Externadistas:} Miembros de la comunidad con vehículo particular y cupos vacíos que buscan amortizar el costo de parqueadero (\$22.000 COP) y gasolina.
+\end{itemize} \\
+\cline{2-2} \cline{4-4}
+ & \rowcolor{primary!15} 
+\textbf{6. Recursos Clave} & & \rowcolor{primary!15} 
+\textbf{3. Canales} & \\
+\cline{2-2} \cline{4-4}
+ & \begin{itemize}[leftmargin=*]
+    \item Base de datos de rutas y usuarios verificados.
+    \item Algoritmo de emparejamiento espacial y ruteo.
+    \item Flota vehicular privada de los propios estudiantes.
+    \item Equipo técnico en Ciencia de Datos y Desarrollo de Software.
+\end{itemize} & & \begin{itemize}[leftmargin=*]
+    \item Aplicación móvil PWA multidispositivo.
+    \item Migración guiada desde los grupos existentes de WhatsApp.
+    \item Campañas en campus universitario, ferias de bienestar y semanas de inducción.
+    \item Programa de referidos de estudiante a estudiante.
+\end{itemize} & \\
+\hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\begin{tabularx}{\linewidth}{|X|X|}
+\hline
+\rowcolor{primary!15}
+\textbf{9. Estructura de Costos} & 
+\textbf{5. Fuentes de Ingresos} \\
+\hline
+\begin{itemize}[leftmargin=*]
+    \item Servidores e infraestructura en la nube elástica (AWS / GCP / Supabase): ~\$280.000 COP/mes.
+    \item Consumo de APIs de mapas y geocodificación (Mapbox / Google Maps): ~\$120.000 COP/mes.
+    \item Costo variable transaccional de pasarela de pagos (Nequi / Daviplata / Wompi): \$200 COP por cupo.
+    \item Gastos de activación y mercadeo de guerrilla en campus: ~\$150.000 COP/mes.
+    \item Mantenimiento técnico, licencias de desarrollo y soporte legal.
+\end{itemize} & 
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Comisión por Servicio (Take Rate):} Tarifa de intermediación de \$1.200 COP (15\%) por cupo completado sobre una tarifa total de \$8.000 COP (el conductor recibe \$6.800 COP netos).
+    \item \textbf{Penalizaciones por Cancelación Tardía (Anti-Ghosting):} Cargo de \$4.000 COP si se cancela a menos de 30 minutos (\$3.200 para el conductor y \$800 para la plataforma).
+    \item \textbf{Futuras Alianzas B2B:} Convenios de validación de estacionamiento preferencial con la universidad.
+\end{itemize} \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Conclusión del Portafolio de Evidencias No. 2}
+El desarrollo del presente portafolio consolida la viabilidad técnica, experimental y comercial de \textbf{Wheels Externado}. Con testimonios cualitativos de expertos que ratifican el dolor logístico y la necesidad de seguridad institucional, una batería de 12 experimentos fundamentados en analítica y un Canvas formal de dos lados, el proyecto se encuentra sólidamente posicionado para su validación de campo a gran escala.
+
+\end{document}
+

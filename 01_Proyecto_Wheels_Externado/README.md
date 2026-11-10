@@ -22,9 +22,11 @@ El objetivo es formalizar y facilitar el proceso que hoy se hace por WhatsApp, o
 ---
 
 ## 📂 Carpetas de Trabajo
-- **`Entrega_3/`**: Espacio para los insumos y entregables correspondientes a la Entrega 3 (Trabajo de campo 2 con clientes).
+- **`Entrega_1/`**: Documento oficial de presentación de la idea y primer prototipo MVP adaptado al proyecto Wheels Externado (`.tex`, `.docx`, `.md`).
+- **`Portafolio_de_Evidencias_2/`**: Consolidado de Tareas 1, 2 y 3 (Validación con expertos, matriz de 12 experimentos desde Ciencia de Datos y primer Lienzo Canvas) (`.tex`, `.docx`, `.md`).
+- **`Entrega_3/`**: Insumos y entregables correspondientes a la Entrega 3 (Trabajo de campo 2 con clientes).
   - `Transcripciones_Entrevistas.md`: Transcripciones íntegras y estructuradas de las 8 entrevistas de campo (conductores y pasajeros).
   - `Informe_Resultados_Validacion_Entrega_3.md`: Informe ejecutivo de validación de campo, customer discovery, personas, Willingness to Pay y backlog de MVP.
   - `Audios/`: Archivos fuente de audio y video de las 8 entrevistas.
   - `Guia Entrega 3_Trabajo de campo 2- con clientes_ok .docx`: Guía oficial docente de la entrega.
-- **`Portafolio_de_Evidencias_4/`**: Espacio para los documentos y avances correspondientes al Portafolio de Evidencias No. 4 (Fuentes de ingresos y LTV).
+- **`Portafolio_de_Evidencias_4/`**: Documentos y avances correspondientes al Portafolio de Evidencias No. 4 (Modelo de Negocio Consolidado, BMC, LTV/CAC e Impactos ODS).

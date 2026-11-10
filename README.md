@@ -59,8 +59,10 @@ Emprendimiento/
 │
 ├── 01_Proyecto_Wheels_Externado/                  # 🚗 PROYECTO ACTIVO: Carpooling Universitario
 │   ├── README.md                                  # Contexto, pivote e idea del proyecto
-│   ├── Entrega_3/                                 # 📌 Carpeta para Entrega 3
-│   └── Portafolio_de_Evidencias_4/                # 📌 Carpeta para Portafolio de Evidencias 4
+│   ├── Entrega_1/                                 # 📌 Entrega 1: Presentación de la Idea y Prototipo MVP (Wheels)
+│   ├── Portafolio_de_Evidencias_2/                # 📌 Portafolio 2: Expertos, 12 Experimentos y Canvas (Wheels)
+│   ├── Entrega_3/                                 # 📌 Entrega 3: Validación de Campo y Clientes
+│   └── Portafolio_de_Evidencias_4/                # 📌 Portafolio 4: BMC, Unit Economics (LTV/CAC) y ODS
 │
 ├── Proyecto_StatCredit_AI/                        # 🏛️ PROYECTO PREVIO (Archivado)
 │   ├── 01_Talleres_y_Contratos/                   # Talleres iniciales y Term Sheet

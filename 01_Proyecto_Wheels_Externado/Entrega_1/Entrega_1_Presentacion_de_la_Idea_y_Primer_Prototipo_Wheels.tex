@@ -1,0 +1,407 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{geometry}
+\geometry{top=2.3cm, bottom=2.3cm, left=2.3cm, right=2.3cm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{enumitem}
+\setlist{nosep, topsep=3pt, partopsep=0pt}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, fit}
+
+\raggedbottom
+
+% ---------------------------------------------------------
+% PALETA INSTITUCIONAL Y DEFINICIÓN DE COLORES
+% ---------------------------------------------------------
+\definecolor{primary}{RGB}{0, 51, 102}      % Azul Institucional Externado (#003366)
+\definecolor{secondary}{RGB}{232, 119, 34}  % Naranja Externado (#E87722)
+\definecolor{accent}{RGB}{0, 114, 206}      % Azul Tecnológico
+\definecolor{darkgray}{RGB}{40, 40, 40}
+\definecolor{lightgray}{RGB}{245, 247, 250}
+\definecolor{bordergray}{RGB}{205, 215, 225}
+\definecolor{success}{RGB}{46, 125, 50}     % Verde Validación (#2E7D32)
+\definecolor{warning}{RGB}{217, 119, 6}     % Ámbar Ajuste Metodológico (#D97706)
+\definecolor{danger}{RGB}{192, 57, 43}      % Rojo Crítico (#C0392B)
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    citecolor=secondary,
+    urlcolor=accent,
+    pdftitle={Entrega No. 1 - Presentación de la Idea y Primer Prototipo - Wheels Externado}
+}
+
+% ---------------------------------------------------------
+% ESTILOS DE CAJAS PERSONALIZADAS
+% ---------------------------------------------------------
+\newtcolorbox{externadobox}[2][]{
+    enhanced,
+    colback=lightgray,
+    colframe=primary,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    sharp corners=south,
+    arc=3.5mm,
+    boxrule=1.1pt,
+    left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+    #1
+}
+
+\newtcolorbox{evidencebox}[2][]{
+    enhanced,
+    colback=secondary!6,
+    colframe=secondary,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    arc=3mm,
+    boxrule=1pt,
+    left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+    #1
+}
+
+\newtcolorbox{kbibox}[2][]{
+    enhanced,
+    colback=success!6,
+    colframe=success,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    arc=3mm,
+    boxrule=1pt,
+    left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+    #1
+}
+
+\newtcolorbox{warningbox}[2][]{
+    enhanced,
+    colback=warning!6,
+    colframe=warning,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    arc=3mm,
+    boxrule=1pt,
+    left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+    #1
+}
+
+\begin{document}
+
+% ---------------------------------------------------------
+% PORTADA INSTITUCIONAL
+% ---------------------------------------------------------
+\begin{titlepage}
+    \centering
+    \vspace*{0.5cm}
+    {\Huge \textbf{\color{primary} UNIVERSIDAD EXTERNADO DE COLOMBIA}}\\[0.3cm]
+    {\Large \textbf{\color{secondary} FACULTAD DE CIENCIAS DE DATOS --- EMPRENDIMIENTO}}\\[1.5cm]
+    
+    \rule{\linewidth}{0.8mm}\\[0.4cm]
+    {\Huge \textbf{ENTREGA 1: PRESENTACIÓN DE LA IDEA}}\\[0.2cm]
+    {\Huge \textbf{Y PRIMER PROTOTIPO (MVP)}}\\[0.3cm]
+    {\Large \textbf{Estructuración Integral Bajo Disciplined Entrepreneurship y Metodología Lean}}\\[0.4cm]
+    \rule{\linewidth}{0.8mm}\\[1.2cm]
+    
+    \begin{externadobox}[colback=white,colframe=primary]{Iniciativa de Emprendimiento Tecnológico}
+        \centering \vspace{0.2cm}
+        {\Huge \textbf{\color{primary} Wheels Externado}}\\[0.3cm]
+        {\large \textit{Plataforma Inteligente de Movilidad Compartida (Carpooling) y Confianza Institucional para la Comunidad Universitaria}}\\[0.2cm]
+    \end{externadobox}
+    
+    \vfill
+    
+    \begin{minipage}{0.85\textwidth}
+        \centering
+        \textbf{\large Equipo Fundador (Grupo 5):}\\[0.3cm]
+        \textbf{Santiago Sandoval} \quad\vert\quad \textbf{Sebastián Ramos}\\[0.15cm]
+        \textbf{Julián Duarte} \quad\vert\quad \textbf{Tomás Rincón} \quad\vert\quad \textbf{Julián Jiménez}\\[0.4cm]
+        {\small Docente: Curso de Emprendimiento \quad$\cdot$\quad Semestre 2026-II}
+    \end{minipage}
+    
+    \vfill
+    {\large \textbf{Bogotá D.C., Colombia --- 2026}}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+% =========================================================================
+% RESUMEN EJECUTIVO Y DECLARACIÓN DE IDENTIDAD
+% =========================================================================
+\section*{Resumen Ejecutivo y Declaración de Identidad}
+\addcontentsline{toc}{section}{Resumen Ejecutivo y Declaración de Identidad}
+
+\begin{externadobox}{Declaración Estratégica del Proyecto}
+\textbf{Wheels Externado} es una plataforma tecnológica móvil de viajes compartidos (\textit{carpooling}) diseñada exclusivamente para la comunidad de la Universidad Externado de Colombia. Transforma la precaria, riesgosa y desorganizada dinámica actual de coordinación en múltiples grupos informales de WhatsApp en un ecosistema formal, seguro y sincronizado con horarios académicos, autenticación federada con correo institucional (\texttt{@uexternado.edu.co}) y liquidación inmediata de micropagos digitales (Nequi / Daviplata).
+
+\vspace{0.2cm}
+\textbf{Enunciado Insignia:} 
+\textit{«No inventamos la necesidad de viajar juntos hacia el Externado; eliminamos la incertidumbre de cupo, el caos de WhatsApp y el riesgo de seguridad para que la comunidad viaje puntual, tranquila y protegida.»}
+\end{externadobox}
+
+\vspace{0.3cm}
+
+% =========================================================================
+% PREGUNTA 1: INDUSTRIA Y SECTOR
+% =========================================================================
+\section{Ubicación Industrial y Sector Económico}
+
+El proyecto \textbf{Wheels Externado} se ubica en la intersección de tres industrias y sectores de vanguardia tecnológica:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Smart Mobility \& Shared Transportation (Movilidad Inteligente y Compartida):} Subsector de \textit{Carpooling P2P} (viajes compartidos no comerciales entre pares con propósito común), enfocado en la optimización del factor de ocupación de vehículos privados existentes (de 1,2 a 3,5 ocupantes por vehículo) sin requerir ampliación de infraestructura vial.
+    \item \textbf{Plataformas Digitales de Dos Lados (Two-Sided Multisided Marketplaces):} Ecosistemas móviles de mediación algorítmica donde se coordina en tiempo real una oferta descentralizada de cupos (estudiantes y colaboradores con vehículo propio) con una demanda recurrente y cautiva de pasajeros universitarios.
+    \item \textbf{Ecosistema EdTech \& Institutional Community Platforms:} Servicios tecnológicos diseñados con arquitectura de red cerrada (\textit{walled-garden}), donde el acceso, reputación y confianza se fundamentan en identidades digitales universitarias verificadas.
+\end{enumerate}
+
+\subsection{Distinción Regulatoria y Conceptual Frente al Transporte Público y Ride-Hailing}
+A diferencia de plataformas comerciales de transporte masivo o bajo demanda (\textit{ride-hailing}) como Uber o InDrive, \textbf{Wheels Externado} opera bajo el principio de \textbf{amortización colaborativa de costos operativos}:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{No constituye servicio público de transporte comercial:} El conductor no es un chofer contratado ni percibe ingresos salariales de subsistencia; es un estudiante que de todos modos realizaría el trayecto hacia el campus universitario.
+    \item \textbf{Compartición de gastos legítima:} El valor aportado por los pasajeros (\$6.000 a \$8.000 COP) se destina exclusivamente a cubrir los gastos directos del desplazamiento: combustible y tarifa de parqueadero en La Candelaria (\$22.000 COP diarios).
+\end{itemize}
+
+% =========================================================================
+% PREGUNTA 2: NECESIDAD VS PROBLEMA ESPECÍFICO (ISHIKAWA)
+% =========================================================================
+\section{Necesidad del Mercado vs. Problema Específico de la Población Objetivo}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabularx}{\textwidth}{p{7cm} X}
+\toprule
+\textbf{Necesidad General del Mercado} & \textbf{Problema Específico y Reencuadre (Bianchi \& Verganti, 2021)} \\
+\midrule
+Los más de 12.000 estudiantes y colaboradores de la Universidad Externado de Colombia necesitan trasladarse diariamente hacia el campus en los Cerros Orientales de forma económica, puntual y digna, superando las limitaciones extremas del transporte público distrital. & 
+\textbf{Problema Visible:} Los estudiantes no tienen suficientes opciones rápidas y seguras de transporte público hacia el campus.\\
+& \textbf{Reencuadre Wheels Externado:} Ya existe una flota privada de cientos de carros de estudiantes con cupos vacíos viajando diariamente a la universidad. El verdadero problema radica en que \textbf{la coordinación se realiza a través de chats planos de WhatsApp, lo que genera saturación de mensajes, incertidumbre de cupo, riesgo de delincuencia al no existir verificación institucional y desequilibrio económico ante cancelaciones imprevistas (\textit{ghosting})}. \\
+\bottomrule
+\end{tabularx}
+\caption{Diferenciación entre necesidad global y problema específico reencuadrado.}
+\end{table}
+
+\subsection{Árbol Causal de Ishikawa (Espina de Pescado)}
+
+\begin{figure}[h!]
+\centering
+\footnotesize
+\begin{tikzpicture}[node distance=1.5cm, >=stealth]
+    \tikzstyle{head} = [rectangle, draw=primary, fill=primary, text=white, font=\bfseries\small, text width=4.5cm, align=center, minimum height=1.3cm, rounded corners=2mm]
+    \tikzstyle{bone} = [rectangle, draw=secondary, fill=lightgray, font=\bfseries, text width=3.2cm, align=center, rounded corners=1mm]
+    \tikzstyle{sub} = [font=\tiny, text width=2.9cm, align=left]
+
+    % Espina dorsal central
+    \draw[ultra thick, primary, ->] (0,0) -- (10.2,0);
+    
+    % Cabeza del problema
+    \node[head] at (12.5,0) {Coordinación ineficiente, incierta e insegura de carpooling en la comunidad Externado};
+
+    % Causas Duras (Arriba)
+    \node[bone] (c1) at (2.5, 2.7) {1. Geografía e Infraestructura};
+    \draw[thick, secondary] (c1) -- (2.5, 0);
+    \node[sub] at (2.5, 1.4) {$\bullet$ Campus en cerros empinados.\\ $\bullet$ Vías estrechas en La Candelaria.\\ $\bullet$ Parqueadero costoso (\$22k/día).};
+
+    \node[bone] (c2) at (6.0, 2.7) {2. Procesos y Operación};
+    \draw[thick, secondary] (c2) -- (6.0, 0);
+    \node[sub] at (6.0, 1.4) {$\bullet$ Reserva por velocidad ("yo").\\ $\bullet$ Moneda en efectivo sin cambio.\\ $\bullet$ Fallas de señal Nequi en sótanos.};
+
+    \node[bone] (c3) at (9.2, 2.7) {3. Tecnología y Canales};
+    \draw[thick, secondary] (c3) -- (9.2, 0);
+    \node[sub] at (9.2, 1.4) {$\bullet$ WhatsApp sin filtros de ruta.\\ $\bullet$ Rutas sepultadas en minutos.\\ $\bullet$ Sin trazabilidad GPS.};
+
+    % Causas Blandas (Abajo)
+    \node[bone] (c4) at (2.5, -2.7) {4. Riesgo y Seguridad};
+    \draw[thick, secondary] (c4) -- (2.5, 0);
+    \node[sub] at (2.5, -1.4) {$\bullet$ Enlaces WhatsApp públicos.\\ $\bullet$ Personas ajenas infiltradas.\\ $\bullet$ Vulnerabilidad de género.};
+
+    \node[bone] (c5) at (6.0, -2.7) {5. Conducta y Ghosting};
+    \draw[thick, secondary] (c5) -- (6.0, 0);
+    \node[sub] at (6.0, -1.4) {$\bullet$ Cancelación a 15 min.\\ $\bullet$ Cero penalización al pasajero.\\ $\bullet$ Conductor pierde \$12k-\$24k.};
+
+    \node[bone] (c6) at (9.2, -2.7) {6. Costos de Transacción};
+    \draw[thick, secondary] (c6) -- (9.2, 0);
+    \node[sub] at (9.2, -1.4) {$\bullet$ Desgaste emocional matutino.\\ $\bullet$ Incertidumbre al madrugar.\\ $\bullet$ Asimetría de información.};
+\end{tikzpicture}
+\caption{Diagrama de Ishikawa: Causas operativas, técnicas y conductuales del problema.}
+\end{figure}
+
+% =========================================================================
+% PREGUNTA 3: MATRIZ DE COMPETIDORES
+% =========================================================================
+\section{Análisis de Competidores Directos e Indirectos}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{p{2.3cm} p{1.8cm} p{2.2cm} p{1.5cm} p{1.8cm} p{1.8cm} X}
+\toprule
+\textbf{Competidor} & \textbf{Actividad} & \textbf{Problema Resuelto} & \textbf{Ventas / Escala} & \textbf{En qué se parece} & \textbf{En qué nos diferenciamos} \\
+\midrule
+\textbf{1. WhatsApp Wheels Externado} & Carpooling informal entre pares & Conecta oferta y demanda de cupos sin intermediarios & \$0 formales; ~400 viajes por semana & Misma comunidad estudiantil y tarifa base (\$6.000 COP) & \textbf{WhatsApp no filtra por ruta, sepulta mensajes, no penaliza el \textit{ghosting}, carece de verificación institucional y no tiene pagos integrados.} \\
+\midrule
+\textbf{2. InDrive} & Movilidad P2P con tarifa negociada & Transporte punto a punto negociado entre chofer y usuario & Global; >\$200M USD facturación anual & Viajes en autos particulares con tarifa previa & \textbf{Mercado abierto sin filtro universitario (alto riesgo de seguridad), sin sincronización con horarios académicos y tarifas dinámicas elevadas (\$18k-\$30k).} \\
+\midrule
+\textbf{3. Uber / DiDi} & Ride-hailing masivo bajo demanda & Movilidad privada inmediata con geolocalización & Global; miles de millones de USD & App móvil nativa con reserva GPS y pago electrónico & \textbf{Tarifas inviables para uso diario estudiantil (\$25.000 a \$45.000 COP por trayecto, 3 a 5 veces superiores a la tarifa de Wheels).} \\
+\midrule
+\textbf{4. TransMilenio / SITP} & Transporte masivo público distrital & Transporte urbano de bajo costo hacia el centro & Billones de COP (empresa distrital) & Mueve el volumen mayoritario de estudiantes al centro & \textbf{Tiempos extremos (90 a 150 min), fatiga severa, transbordos forzados, caminata empinada e inseguridad en puentes y estaciones.} \\
+\midrule
+\textbf{5. Try My Ride} & Software corporativo de carpooling & Reducción de huella de carbono y congestión en empresas & Pyme tecnológica regional & Modelo de carpooling en comunidad cerrada & \textbf{Enfoque rígido en compliance empresarial; no resuelve el dinamismo P2P estudiantil ni micropagos instantáneos.} \\
+\bottomrule
+\end{tabularx}
+\caption{Matriz comparativa de 5 competidores directos e indirectos.}
+\end{table}
+
+% =========================================================================
+% PREGUNTA 4: TRES PREGUNTAS CLAVE (STEVE BLANK)
+% =========================================================================
+\section{Tres Preguntas Clave sobre el Problema y el Mercado}
+
+\subsection{1. ¿Qué hacen los clientes hoy?}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Comportamiento actual:} Los estudiantes usan más de 4 grupos de WhatsApp saturados (cada uno con 800 a 1.000 miembros). Se levantan entre las 5:00 am y 5:30 am a monitorear frenéticamente el chat para escribir «yo» en fracciones de segundo cuando un conductor publica una ruta.
+    \item \textbf{Costos incurridos:} El pasajero paga \$6.000 COP por trayecto en efectivo o Nequi informal (o entre \$25.000 y \$40.000 en Uber cuando el cupo falla). El conductor recauda \$18.000-\$24.000 por viaje, gastándolos íntegramente en parqueadero (\$22.000) y combustible. En transporte público pagan \$3.200 pero pierden hasta 2,5 horas por sentido.
+    \item \textbf{Pains validados en campo:} Lectura de 300+ mensajes innecesarios, cancelaciones de última hora (\textit{ghosting}) sin indemnización, transferencias bloqueadas en sótanos y miedo por la presencia de personas ajenas a la universidad.
+\end{itemize}
+
+\subsection{2. ¿Por qué el problema es difícil de resolver?}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Dilema del mercado de dos lados (Chicken-and-Egg):} Sin conductores con rutas atractivas los pasajeros no abren la app; sin pasajeros asegurados los conductores no publican sus horarios.
+    \item \textbf{Límites del canal plano:} WhatsApp no posee arquitectura de bases de datos, filtrado geoespacial ni pasarela transaccional.
+    \item \textbf{Economía de márgenes reducidos:} Un operador comercial tradicional no puede operar a \$8.000 COP por viaje y ser rentable; solo un modelo de economía colaborativa entre estudiantes (con CAC mínimo y sin salarios a choferes) hace viable esta solución.
+\end{itemize}
+
+\subsection{3. ¿Qué tipo de mercado estamos abordando?}
+De acuerdo con la taxonomía de Steve Blank (2021), abordamos un \textbf{MERCADO RESEGMENTADO POR NICHO (Resegmented Market - Niche Strategy)}. No creamos la necesidad de moverse en Bogotá (mercado existente dominado por buses y apps de transporte), sino que tomamos una comunidad cerrada con alta densidad geográfica y necesidades específicas (estudiantes del Externado), ofreciendo una solución a la medida con atributos diferenciadores: confianza institucional garantizada, rutas consolidadas hacia los cerros y tarifas protegidas para estudiantes.
+
+% =========================================================================
+% PREGUNTA 5: TAMAÑO DE LA INDUSTRIA
+% =========================================================================
+\section{Tamaño de la Industria y Dimensionamiento del Mercado}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Industria Nacional:} Según la Cámara Colombiana de Informática y Telecomunicaciones (CCIT, 2025), el mercado de plataformas de movilidad intermediada en Colombia factura más de \textbf{\$1,2 billones de COP anuales}.
+    \item \textbf{Mercado Universitario en Bogotá:} La capital alberga más de 750.000 estudiantes universitarios (Ministerio de Educación Nacional). En la zona centro de Bogotá (La Candelaria) convergen más de 85.000 estudiantes (Externado, Andes, Rosario, América, Central), configurando un TAM regional de más de \textbf{\$3.120 millones de COP anuales} en carpooling.
+    \item \textbf{Mercado Inicial (Beachhead - Universidad Externado):}
+    \begin{itemize}
+        \item Población activa: ~12.000 miembros (estudiantes, docentes y administrativos).
+        \item Segmento objetivo con viajes críticos (>60 min o zonas periféricas): ~2.400 estudiantes diarios.
+        \item Frecuencia: 256 viajes anuales promedio por estudiante (16 semanas por semestre, 4 viajes semanales).
+        \item Valor bruto transaccional anual: $2.400 \times 256 \times \$8.000 = \mathbf{\$4.915.200.000\text{ COP/año}}$.
+        \item Ingreso proyectado por comisión (take-rate del 15\% / \$1.200 COP): $\mathbf{\$737.280.000\text{ COP/año}}$ (~184.000 USD).
+    \end{itemize}
+\end{itemize}
+
+% =========================================================================
+% PREGUNTA 6: CLIENTE POTENCIAL (PERSONAS)
+% =========================================================================
+\section{Características del Cliente Potencial (Buyer Personas)}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabularx}{\textwidth}{p{3.8cm} X X}
+\toprule
+\textbf{Variable / Atributo} & \textbf{Perfil Pasajera: «Camila»} & \textbf{Perfil Conductor: «Daniel»} \\
+\midrule
+\textbf{Demografía} & 19 años, mujer, estudiante de 3.er semestre de Derecho. & 22 años, hombre, estudiante de 7.° semestre de Finanzas. \\
+\textbf{Ubicación y Origen} & Timiza / Kennedy (Sur-Occidente de Bogotá). & Modelia / Fontibón (Occidente de Bogotá). \\
+\textbf{Ingresos y Presupuesto} & Mesada familiar (\$300.000 COP/mes); alta sensibilidad al precio. & Ingresos por pasantía o apoyo familiar; costea gasolina y parqueadero. \\
+\textbf{Estilo de Vida y Dolor} & Se levanta a las 5:10 am. Tarda 105 min en TransMilenio con transbordos y camina con miedo desde Las Aguas. En WhatsApp no alcanza a ganar cupo. & Conduce solo en su carro. El parqueadero en La Candelaria le cuesta \$22.000 diarios (\$440.000 al mes). Le molesta esperar a gente que no llega. \\
+\textbf{Propuesta de Valor} & Cupo asegurado desde la noche anterior, conductor verificado y ruta directa en 45 minutos. & Amortización completa del parqueadero y combustible (\$27.200 por viaje lleno con 4 cupos) y penalización garantizada si alguien cancela. \\
+\bottomrule
+\end{tabularx}
+\caption{Caracterización psicográfica y demográfica de los dos lados del mercado.}
+\end{table}
+
+% =========================================================================
+% PREGUNTAS 7 Y 8: PROTOTIPO MVP Y RESOLUCIÓN DEL PROBLEMA
+% =========================================================================
+\section{Arquitectura del Primer Prototipo (MVP) y Solución al Problema}
+
+El prototipo de \textbf{Wheels Externado} se concibe como una Progressive Web App (PWA) móvil con tres componentes funcionales principales:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Módulo de Descubrimiento y Reserva por Corredores Viales:} El pasajero visualiza ofertas agrupadas por corredores preestablecidos (Autonorte, Calle 80, Calle 26, Av. Américas, Boyacá, Suba, Chía/Cota) con puntos de recogida estratégicos y horarios de llegada al campus (7:00 am, 8:00 am, 9:00 am). La reserva es automática e instantánea.
+    \item \textbf{Bóveda de Pago Digital en Custodia (Escrow Microservice):} El pasajero recarga saldo o paga su cupo (\$8.000 COP) vía pasarela integrada (Nequi / Daviplata). El dinero queda retenido en garantía; solo se libera al conductor (\$6.800 COP) cuando el viaje finaliza mediante validación por código QR dinámico.
+    \item \textbf{Círculo de Confianza Institucional y Calificación Bilateral:} Registro obligatorio mediante credenciales institucionales \texttt{@uexternado.edu.co}. Métricas de puntualidad, reseñas comunitarias y filtro opcional de seguridad «Solo Pasajeras Mujeres».
+\end{enumerate}
+
+\begin{tcolorbox}[colback=white,colframe=primary,title=\textbf{¿Por qué este prototipo resuelve efectivamente el problema de los clientes?}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Erradica la lotería del chat:} Sustituye la necesidad de leer 400 mensajes desordenados por un buscador geoespacial con reserva garantizada en un clic.
+    \item \textbf{Elimina el fenómeno del Ghosting:} Implementa una penalización de \$4.000 COP si el pasajero cancela con menos de 30 minutos de antelación; el 80\% de esa penalización se transfiere automáticamente a la cuenta del conductor para compensar su cupo vacío.
+    \item \textbf{Garantiza seguridad verificable:} Elimina el ingreso de delincuentes o personas ajenas a la universidad mediante autenticación con el directorio activo institucional.
+\end{itemize}
+\end{tcolorbox}
+
+% =========================================================================
+% PREGUNTAS 9 Y 10: IMPACTOS SOCIALES Y AMBIENTALES (ODS)
+% =========================================================================
+\section{Análisis de Impactos Sociales y Ambientales (ODS)}
+
+\subsection{5 Impactos Sociales: Beneficios, Riesgos y Mitigación}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{p{3.2cm} p{4.2cm} p{3.5cm} X}
+\toprule
+\textbf{Dimensión Social / ODS} & \textbf{Impacto Positivo} & \textbf{Riesgo Potencial} & \textbf{Estrategia de Mitigación} \\
+\midrule
+\textbf{1. Igualdad de Género (ODS 5)} & Trayectos seguros para estudiantes mujeres con opción de filtro exclusivo «Conductora Mujer». & Posible sensación de segregación o quejas por restricción de cupos. & Mantener el filtro como una opción voluntaria para la pasajera y conductora, promoviendo espacios protegidos. \\
+\midrule
+\textbf{2. Bienestar y Salud Mental (ODS 3)} & Ahorro de 60 a 90 minutos diarios por estudiante; reducción del estrés y la fatiga matutina. & Sobrecarga de expectativas o frustración si un conductor se retrasa por tráfico. & Monitoreo GPS en tiempo real con cálculo dinámico de hora estimada de llegada (ETA) y comunicación directa. \\
+\midrule
+\textbf{3. Tejido Comunitario (ODS 11)} & Fomenta la integración interdisciplinar y el capital social entre facultades distintas. & Desacuerdos de convivencia dentro del vehículo (música, conversación incómoda). & Código comunitario de convivencia visible en la app y sistema de evaluación mutua por estrellas. \\
+\midrule
+\textbf{4. Protección Económica (ODS 8)} & Tarifa justa y protegida para pasajeros y amortización del 100\% del parqueadero para conductores. & Intentos de desviar los pagos por fuera de la app para evadir la comisión. & Seguro de viaje exclusivo para trayectos pagados dentro de la plataforma y bonificaciones por fidelidad. \\
+\midrule
+\textbf{5. Seguridad Ciudadana (ODS 16)} & Erradicación de personas ajenas a la universidad infiltradas en el carpooling. & Suplantación de identidad o préstamo de cuentas universitarias. & Validación biométrica periódica contra el carné digital institucional y número de cédula. \\
+\bottomrule
+\end{tabularx}
+\caption{Matriz de impactos sociales, riesgos y planes de mitigación.}
+\end{table}
+
+\subsection{5 Impactos Ambientales: Beneficios, Riesgos y Mitigación}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{p{3.2cm} p{4.2cm} p{3.5cm} X}
+\toprule
+\textbf{Dimensión Ambiental / ODS} & \textbf{Impacto Positivo} & \textbf{Riesgo Potencial} & \textbf{Estrategia de Mitigación} \\
+\midrule
+\textbf{1. Reducción de Emisiones (ODS 13)} & Aumento de la ocupación vehicular de 1,2 a 3,5 personas por carro, evitando más de 45 toneladas de CO2 al año. & Rebote de demanda: que más estudiantes decidan llevar vehículo propio al campus. & Priorizar incentivos y tarifas de parqueadero universitario compartido para autos con 3 o más ocupantes. \\
+\midrule
+\textbf{2. Descongestión Vial (ODS 11)} & Retiro de más de 150 vehículos diarios en corredores críticos hacia La Candelaria y Circunvalar. & Retrasos menores por desvíos para recoger pasajeros en la ruta. & Puntos de encuentro fijos preestablecidos en bahías principales (no desvíos puerta a puerta). \\
+\midrule
+\textbf{3. Huella Digital Verde (ODS 12)} & Infraestructura en la nube con consumo elástico eficiente y servidores con neutralidad de carbono. & Consumo energético por procesamiento continuo de geolocalización. & Optimización de frecuencia de actualización del GPS según velocidad vehicular y modo reposo. \\
+\midrule
+\textbf{4. Calidad del Aire Urbano (ODS 3/11)} & Menor emisión de material particulado (PM2.5) y óxidos de nitrógeno en el centro histórico. & Uso de vehículos antiguos con baja eficiencia energética en la flota. & Registro obligatorio de certificación técnico-mecánica vigente del vehículo. \\
+\midrule
+\textbf{5. Cultura de Movilidad Sostenible} & Sensibilización de la comunidad estudiantil sobre transporte colaborativo y reporte de huella ahorrada. & Desinterés del usuario en métricas ecológicas si no percibe ahorro monetario. & Gamificación en la app: insignias y descuentos en cafeterías por kilogramos de CO2 ahorrados. \\
+\bottomrule
+\end{tabularx}
+\caption{Matriz de impactos ambientales, externalidades y control ecológico.}
+\end{table}
+
+% =========================================================================
+% CONCLUSIÓN DE LA ENTREGA 1
+% =========================================================================
+\section{Conclusión y Siguientes Pasos}
+La presente formulación de la **Entrega 1** establece los cimientos estratégicos, analíticos y comunitarios de **Wheels Externado**. Resuelve de raíz las limitaciones de los grupos informales de WhatsApp, aprovecha los activos existentes en la universidad y sienta las bases para una validación experimental cuantitativa rigurosa en el Portafolio de Evidencias No. 2.
+
+\end{document}
+
